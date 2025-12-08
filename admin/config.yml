@@ -1,13 +1,13 @@
 backend:
   name: git-gateway
-  branch: main   # ou master selon ton dépôt
+  branch: main   # branche principale de ton dépôt GitHub
 
-media_folder: "assets/uploads"   # où les images seront stockées
-public_folder: "/assets/uploads"
+media_folder: "assets/uploads"   # où les images seront stockées dans ton repo
+public_folder: "/assets/uploads" # chemin public pour les images
 
 collections:
   - name: "pages"
-    label: "Pages"
+    label: "Pages du site"
     files:
       - file: "index.html"
         label: "Accueil"
@@ -15,14 +15,34 @@ collections:
         fields:
           - {label: "Titre", name: "title", widget: "string"}
           - {label: "Texte", name: "body", widget: "text"}
+
+      - file: "services.html"
+        label: "Services"
+        name: "services"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Texte", name: "body", widget: "markdown"}
+
       - file: "about.html"
         label: "À propos"
         name: "about"
         fields:
-          - {label: "Texte", name: "body", widget: "text"}
+          - {label: "Texte", name: "body", widget: "markdown"}
+
+      - file: "contact.html"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - {label: "Texte", name: "body", widget: "markdown"}
+
+      - file: "legal.html"
+        label: "Mentions légales"
+        name: "legal"
+        fields:
+          - {label: "Texte", name: "body", widget: "markdown"}
 
   - name: "blog"
-    label: "Blog"
+    label: "Articles du blog"
     folder: "blog"
     create: true
     slug: "{{slug}}"
