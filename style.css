@@ -291,3 +291,39 @@ footer {
   color: #fdd835;
   background: transparent;
 }
+
+.services-overview .grid-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  gap: 24px; /* espace entre les blocs */
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Responsive : 1 colonne sur mobile */
+@media (max-width: 768px) {
+  .services-overview .grid-list {
+    grid-template-columns: 1fr;
+  }
+}
+/* Supprimer le soulignement sur les blocs de services */
+.service-block {
+  text-decoration: none;   /* enlève le soulignement global */
+  color: inherit;          /* garde la couleur définie ailleurs */
+  display: block;          /* rend tout le bloc cliquable */
+}
+
+/* Supprimer le soulignement sur les titres et listes à l'intérieur */
+.service-block h3,
+.service-block ul li,
+.service-block ol li,
+.service-block strong {
+  text-decoration: none;
+  color: #0047AB; /* ton bleu roi premium */
+}
+
+/* Supprimer le soulignement sur les icônes */
+.service-block i {
+  text-decoration: none;
+}
