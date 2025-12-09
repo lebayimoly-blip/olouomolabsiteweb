@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <title>Olouomo Lab CMS</title>
-  <!-- Charge la bonne version UMD de Netlify CMS -->
+  <!-- Charge Netlify CMS UMD -->
   <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
 </head>
 <body>
   <!-- Conteneur où Netlify CMS va injecter son interface -->
   <div id="nc-root"></div>
 
+  <!-- Initialise CMS après chargement du DOM -->
   <script>
-    CMS.init();
+    window.addEventListener("DOMContentLoaded", function() {
+      CMS.init();
+    });
   </script>
 </body>
 </html>
