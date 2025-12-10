@@ -1,33 +1,120 @@
-.tools-overview {
-  max-width: 900px;
+/* Reset */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #0047AB; /* Bleu roi */
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+
+/* Coordonnées */
+.contact-info {
+  text-align: center;
   margin: 40px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 1.1em;
 }
 
-.tools-overview h2 {
-  color: #0047AB; /* Bleu roi premium */
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.contact-info h2 {
+  color: #0047AB;
+  margin-bottom: 20px;
 }
 
-.tools-overview ul li {
+.contact-info p {
   margin: 10px 0;
   color: #333;
-  line-height: 1.6;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
-/* Icônes premium */
-.tools-overview i {
-  color: #0047AB; /* Bleu roi premium */
-  font-size: 1.2em;
+.contact-info i {
+  color: #0047AB;
+  margin-right: 8px;
+}
+
+/* Formulaire */
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: #0047AB;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #0047AB;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+/* Confirmation */
+.form-success {
+  text-align: center;
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #0047AB;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95em;
 }
 /* Liens sociaux */
 .social-links {

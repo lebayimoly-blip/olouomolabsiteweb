@@ -327,3 +327,220 @@ footer {
 .service-block i {
   text-decoration: none;
 }
+/* Liens sociaux */
+.social-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-btn {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.social-btn i {
+  margin-right: 8px;
+}
+
+.social-btn.facebook {
+  background: #1877f2;
+  color: #fff;
+}
+
+.social-btn.facebook:hover {
+  background: #145dbf;
+  transform: translateY(-3px);
+}
+
+.social-btn.linkedin {
+  background: #0a66c2;
+  color: #fff;
+}
+
+.social-btn.linkedin:hover {
+  background: #004182;
+  transform: translateY(-3px);
+}
+
+/* Footer social icons */
+.footer-social {
+  margin-top: 10px;
+}
+
+.footer-social a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ffcc00; /* Doré au hover */
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #0047AB;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2em;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #003580;
+}
+
+nav a {
+  color: #fff;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+/* Sections */
+section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Grilles services */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffcc00;
+}
+
+/* Formulaire */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+form button {
+  background: #0047AB;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+/* Footer */
+footer {
+  background: #0047AB;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.footer-social a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5em;
+}
+
+.footer-social a:hover {
+  color: #ffcc00;
+}
+
+/* ------------------- */
+/* Responsive Queries */
+/* ------------------- */
+
+/* Tablettes */
+@media (max-width: 992px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+  nav a {
+    padding: 10px;
+    font-size: 0.95em;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+  nav {
+    flex-direction: column;
+  }
+  nav a {
+    text-align: center;
+    border-top: 1px solid #003580;
+  }
+  section {
+    margin: 20px auto;
+    padding: 15px;
+  }
+  .service-card {
+    padding: 15px;
+  }
+  form button {
+    font-size: 1em;
+  }
+}

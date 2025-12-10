@@ -3,33 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <title>Olouomo Lab - Contact</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS unique -->
+  <link rel="stylesheet" href="contact.css">
 </head>
 <body>
 <header>
   <h1>Contactez-nous</h1>
 </header>
+
 <main>
-  <p>📧 Email : olouomolabgab@gmail.com</p>
-  <p>📞 Téléphone : 065629599</p>
-  <p>📍 Adresse : Libreville, Gabon</p>
+  <!-- Coordonnées -->
+  <section class="contact-info">
+    <h2>Nos coordonnées</h2>
+    <p><i class="fa-solid fa-envelope"></i> olouomolabgab@gmail.com</p>
+    <p><i class="fa-solid fa-phone"></i> 065629599</p>
+    <p><i class="fa-solid fa-location-dot"></i>Owendo, derrière la pédiatrie, Libreville</p>
 
-  <h2>Envoyez-nous un message</h2>
-  <form name="contact" method="POST" data-netlify="true">
-    <label for="name">Nom :</label>
-    <input type="text" id="name" name="name" required>
+    <!-- Réseaux sociaux -->
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank" class="social-btn facebook">
+        <i class="fa-brands fa-facebook"></i> Facebook
+      </a>
+      <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank" class="social-btn linkedin">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </section>
 
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" required>
+  <!-- Formulaire -->
+  <section class="contact-form">
+    <h2>Envoyez-nous un message</h2>
+    <form name="contact" method="POST" data-netlify="true">
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" required>
 
-    <label for="message">Message :</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
 
-    <button type="submit">Envoyer</button>
-  </form>
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+    <!-- Message de confirmation -->
+    <p class="form-success" style="display:none;">✅ Merci, votre message a bien été envoyé !</p>
+  </section>
 </main>
+
+<!-- Footer enrichi -->
 <footer>
-  <p>Olouomo Lab © 2025</p>
+  <p>📧 olouomolabgab@gmail.com | 📞 065629599 | 📍 Libreville, Gabon</p>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
 </footer>
+
+<!-- Script confirmation -->
+<script>
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.querySelector(".form-success").style.display = "block";
+  this.reset();
+});
+</script>
 </body>
 </html>

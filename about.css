@@ -1,33 +1,150 @@
-.tools-overview {
+/* Reset léger */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #0047AB; /* Bleu roi */
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+
+/* Intro */
+.intro {
   max-width: 900px;
   margin: 40px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.tools-overview h2 {
-  color: #0047AB; /* Bleu roi premium */
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.tools-overview ul li {
-  margin: 10px 0;
-  color: #333;
-  line-height: 1.6;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Icônes premium */
-.tools-overview i {
-  color: #0047AB; /* Bleu roi premium */
   font-size: 1.2em;
+  line-height: 1.8;
+  color: #333;
+  text-align: center;
+}
+
+/* Services */
+.services {
+  background: #f9f9f9;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+.services h2 {
+  text-align: center;
+  color: #0047AB;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffcc00; /* Doré */
+}
+
+.service-icon {
+  font-size: 2em;
+  color: #0047AB;
+  flex-shrink: 0;
+}
+
+.service-card:hover .service-icon {
+  color: #ffcc00; /* Doré au hover */
+}
+
+.service-card h3 {
+  color: #0047AB;
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+}
+
+.service-card p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+/* Mission */
+.mission {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.mission h2 {
+  color: #0047AB;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+}
+
+.mission p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background: #0047AB;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95em;
+}
+.devis-btn-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.devis-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #0047AB; /* Bleu roi */
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.devis-btn:hover {
+  background: #ffcc00; /* Doré */
+  color: #000;
+  transform: translateY(-3px);
 }
 /* Liens sociaux */
 .social-links {
