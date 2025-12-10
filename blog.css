@@ -1,201 +1,6 @@
-/* Mise en page du blog */
-.blog-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-/* Carte d’article */
-.blog-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.blog-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Image miniature */
-.blog-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-/* Contenu */
-.blog-content {
-  padding: 20px;
-}
-
-.blog-content h2 a {
-  color: #0047AB; /* Bleu roi premium */
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.blog-content h2 a:hover {
-  color: #ffcc00; /* Doré premium */
-}
-
-.blog-content p {
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Bouton Lire la suite */
-.read-more {
-  display: inline-block;
-  margin-top: 10px;
-  color: #0047AB;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.read-more:hover {
-  color: #ffcc00;
-}
-.article-page {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.article-page h2 {
-  color: #0047AB;
-  margin-bottom: 20px;
-}
-
-.article-page h3 {
-  color: #ffcc00;
-  margin-top: 30px;
-}
-
-.article-page ul, .article-page ol {
-  margin: 20px 0;
-  padding-left: 20px;
-  line-height: 1.6;
-}
-
-.article-page p {
-  color: #333;
-  line-height: 1.6;
-}
-.article-navigation {
-  margin-top: 30px;
-}
-
-.back-btn {
-  display: inline-block;
-  padding: 10px 15px;
-  background: #0047AB;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.back-btn:hover {
-  background: #ffcc00;
-  color: #000;
-}
-
-.related-articles {
-  margin-top: 40px;
-  padding: 20px;
-  background: #f9f9f9;
-  border-left: 4px solid #0047AB;
-  border-radius: 8px;
-}
-
-.related-articles h3 {
-  margin-bottom: 15px;
-  color: #0047AB;
-}
-
-.related-articles ul {
-  list-style: none;
-  padding: 0;
-}
-
-.related-articles ul li {
-  margin: 8px 0;
-}
-
-.related-articles ul li a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.related-articles ul li a:hover {
-  color: #ffcc00;
-}
-/* Liens sociaux */
-.social-links {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.social-btn {
-  display: inline-block;
-  margin: 5px 10px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.social-btn i {
-  margin-right: 8px;
-}
-
-.social-btn.facebook {
-  background: #1877f2;
-  color: #fff;
-}
-
-.social-btn.facebook:hover {
-  background: #145dbf;
-  transform: translateY(-3px);
-}
-
-.social-btn.linkedin {
-  background: #0a66c2;
-  color: #fff;
-}
-
-.social-btn.linkedin:hover {
-  background: #004182;
-  transform: translateY(-3px);
-}
-
-/* Footer social icons */
-.footer-social {
-  margin-top: 10px;
-}
-
-.footer-social a {
-  color: #fff;
-  margin: 0 10px;
-  font-size: 1.5em;
-  transition: color 0.3s ease;
-}
-
-.footer-social a:hover {
-  color: #ffcc00; /* Doré au hover */
-}
-/* Reset */
+/* ------------------- */
+/* Reset & Base Styles */
+/* ------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -204,12 +9,15 @@
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #fafafa;
+  font-size: 1.1em;
+  line-height: 1.8;
   color: #333;
-  line-height: 1.6;
+  background: #fafafa;
 }
 
-/* Header */
+/* ------------------- */
+/* Header & Navigation */
+/* ------------------- */
 header {
   background: #0047AB;
   color: #fff;
@@ -221,7 +29,22 @@ header h1 {
   font-size: 2em;
 }
 
-/* Navigation */
+.header-social {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.header-social a {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 1.4em;
+  transition: color 0.3s ease;
+}
+
+.header-social a:hover {
+  color: #ffcc00; /* Doré premium */
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -241,14 +64,199 @@ nav a:hover {
   color: #000;
 }
 
-/* Sections */
-section {
+/* ------------------- */
+/* Blog Layout & Cards */
+/* ------------------- */
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   max-width: 1100px;
   margin: 40px auto;
   padding: 20px;
 }
 
-/* Grilles services */
+.blog-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.blog-card.featured {
+  border: 2px solid #ffcc00;
+  background: #fffbea;
+  position: relative;
+  padding-top: 40px;
+}
+
+.blog-card.featured img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.badge-new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-content h2 a {
+  color: #0047AB;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blog-content h2 a:hover {
+  color: #ffcc00;
+}
+
+.blog-content p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0047AB;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  color: #ffcc00;
+}
+
+/* ------------------- */
+/* Article Page */
+/* ------------------- */
+.article-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.article-page h2 {
+  color: #0047AB;
+  margin-bottom: 20px;
+}
+
+.article-page h3 {
+  color: #ffcc00;
+  margin-top: 30px;
+}
+
+.article-page ul,
+.article-page ol {
+  margin: 20px 0;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.article-page p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.article-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 25px 0;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+/* ------------------- */
+/* Navigation Article */
+/* ------------------- */
+.article-navigation {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #0047AB;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+/* ------------------- */
+/* Related Articles */
+/* ------------------- */
+.related-articles {
+  margin-top: 50px;
+  padding: 20px;
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+.related-articles h3 {
+  margin-bottom: 15px;
+  color: #0047AB;
+}
+
+.related-articles ul {
+  list-style: none;
+  padding: 0;
+}
+
+.related-articles li {
+  margin-bottom: 10px;
+}
+
+.related-articles a {
+  color: #0047AB;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.related-articles a:hover {
+  color: #ffcc00;
+}
+
+/* ------------------- */
+/* Services Grid */
+/* ------------------- */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -269,13 +277,16 @@ section {
   border-color: #ffcc00;
 }
 
-/* Formulaire */
+/* ------------------- */
+/* Forms */
+/* ------------------- */
 form {
   display: flex;
   flex-direction: column;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ddd;
@@ -297,7 +308,9 @@ form button:hover {
   color: #000;
 }
 
+/* ------------------- */
 /* Footer */
+/* ------------------- */
 footer {
   background: #0047AB;
   color: #fff;
@@ -309,10 +322,15 @@ footer p {
   margin: 5px 0;
 }
 
+.footer-social {
+  margin-top: 10px;
+}
+
 .footer-social a {
   color: #fff;
   margin: 0 10px;
   font-size: 1.5em;
+  transition: color 0.3s ease;
 }
 
 .footer-social a:hover {
@@ -320,10 +338,32 @@ footer p {
 }
 
 /* ------------------- */
+/* Typography */
+/* ------------------- */
+h1, h2, h3 {
+  font-family: "Merriweather", serif;
+  color: #0047AB;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 1.4em;
+  margin-top: 25px;
+}
+
+p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* ------------------- */
 /* Responsive Queries */
 /* ------------------- */
-
-/* Tablettes */
 @media (max-width: 992px) {
   header h1 {
     font-size: 1.8em;
@@ -334,7 +374,6 @@ footer p {
   }
 }
 
-/* Mobiles */
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.5em;
@@ -357,153 +396,25 @@ footer p {
     font-size: 1em;
   }
 }
-.blog-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-/* Typographie et lisibilité */
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 1.1em;
-  line-height: 1.8;
-  color: #333;
-  background: #fafafa;
-  margin: 0;
-  padding: 0;
-}
-
-/* Titres */
-h1, h2, h3 {
-  font-family: "Merriweather", serif;
-  color: #0047AB;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 1.8em;
+/* Bouton retour accueil */
+.home-navigation {
   margin-top: 30px;
-}
-
-h3 {
-  font-size: 1.4em;
-  margin-top: 25px;
-}
-
-/* Paragraphes */
-p {
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-/* Images mises en avant */
-.article-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin: 25px 0;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  object-fit: cover;
-}
-
-/* Listes */
-ul, ol {
-  margin: 20px 0;
-  padding-left: 25px;
-}
-
-ul li, ol li {
-  margin-bottom: 15px;
-}
-
-/* Navigation article */
-.article-navigation {
-  margin-top: 40px;
   text-align: center;
 }
 
-.back-btn {
+.home-btn {
   display: inline-block;
   padding: 12px 20px;
-  background: #0047AB;
+  background: #0047AB; /* Bleu premium */
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.back-btn:hover {
-  background: #ffcc00;
+.home-btn:hover {
+  background: #ffcc00; /* Doré premium */
   color: #000;
-}
-
-/* Articles similaires */
-.related-articles {
-  margin-top: 50px;
-  padding: 20px;
-  background: #f1f1f1;
-  border-radius: 8px;
-}
-
-.related-articles h3 {
-  margin-bottom: 15px;
-}
-
-.related-articles ul {
-  list-style: none;
-  padding: 0;
-}
-
-.related-articles li {
-  margin-bottom: 10px;
-}
-
-.related-articles a {
-  color: #0047AB;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.related-articles a:hover {
-  color: #ffcc00;
-}
-/* Mettre en avant l'article "featured" */
-.blog-card.featured {
-  border: 2px solid #ffcc00;
-  background: #fffbea;
-  position: relative;
-  padding-top: 40px;
-}
-
-/* Badge "Nouveau" */
-.badge-new {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #ffcc00;
-  color: #000;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 0.9em;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-/* Uniformiser toutes les cartes d'article */
-.blog-card img {
-  width: 100%;
-  height: 180px; /* même hauteur que les 3 premiers */
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0; /* pas besoin de marge supplémentaire */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* Featured card (nouveau) doit garder la même proportion */
-.blog-card.featured img {
-  height: 180px; /* même hauteur que les autres */
-  object-fit: cover;
+  transform: translateY(-3px);
 }

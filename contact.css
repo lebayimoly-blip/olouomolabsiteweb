@@ -1,12 +1,22 @@
-/* Reset */
-body {
+/* ------------------- */
+/* Reset & Base Styles */
+/* ------------------- */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: #fafafa;
   color: #333;
+  line-height: 1.6;
 }
 
+/* ------------------- */
 /* Header */
+/* ------------------- */
 header {
   background: #0047AB; /* Bleu roi */
   color: #fff;
@@ -20,10 +30,43 @@ header h1 {
   letter-spacing: 1px;
 }
 
-/* Coordonnées */
-.contact-info {
-  text-align: center;
+/* ------------------- */
+/* Navigation */
+/* ------------------- */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #003580;
+}
+
+nav a {
+  color: #fff;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+/* ------------------- */
+/* Sections */
+/* ------------------- */
+section {
+  max-width: 1100px;
   margin: 40px auto;
+  padding: 20px;
+}
+
+/* ------------------- */
+/* Coordonnées */
+/* ------------------- */
+.contact-info {
+  flex: 1;
+  text-align: left;
   font-size: 1.1em;
 }
 
@@ -42,10 +85,55 @@ header h1 {
   margin-right: 8px;
 }
 
+/* ------------------- */
+/* Liens sociaux */
+/* ------------------- */
+.social-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-btn {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.social-btn i {
+  margin-right: 8px;
+}
+
+.social-btn.facebook {
+  background: #1877f2;
+  color: #fff;
+}
+
+.social-btn.facebook:hover {
+  background: #145dbf;
+  transform: translateY(-3px);
+}
+
+.social-btn.linkedin {
+  background: #0a66c2;
+  color: #fff;
+}
+
+.social-btn.linkedin:hover {
+  background: #004182;
+  transform: translateY(-3px);
+}
+
+/* ------------------- */
 /* Formulaire */
+/* ------------------- */
 .contact-form {
+  flex: 1;
   max-width: 600px;
-  margin: 40px auto;
+  margin: 0 auto;
   padding: 20px;
   background: #f9f9f9;
   border-radius: 10px;
@@ -103,7 +191,9 @@ header h1 {
   font-weight: bold;
 }
 
+/* ------------------- */
 /* Footer */
+/* ------------------- */
 footer {
   background: #0047AB;
   color: #fff;
@@ -113,50 +203,10 @@ footer {
 }
 
 footer p {
-  margin: 0;
+  margin: 5px 0;
   font-size: 0.95em;
 }
-/* Liens sociaux */
-.social-links {
-  margin-top: 20px;
-  text-align: center;
-}
 
-.social-btn {
-  display: inline-block;
-  margin: 5px 10px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.social-btn i {
-  margin-right: 8px;
-}
-
-.social-btn.facebook {
-  background: #1877f2;
-  color: #fff;
-}
-
-.social-btn.facebook:hover {
-  background: #145dbf;
-  transform: translateY(-3px);
-}
-
-.social-btn.linkedin {
-  background: #0a66c2;
-  color: #fff;
-}
-
-.social-btn.linkedin:hover {
-  background: #004182;
-  transform: translateY(-3px);
-}
-
-/* Footer social icons */
 .footer-social {
   margin-top: 10px;
 }
@@ -169,130 +219,20 @@ footer p {
 }
 
 .footer-social a:hover {
-  color: #ffcc00; /* Doré au hover */
-}
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  color: #ffcc00;
 }
 
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #fafafa;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Header */
-header {
-  background: #0047AB;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 2em;
-}
-
-/* Navigation */
-nav {
+/* ------------------- */
+/* Conteneur principal */
+/* ------------------- */
+.contact-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background: #003580;
-}
-
-nav a {
-  color: #fff;
-  padding: 15px 20px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  background: #ffcc00;
-  color: #000;
-}
-
-/* Sections */
-section {
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
   max-width: 1100px;
   margin: 40px auto;
   padding: 20px;
-}
-
-/* Grilles services */
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.service-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  border-color: #ffcc00;
-}
-
-/* Formulaire */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-form input, form textarea {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-
-form button {
-  background: #0047AB;
-  color: #fff;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-form button:hover {
-  background: #ffcc00;
-  color: #000;
-}
-
-/* Footer */
-footer {
-  background: #0047AB;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-footer p {
-  margin: 5px 0;
-}
-
-.footer-social a {
-  color: #fff;
-  margin: 0 10px;
-  font-size: 1.5em;
-}
-
-.footer-social a:hover {
-  color: #ffcc00;
 }
 
 /* ------------------- */
@@ -311,6 +251,16 @@ footer p {
 }
 
 /* Mobiles */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contact-info, .contact-form {
+    text-align: center;
+  }
+}
+
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.5em;
@@ -332,4 +282,34 @@ footer p {
   form button {
     font-size: 1em;
   }
+}
+/* Bouton retour accueil modernisé dans le header */
+.home-navigation {
+  position: absolute;   /* permet de placer librement dans le header */
+  top: 20px;            /* distance depuis le haut du header */
+  left: 20px;           /* distance depuis le bord gauche */
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;             /* espace entre icône et texte */
+  padding: 8px 14px;    /* dimensions adaptées pour header */
+  background: #fff;     /* fond blanc par défaut */
+  color: #0047AB;       /* texte bleu premium */
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.home-btn i {
+  font-size: 1.1em;
+}
+
+.home-btn:hover {
+  background: #ffcc00;  /* doré premium au survol */
+  color: #000;          /* texte noir pour contraste */
+  transform: translateY(-2px);
 }

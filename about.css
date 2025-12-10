@@ -363,3 +363,78 @@ footer p {
     font-size: 1em;
   }
 }
+/* Bouton retour accueil */
+.home-navigation {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #0047AB; /* Bleu premium */
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.home-btn:hover {
+  background: #ffcc00; /* Doré premium */
+  color: #000;
+  transform: translateY(-3px);
+}
+/* Conteneur du bouton dans le header */
+.home-navigation {
+  position: absolute;   /* permet de placer librement dans le header */
+  top: 20px;            /* distance depuis le haut du header */
+  left: 20px;           /* distance depuis le bord gauche */
+}
+
+/* Bouton retour accueil modernisé dans le header */
+.home-navigation {
+  position: absolute;   /* permet de placer librement dans le header */
+  top: 20px;            /* distance depuis le haut du header */
+  left: 20px;           /* distance depuis le bord gauche */
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;             /* espace entre icône et texte */
+  padding: 8px 14px;    /* dimensions adaptées pour header */
+  background: #fff;     /* fond blanc par défaut */
+  color: #0047AB;       /* texte bleu premium */
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.home-btn i {
+  font-size: 1.1em;
+}
+
+.home-btn:hover {
+  background: #ffcc00;  /* doré premium au survol */
+  color: #000;          /* texte noir pour contraste */
+  transform: translateY(-2px);
+}
+.logo-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.logo-img {
+  max-width: 180px;       /* taille adaptée */
+  height: auto;
+  border-radius: 12px;    /* coins arrondis */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* effet d’ombre élégant */
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05); /* petit zoom au survol */
+}

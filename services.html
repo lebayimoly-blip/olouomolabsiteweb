@@ -18,17 +18,27 @@
 <body id="services-page">
 
 <header>
-  <nav class="top-nav">
-    <a class="logo" href="/">OLOUOMO LAB</a>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact" class="cta">Contact</a></li>
+  <!-- Logo cliquable -->
+  <a class="logo" href="index.html">OLOUOMO LAB</a>
+
+  <!-- Bouton hamburger -->
+  <button class="menu-toggle" aria-label="Ouvrir le menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- Menu -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="outils.html">Nos Outils</a></li>
     </ul>
   </nav>
 </header>
+
 
 <section class="hero">
   <h1>Un site web professionnel dès 150.000 FCFA — livré en 2 à 5 jours max</h1>
@@ -36,22 +46,22 @@
   <div class="hero-cta">
     <a class="btn primary" href="https://wa.me/+24165629599?text=Bonjour%20Olouomo%20Lab%20!%20Je%20veux%20un%20site%20pro.%20">Discuter sur WhatsApp</a>
     <a class="btn" href="#tarifs">Voir les tarifs</a>
-    <a class="btn ghost" href="#portfolio">Voir des exemples</a>
+    <!-- Bouton vers portfolio retiré -->
   </div>
 </section>
 
 <main id="services">
   <section class="benefits">
-    <h2>Pourquoi nous choisir</h2>
-    <ul class="grid-list">
-      <li><strong>Design responsive:</strong> élégant sur mobile, tablette et desktop.</li>
-      <li><strong>Sécurité renforcée:</strong> HTTPS, durcissement, bonnes pratiques OWASP.</li>
-      <li><strong>Livraison rapide:</strong> 2 à 5 jours selon complexité et contenu fourni.</li>
-      <li><strong>SEO prêt:</strong> balises, performance, structuration, sitemap et robots.</li>
-      <li><strong>Maintenance:</strong> assistance et mises à jour essentielles.</li>
-      <li><strong>Contenu local:</strong> identités visuelles adaptées au contexte gabonais/africain.</li>
-    </ul>
-  </section>
+  <h2>Pourquoi nous choisir</h2>
+  <ul class="grid-list">
+    <li><i class="fa-solid fa-display icon-benefit"></i> <strong>Design responsive:</strong> élégant sur mobile, tablette et desktop.</li>
+    <li><i class="fa-solid fa-shield-halved icon-benefit"></i> <strong>Sécurité renforcée:</strong> HTTPS, durcissement, bonnes pratiques OWASP.</li>
+    <li><i class="fa-solid fa-truck-fast icon-benefit"></i> <strong>Livraison rapide:</strong> 2 à 5 jours selon complexité et contenu fourni.</li>
+    <li><i class="fa-solid fa-chart-line icon-benefit"></i> <strong>SEO prêt:</strong> balises, performance, structuration, sitemap et robots.</li>
+    <li><i class="fa-solid fa-screwdriver-wrench icon-benefit"></i> <strong>Maintenance:</strong> assistance et mises à jour essentielles.</li>
+    <li><i class="fa-solid fa-earth-africa icon-benefit"></i> <strong>Contenu local:</strong> identités visuelles adaptées au contexte gabonais/africain.</li>
+  </ul>
+</section>
 
   <!-- Bloc regroupé avec icônes modernes -->
   <section class="services-overview" id="services">
@@ -146,24 +156,6 @@
     </div>
   </section>
 
-  <section id="portfolio">
-    <h2>Portfolio (exemples)</h2>
-    <div class="portfolio-grid">
-      <figure>
-        <img src="assets/mockup-site-vitrine.jpg" alt="Site vitrine moderne">
-        <figcaption><strong>Site vitrine:</strong> identité forte, conversion claire.</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/mockup-ecommerce.jpg" alt="E-commerce performant">
-        <figcaption><strong>E-commerce:</strong> catalogue, paiement, sécurité.</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/mockup-blog.jpg" alt="Blog optimisé SEO">
-        <figcaption><strong>Blog:</strong> SEO, performance, partage social.</figcaption>
-      </figure>
-    </div>
-  </section>
-
   <section id="faq">
     <h2>FAQ</h2>
     <details>
@@ -184,12 +176,6 @@
     <h2>Contact</h2>
     <p><strong>WhatsApp:</strong> <a href="https://wa.me/+24165629599">+241 65 629 599</a></p>
     <p><strong>Email:</strong> <a href="mailto:olouomolabgab@gmail.com">olouomolabgab@gmail.com</a></p>
-    <form class="contact-form" action="#" method="post">
-      <label><strong>Nom:</strong> <input type="text" name="name" required></label>
-      <label><strong>Email:</strong> <input type="email" name="email" required></label>
-      <label><strong>Message:</strong> <textarea name="message" rows="5" required></textarea></label>
-      <button class="btn primary" type="submit">Envoyer</button>
-    </form>
   </section>
 </main>
 
