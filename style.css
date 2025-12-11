@@ -447,3 +447,233 @@ header .logo {
     font-size: 1em;
   }
 }
+/* === Styles Blog === */
+
+/* Conteneur principal */
+.article-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Images responsives */
+.article-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+/* Navigation */
+.article-navigation {
+  margin: 20px 0;
+}
+.article-navigation .back-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.article-navigation .back-btn:hover {
+  background: var(--secondary-color);
+  color: #000;
+}
+
+/* Articles similaires */
+.related-articles ul {
+  list-style: none;
+  padding: 0;
+}
+.related-articles li {
+  margin: 8px 0;
+}
+.related-articles a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.related-articles a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .article-page {
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 1.4em;
+    text-align: center;
+  }
+  .article-page h2 {
+    font-size: 1.2em;
+  }
+  .article-page p,
+  .article-page li {
+    font-size: 0.95em;
+  }
+}
+/* Paragraphes et listes dans les articles */
+.article-page p {
+  margin-bottom: 18px;   /* espace entre les paragraphes */
+}
+
+.article-page ul,
+.article-page ol {
+  margin: 15px 0 20px 25px; /* espace avant/après et indentation */
+  padding-left: 20px;
+}
+
+.article-page li {
+  margin-bottom: 10px;   /* espace entre les éléments de liste */
+}
+
+/* Titres */
+.article-page h2,
+.article-page h3 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+/* Images */
+.article-image {
+  margin: 25px 0;        /* espace avant/après les images */
+}
+/* === Hero Blog === */
+.hero-blog {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url("https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1600") center/cover no-repeat;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+.hero-blog .hero-content {
+  max-width: 800px;
+  margin: auto;
+}
+.hero-blog h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4em;
+  margin-bottom: 15px;
+}
+.hero-blog p {
+  font-family: 'Lora', serif;
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* === Article Page === */
+.article-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'Lora', serif;
+  line-height: 1.7;
+}
+
+.article-page h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+.article-page h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+
+.article-page p {
+  margin-bottom: 18px;
+  font-size: 1.05em;
+}
+.article-page ul,
+.article-page ol {
+  margin: 15px 0 20px 25px;
+  padding-left: 20px;
+}
+.article-page li {
+  margin-bottom: 10px;
+}
+
+/* Images */
+.article-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 25px 0;
+  display: block;
+}
+
+/* Navigation */
+.article-navigation {
+  margin: 20px 0;
+}
+.article-navigation .back-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.article-navigation .back-btn:hover {
+  background: var(--secondary-color);
+  color: #000;
+}
+
+/* Articles similaires */
+.related-articles ul {
+  list-style: none;
+  padding: 0;
+}
+.related-articles li {
+  margin: 8px 0;
+}
+.related-articles a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.related-articles a:hover {
+  text-decoration: underline;
+}
+
+/* Sources */
+.sources ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+.sources a {
+  color: var(--primary-color);
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .hero-blog {
+    padding: 50px 15px;
+  }
+  .hero-blog h1 {
+    font-size: 1.6em;
+  }
+  .hero-blog p {
+    font-size: 1em;
+  }
+  .article-page {
+    padding: 12px;
+  }
+  .article-page h2 {
+    font-size: 1.4em;
+  }
+  .article-page h3 {
+    font-size: 1.2em;
+  }
+  .article-page p,
+  .article-page li {
+    font-size: 0.95em;
+  }
+}
