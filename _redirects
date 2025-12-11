@@ -10,11 +10,3 @@ http://olouomolab.com/*                https://www.olouomolab.com/:splat   301!
 
 # Rediriger l’adresse Render vers ton domaine officiel
 https://olouomolabsiteweb-1.onrender.com/*   https://www.olouomolab.com/:splat   301!
-
-# Gestion multilingue : rediriger vers sous-domaines dédiés
-# Exemple : français par défaut, anglais sur en.olouomolab.com
-https://www.olouomolab.com/fr/*        https://fr.olouomolab.com/:splat    301!
-https://www.olouomolab.com/en/*        https://en.olouomolab.com/:splat    301!
-
-# Optionnel : rediriger la racine vers la langue par défaut (français)
-https://www.olouomolab.com/*           https://fr.olouomolab.com/:splat    301!
