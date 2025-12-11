@@ -10,6 +10,22 @@
   <link rel="stylesheet" href="about.css">
   <meta name="description" content="Olouomo Lab - Agence digitale au Gabon spécialisée dans la création de sites web, applications mobiles, stratégie digitale et solutions IT.">
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    if (!toggle || !navMenu) return;
+
+    toggle.setAttribute('aria-expanded', 'false');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('show');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+</script>
+
 <body>
 
 <script>

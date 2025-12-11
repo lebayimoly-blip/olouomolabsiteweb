@@ -47,6 +47,23 @@
     });
   });
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    // Sécurité: si éléments introuvables, on sort
+    if (!toggle || !navMenu) return;
+
+    // Accessibilité (optionnel)
+    toggle.setAttribute('aria-expanded', 'false');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('show');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+</script>
 <body>
 <header>
   <!-- Logo cliquable -->

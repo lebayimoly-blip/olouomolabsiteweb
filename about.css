@@ -1,20 +1,29 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ------------------- */
+/* Variables & Reset   */
+/* ------------------- */
+:root {
+  --primary-color: #0047AB;   /* bleu roi premium */
+  --secondary-color: #ffcc00; /* doré premium */
+  --text-color: #333;
+  --bg-light: #fafafa;
+  --card-bg: #fff;
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #fafafa;
-  color: #333;
-  line-height: 1.6;
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: var(--text-color);
+  background: var(--bg-light);
 }
 
-/* Header */
+/* ------------------- */
+/* Header & Navigation */
+/* ------------------- */
 header {
-  background: var(--primary-color, #0047AB); /* bleu roi premium */
+  background: var(--primary-color);
   color: #fff;
   padding: 10px 20px;
   display: flex;
@@ -32,7 +41,7 @@ header .logo {
   color: #fff;
 }
 
-/* Navigation */
+/* Menu desktop */
 nav ul {
   list-style: none;
   display: flex;
@@ -48,11 +57,15 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: var(--secondary-color, #ffcc00); /* doré premium */
+nav ul li a:hover { color: var(--secondary-color); }
+
+/* Surbrillance active */
+nav ul li a.active {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
 }
 
-/* Bouton hamburger caché sur desktop */
+/* Bouton hamburger (caché sur desktop) */
 .menu-toggle {
   display: none;
   background: none;
@@ -62,195 +75,117 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-/* Intro */
-.intro {
-  max-width: 900px;
-  margin: 40px auto;
-  font-size: 1.2em;
-  line-height: 1.8;
-  text-align: center;
-  color: #333;
-}
-
-/* Services */
-.services {
-  background: #f9f9f9;
-  padding: 40px 20px;
-  border-radius: 10px;
-  margin: 40px auto;
+/* ------------------- */
+/* Logo section        */
+/* ------------------- */
+.logo-container {
   max-width: 1100px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+  text-align: center;
 }
 
-.services h2 {
-  text-align: center;
-  color: #0047AB;
-  margin-bottom: 30px;
+.logo-img {
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* ------------------- */
+/* Main sections       */
+/* ------------------- */
+main { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+
+.intro, .mission {
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.intro p, .mission p { color: var(--text-color); }
+
+/* ------------------- */
+/* Services grid       */
+/* ------------------- */
+.services h2,
+.mission h2 {
+  color: var(--primary-color);
   font-size: 1.8em;
+  margin: 10px 0 20px;
 }
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* desktop: 3 colonnes */
   gap: 20px;
 }
 
 .service-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, border-color 0.3s ease;
   display: flex;
   align-items: flex-start;
-  gap: 15px;
+  gap: 14px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  border-color: #ffcc00;
+  transform: translateY(-4px);
+  border-left: 4px solid var(--secondary-color);
 }
 
 .service-icon {
-  font-size: 2em;
-  color: #0047AB;
+  font-size: 1.6em;
+  color: var(--primary-color);
   flex-shrink: 0;
-}
-
-.service-card:hover .service-icon {
-  color: #ffcc00;
+  margin-top: 4px;
 }
 
 .service-card h3 {
-  color: #0047AB;
-  margin: 0 0 10px 0;
-  font-size: 1.2em;
+  color: var(--primary-color);
+  margin-bottom: 6px;
+  font-size: 1.1em;
 }
 
-.service-card p {
-  color: #555;
-  line-height: 1.6;
-  font-size: 0.95em;
-}
+.service-card p { color: #555; }
 
-/* Mission */
-.mission {
-  max-width: 900px;
-  margin: 40px auto;
-  text-align: center;
-  padding: 20px;
-}
-
-.mission h2 {
-  color: #0047AB;
-  margin-bottom: 20px;
-  font-size: 1.6em;
-}
-
-.mission p {
-  font-size: 1.2em;
-  line-height: 1.8;
-  color: #333;
-}
-
-/* Bouton devis */
+/* ------------------- */
+/* Devis button        */
+/* ------------------- */
 .devis-btn-container {
+  max-width: 1100px;
+  margin: 10px auto 30px;
+  padding: 0 20px;
   text-align: center;
-  margin: 40px 0;
 }
 
 .devis-btn {
   display: inline-block;
-  padding: 15px 30px;
-  background: #0047AB;
+  padding: 12px 20px;
+  background: var(--primary-color);
   color: #fff;
-  font-size: 1.1em;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.devis-btn:hover {
-  background: #ffcc00;
-  color: #000;
-  transform: translateY(-3px);
-}
-
-/* Logo */
-.logo-container {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.logo-img {
-  max-width: 180px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.logo-img:hover {
-  transform: scale(1.05);
-}
-
-/* Liens sociaux */
-.social-links {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.social-btn {
-  display: inline-block;
-  margin: 5px 10px;
-  padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.social-btn i {
-  margin-right: 8px;
-}
+.devis-btn:hover { background: var(--secondary-color); color: #000; transform: translateY(-2px); }
 
-.social-btn.facebook {
-  background: #1877f2;
-  color: #fff;
-}
-
-.social-btn.facebook:hover {
-  background: #145dbf;
-  transform: translateY(-3px);
-}
-
-.social-btn.linkedin {
-  background: #0a66c2;
-  color: #fff;
-}
-
-.social-btn.linkedin:hover {
-  background: #004182;
-  transform: translateY(-3px);
-}
-
-/* Footer */
+/* ------------------- */
+/* Footer              */
+/* ------------------- */
 footer {
-  background: #0047AB;
+  background: var(--primary-color);
   color: #fff;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
-}
-
-footer p {
-  margin: 5px 0;
-  font-size: 0.95em;
-}
-
-.footer-social {
-  margin-top: 10px;
 }
 
 .footer-social a {
@@ -260,60 +195,51 @@ footer p {
   transition: color 0.3s ease;
 }
 
-.footer-social a:hover {
-  color: #ffcc00;
-}
+.footer-social a:hover { color: var(--secondary-color); }
 
-/* Responsive Queries */
+/* ------------------- */
+/* Responsive          */
+/* ------------------- */
 @media (max-width: 992px) {
-  header .logo {
-    font-size: 1.2em;
-  }
-  nav ul li a {
-    font-size: 0.95em;
-  }
+  header .logo { font-size: 1.2em; }
+  nav ul li a { font-size: 0.95em; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); } /* tablette: 2 colonnes */
 }
 
 @media (max-width: 768px) {
+  /* Affiche le hamburger */
+  .menu-toggle { display: block; }
+
+  /* Menu mobile caché par défaut */
   nav ul {
     display: none;
     flex-direction: column;
-    background: var(--primary-color, #0047AB);
+    background: var(--primary-color);
     position: absolute;
     top: 60px;
     right: 20px;
-    width: 220px;
-    padding: 20px;
+    width: 240px;
+    padding: 16px;
     border-radius: 8px;
+    z-index: 1001;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
 
-  nav ul li a {
-    padding: 10px 0;
-    display: block;
-  }
+  nav ul li a { padding: 10px 0; display: block; }
 
-  nav ul.show {
-    display: flex;
-  }
+  /* Affichage au clic */
+  nav ul.show { display: flex; }
 
-  .menu-toggle {
-    display: block;
-  }
+  /* Grille: 1 colonne sur mobile */
+  .service-grid { grid-template-columns: 1fr; }
+
+  /* Espacements */
+  .logo-container { margin-top: 20px; }
+  main { margin: 20px auto; }
 }
 
 @media (max-width: 600px) {
-  section {
-    margin: 20px auto;
-    padding: 15px;
-  }
-  .service-card {
-    padding: 15px;
-  }
-  form button {
-    font-size: 1em;
-  }
-}
-nav ul li a.active {
-  color: #ffcc00;
-  border-bottom: 2px solid #ffcc00;
+  .services h2, .mission h2 { font-size: 1.6em; }
+  .service-card { padding: 14px; }
+  .devis-btn { width: 100%; }
 }

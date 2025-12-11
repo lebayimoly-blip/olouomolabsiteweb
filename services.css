@@ -198,3 +198,45 @@ nav ul li a.active {
   color: #ffcc00;
   border-bottom: 2px solid #ffcc00;
 }
+/* Boutons d'action (WhatsApp et Tarifs) */
+.btn-whatsapp,
+.btn-tarifs {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 5px;
+  text-align: center;
+}
+
+/* WhatsApp */
+.btn-whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5d;
+}
+
+/* Tarifs */
+.btn-tarifs {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-tarifs:hover {
+  background: var(--secondary-color);
+  color: #000;
+}
+
+/* Responsive : sur mobile, les boutons s’empilent */
+@media (max-width: 768px) {
+  .btn-whatsapp,
+  .btn-tarifs {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
