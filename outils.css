@@ -1,3 +1,102 @@
+/* ------------------- */
+/* Reset & Base Styles */
+/* ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ------------------- */
+/* Header harmonisé */
+/* ------------------- */
+header {
+  background: #0047AB; /* Bleu roi premium */
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  display: inline-block;
+  max-height: 36px;          /* pour img logo */
+  font-weight: bold;         /* si lien texte */
+  font-size: 1.4em;          /* si lien texte */
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00; /* doré premium */
+}
+
+/* Surbrillance page active */
+nav ul li a.active {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+}
+
+/* Bouton hamburger caché sur desktop (si présent dans le HTML) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ------------------- */
+/* Hero (optionnel) */
+/* ------------------- */
+.hero {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #0047AB;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #555;
+}
+
+/* ------------------- */
+/* Tools overview */
+/* ------------------- */
 .tools-overview {
   max-width: 900px;
   margin: 40px auto;
@@ -15,6 +114,12 @@
   gap: 10px;
 }
 
+.tools-overview ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
 .tools-overview ul li {
   margin: 10px 0;
   color: #333;
@@ -26,10 +131,13 @@
 
 /* Icônes premium */
 .tools-overview i {
-  color: #0047AB; /* Bleu roi premium */
+  color: #0047AB;
   font-size: 1.2em;
 }
-/* Liens sociaux */
+
+/* ------------------- */
+/* Liens sociaux (réutilisables) */
+/* ------------------- */
 .social-links {
   margin-top: 20px;
   text-align: center;
@@ -69,7 +177,21 @@
   transform: translateY(-3px);
 }
 
-/* Footer social icons */
+/* ------------------- */
+/* Footer */
+/* ------------------- */
+footer {
+  background: #0047AB;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
 .footer-social {
   margin-top: 10px;
 }
@@ -82,167 +204,59 @@
 }
 
 .footer-social a:hover {
-  color: #ffcc00; /* Doré au hover */
-}
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #fafafa;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Header */
-header {
-  background: #0047AB;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 2em;
-}
-
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background: #003580;
-}
-
-nav a {
-  color: #fff;
-  padding: 15px 20px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  background: #ffcc00;
-  color: #000;
-}
-
-/* Sections */
-section {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-/* Grilles services */
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.service-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  border-color: #ffcc00;
-}
-
-/* Formulaire */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-form input, form textarea {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-
-form button {
-  background: #0047AB;
-  color: #fff;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-form button:hover {
-  background: #ffcc00;
-  color: #000;
-}
-
-/* Footer */
-footer {
-  background: #0047AB;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-footer p {
-  margin: 5px 0;
-}
-
-.footer-social a {
-  color: #fff;
-  margin: 0 10px;
-  font-size: 1.5em;
-}
-
-.footer-social a:hover {
   color: #ffcc00;
 }
 
 /* ------------------- */
-/* Responsive Queries */
+/* Responsive */
 /* ------------------- */
-
-/* Tablettes */
 @media (max-width: 992px) {
-  header h1 {
-    font-size: 1.8em;
+  header .logo {
+    font-size: 1.2em; /* pour version texte */
   }
-  nav a {
-    padding: 10px;
+  nav ul li a {
     font-size: 0.95em;
   }
 }
 
-/* Mobiles */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5em;
-  }
-  nav {
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* caché par défaut sur mobile */
     flex-direction: column;
+    background: #0047AB;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 220px;
+    padding: 20px;
+    border-radius: 8px;
   }
-  nav a {
-    text-align: center;
-    border-top: 1px solid #003580;
+
+  nav ul li a {
+    padding: 10px 0;
+    display: block;
   }
-  section {
+
+  nav ul.show {
+    display: flex; /* affiché au clic hamburger */
+  }
+
+  .menu-toggle {
+    display: block; /* visible sur mobile */
+  }
+
+  .tools-overview {
     margin: 20px auto;
-    padding: 15px;
+    padding: 16px;
   }
-  .service-card {
-    padding: 15px;
+
+  .hero h1 {
+    font-size: 1.7em;
   }
-  form button {
-    font-size: 1em;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    margin-top: 30px;
   }
 }

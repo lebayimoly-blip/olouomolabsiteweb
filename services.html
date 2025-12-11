@@ -15,6 +15,63 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Normalise l'URL actuelle
+    const loc = window.location;
+    const currentPath = loc.pathname.replace(/\/+$/, ''); // retire slash final
+    const currentPage = currentPath.split('/').pop() || 'index.html'; // homepage
+
+    // Gère aussi les URLs absolues vers le même domaine
+    const currentOrigin = loc.origin;
+
+    // Sélectionne les liens du menu
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+
+      // Cas 1: lien relatif (index.html, about.html, etc.)
+      const isRelativeMatch = href === currentPage;
+
+      // Cas 2: lien vers la homepage quand href = "index.html" et currentPage = "index.html"
+      const isHomeMatch = (href === 'index.html' && currentPage === 'index.html');
+
+      // Cas 3: URL absolue (rare mais possible), on compare l’origin + pathname
+      let isAbsoluteMatch = false;
+      try {
+        const url = new URL(href, currentOrigin); // résout éventuellement relatif -> absolu
+        const linkPath = url.pathname.replace(/\/+$/, '');
+        const linkPage = linkPath.split('/').pop() || 'index.html';
+        isAbsoluteMatch = (linkPage === currentPage);
+      } catch (e) {
+        // ignore les erreurs de parsing
+      }
+
+      if (isRelativeMatch || isHomeMatch || isAbsoluteMatch) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    // Sécurité: si éléments introuvables, on sort
+    if (!toggle || !navMenu) return;
+
+    // Accessibilité (optionnel)
+    toggle.setAttribute('aria-expanded', 'false');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('show');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+</script>
+
 <body id="services-page">
 
 <header>

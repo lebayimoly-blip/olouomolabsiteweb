@@ -140,3 +140,61 @@ nav ul li a:hover {
     grid-template-columns: 1fr;
   }
 }
+.benefits {
+  background: #f9f9f9;
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.benefits h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.benefits .grid-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+}
+
+.benefits .grid-list li {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-weight: bold;
+  color: #333;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: transform 0.3s ease;
+}
+
+.benefits .grid-list li:hover {
+  transform: translateY(-5px);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.icon-benefit {
+  font-size: 1.5em;
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .benefits .grid-list {
+    grid-template-columns: 1fr;
+  }
+}
+nav ul li a.active {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+}

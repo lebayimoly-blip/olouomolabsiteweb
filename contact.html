@@ -9,15 +9,67 @@
   <!-- CSS unique -->
   <link rel="stylesheet" href="contact.css">
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Normalise l'URL actuelle
+    const loc = window.location;
+    const currentPath = loc.pathname.replace(/\/+$/, ''); // retire slash final
+    const currentPage = currentPath.split('/').pop() || 'index.html'; // homepage
+
+    // Gère aussi les URLs absolues vers le même domaine
+    const currentOrigin = loc.origin;
+
+    // Sélectionne les liens du menu
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+
+      // Cas 1: lien relatif (index.html, about.html, etc.)
+      const isRelativeMatch = href === currentPage;
+
+      // Cas 2: lien vers la homepage quand href = "index.html" et currentPage = "index.html"
+      const isHomeMatch = (href === 'index.html' && currentPage === 'index.html');
+
+      // Cas 3: URL absolue (rare mais possible), on compare l’origin + pathname
+      let isAbsoluteMatch = false;
+      try {
+        const url = new URL(href, currentOrigin); // résout éventuellement relatif -> absolu
+        const linkPath = url.pathname.replace(/\/+$/, '');
+        const linkPage = linkPath.split('/').pop() || 'index.html';
+        isAbsoluteMatch = (linkPage === currentPage);
+      } catch (e) {
+        // ignore les erreurs de parsing
+      }
+
+      if (isRelativeMatch || isHomeMatch || isAbsoluteMatch) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
 <body>
 <header>
-  <h1>Contactez-nous</h1>
-<!-- Bouton retour accueil modernisé -->
-<div class="home-navigation">
-  <a href="index.html" class="home-btn">
-    <i class="fa-solid fa-house"></i> Retour à l’accueil
-  </a>
-</div>
+  <!-- Logo cliquable -->
+  <a class="logo" href="index.html">OLOUOMO LAB</a>
+
+  <!-- Bouton hamburger -->
+  <button class="menu-toggle" aria-label="Ouvrir le menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- Menu -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="outils.html">Nos Outils</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>

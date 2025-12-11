@@ -9,6 +9,24 @@
   <title>Olouomo Lab - Accueil</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    // Sécurité: si éléments introuvables, on sort
+    if (!toggle || !navMenu) return;
+
+    // Accessibilité (optionnel)
+    toggle.setAttribute('aria-expanded', 'false');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('show');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+</script>
+
 <body>
   <header>
   <!-- Logo cliquable vers l'accueil -->
@@ -34,7 +52,7 @@
 
   <section class="hero">
     <h1>Bienvenue chez Olouomo Lab</h1>
-    <p>Experts en développement d'applications et création de sites web à Libreville au Gabon.</p>
+    <p>Experts en développement d'applications,cybersécurité et création de sites web à Libreville au Gabon.</p>
     <a href="services.html" class="btn">Découvrir nos services</a>
   </section>
   <!-- Widgets de statistiques -->

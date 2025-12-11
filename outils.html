@@ -9,6 +9,40 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const normalize = (path) => {
+      // retire query/hash
+      path = path.split('?')[0].split('#')[0];
+      // retire slash final
+      path = path.replace(/\/+$/, '');
+      // prend le dernier segment
+      let last = path.split('/').pop() || '';
+      // homepage (racine) => index
+      if (last === '') last = 'index';
+      // retire extension .html
+      last = last.replace(/\.html$/i, '');
+      return last.toLowerCase();
+    };
+
+    const current = normalize(window.location.pathname);
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href') || '';
+      // Résout relatif -> URL absolue basée sur l’origine
+      const url = new URL(href, window.location.origin);
+      const linkNorm = normalize(url.pathname);
+
+      if (linkNorm === current) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  });
+</script>
+
 <body>
   <header>
     <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">

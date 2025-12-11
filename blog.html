@@ -8,14 +8,66 @@
   <!-- Ajout de Font Awesome pour les icônes -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Normalise l'URL actuelle
+    const loc = window.location;
+    const currentPath = loc.pathname.replace(/\/+$/, ''); // retire slash final
+    const currentPage = currentPath.split('/').pop() || 'index.html'; // homepage
+
+    // Gère aussi les URLs absolues vers le même domaine
+    const currentOrigin = loc.origin;
+
+    // Sélectionne les liens du menu
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+
+      // Cas 1: lien relatif (index.html, about.html, etc.)
+      const isRelativeMatch = href === currentPage;
+
+      // Cas 2: lien vers la homepage quand href = "index.html" et currentPage = "index.html"
+      const isHomeMatch = (href === 'index.html' && currentPage === 'index.html');
+
+      // Cas 3: URL absolue (rare mais possible), on compare l’origin + pathname
+      let isAbsoluteMatch = false;
+      try {
+        const url = new URL(href, currentOrigin); // résout éventuellement relatif -> absolu
+        const linkPath = url.pathname.replace(/\/+$/, '');
+        const linkPage = linkPath.split('/').pop() || 'index.html';
+        isAbsoluteMatch = (linkPage === currentPage);
+      } catch (e) {
+        // ignore les erreurs de parsing
+      }
+
+      if (isRelativeMatch || isHomeMatch || isAbsoluteMatch) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
 <body>
 <header>
-  <h1>Blog & Actualités</h1>
-  <!-- Icônes sociales dans le header -->
-  <div class="header-social">
-    <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-    <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-  </div>
+  <!-- Logo cliquable -->
+  <a class="logo" href="index.html">OLOUOMO LAB</a>
+
+  <!-- Bouton hamburger -->
+  <button class="menu-toggle" aria-label="Ouvrir le menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- Menu -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="outils.html">Nos Outils</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main class="blog-list">
@@ -68,12 +120,6 @@
   </div>
 </article>
 </main>
-<!-- Bouton retour accueil modernisé -->
-<div class="home-navigation">
-  <a href="index.html" class="home-btn">
-    <i class="fa-solid fa-house"></i> Retour à l’accueil
-  </a>
-</div>
 <!-- Footer enrichi -->
 <footer>
   <p>📧 olouomolabgab@gmail.com | 📞 065629599 | 📍 Libreville, Gabon</p>

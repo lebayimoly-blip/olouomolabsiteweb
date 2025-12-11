@@ -263,3 +263,9 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* Masquer la section services-overview sur mobile */
+@media (max-width: 768px) {
+  .services-overview {
+    display: none;
+  }
+}
