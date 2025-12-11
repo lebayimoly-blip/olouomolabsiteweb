@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- CSS unique -->
-  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Olouomo Lab - Agence digitale au Gabon spécialisée dans la création de sites web, applications mobiles, stratégie digitale et solutions IT.">
 </head>
 <script>
@@ -69,8 +70,9 @@
 </script>
 
 <header>
-  <!-- Logo cliquable -->
-  <a class="logo" href="index.html">OLOUOMO LAB</a>
+<a href="index.html">
+  <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
+</a>
 
   <!-- Bouton hamburger -->
   <button class="menu-toggle" aria-label="Ouvrir le menu">
@@ -82,7 +84,7 @@
     <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">À propos</a></li>
+      <li><a href="about.html" class="active">À propos</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="outils.html">Nos Outils</a></li>
@@ -90,10 +92,11 @@
   </nav>
 </header>
 
-<!-- Logo stylé -->
-<div class="logo-container">
-  <img src="assets/mon logo.jpg" alt="Logo Olouomo Lab" class="logo-img">
-</div>
+<!-- Hero placé en dehors du header -->
+<section class="hero">
+  <h1>À propos de nous</h1>
+  <p>Découvrez notre vision et notre mission pour transformer le digital au Gabon et en Afrique.</p>
+</section>
 
 <main>
   <!-- Intro -->

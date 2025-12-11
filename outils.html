@@ -6,21 +6,18 @@
   <meta name="keywords" content="IA, outils, applications, Olouomo Lab, Libreville Gabon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Olouomo Lab - Nos Outils</title>
+  <!-- CSS unique -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const normalize = (path) => {
-      // retire query/hash
       path = path.split('?')[0].split('#')[0];
-      // retire slash final
       path = path.replace(/\/+$/, '');
-      // prend le dernier segment
       let last = path.split('/').pop() || '';
-      // homepage (racine) => index
       if (last === '') last = 'index';
-      // retire extension .html
       last = last.replace(/\.html$/i, '');
       return last.toLowerCase();
     };
@@ -30,7 +27,6 @@
 
     navLinks.forEach(link => {
       const href = link.getAttribute('href') || '';
-      // Résout relatif -> URL absolue basée sur l’origine
       const url = new URL(href, window.location.origin);
       const linkNorm = normalize(url.pathname);
 
@@ -40,12 +36,32 @@
         link.classList.remove('active');
       }
     });
+
+    // Gestion hamburger
+    const toggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    if (toggle && navMenu) {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('show');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
   });
 </script>
 
 <body>
   <header>
-    <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
+    <a href="index.html">
+  <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
+</a>
+
+    <!-- Bouton hamburger -->
+    <button class="menu-toggle" aria-label="Ouvrir le menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Menu -->
     <nav>
       <ul>
         <li><a href="index.html">Accueil</a></li>
@@ -58,30 +74,32 @@
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <h1>Nos Outils Premium</h1>
     <p>Découvrez comment évoluer avec l’IA et tester nos applications innovantes.</p>
   </section>
 
+  <!-- Contenu -->
   <main class="tools-overview">
-  <h2><i class="fa-solid fa-robot"></i> 1. Évoluer avec l’IA</h2>
-  <ul>
-    <li><i class="fa-solid fa-code"></i> <strong>1.1 Développer avec l’IA :</strong> Assistance intelligente pour vos projets de développement.</li>
-  </ul>
+    <h2><i class="fa-solid fa-robot"></i> 1. Évoluer avec l’IA</h2>
+    <ul>
+      <li><i class="fa-solid fa-code"></i> <strong>1.1 Développer avec l’IA :</strong> Assistance intelligente pour vos projets de développement.</li>
+    </ul>
 
-  <h2><i class="fa-solid fa-vial"></i> 2. Tester nos applications</h2>
-  <ul>
-    <li><i class="fa-solid fa-keyboard"></i> <strong>2.1 Application de transcription de texte :</strong> Transformez vos paroles en texte instantanément.</li>
-  </ul>
-</main>
+    <h2><i class="fa-solid fa-vial"></i> 2. Tester nos applications</h2>
+    <ul>
+      <li><i class="fa-solid fa-keyboard"></i> <strong>2.1 Application de transcription de texte :</strong> Transformez vos paroles en texte instantanément.</li>
+    </ul>
+  </main>
 
-<!-- Footer enrichi -->
-<footer>
-  <p>📧 olouomolabgab@gmail.com | 📞 065629599 | 📍 Libreville, Gabon</p>
-  <div class="footer-social">
-    <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-    <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p>📧 olouomolabgab@gmail.com | 📞 065629599 | 📍 Libreville, Gabon</p>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </footer>
 </body>
 </html>

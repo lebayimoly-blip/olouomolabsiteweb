@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Olouomo Lab - Blog</title>
-  <link rel="stylesheet" href="blog.css">
+  <!-- CSS unique -->
+  <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Blog Olouomo Lab - Transformation digitale au Gabon et en Afrique. Applications mobiles, sites web professionnels et opportunités internationales.">
   <!-- Ajout de Font Awesome pour les icônes -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -66,8 +68,9 @@
 </script>
 <body>
 <header>
-  <!-- Logo cliquable -->
-  <a class="logo" href="index.html">OLOUOMO LAB</a>
+  <a href="index.html">
+  <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
+</a>
 
   <!-- Bouton hamburger -->
   <button class="menu-toggle" aria-label="Ouvrir le menu">
@@ -81,11 +84,17 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="about.html">À propos</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="outils.html">Nos Outils</a></li>
     </ul>
   </nav>
 </header>
+
+<!-- Hero placé en dehors du header -->
+<section class="hero">
+  <h1>Le Blog d’Olouomo Lab</h1>
+  <p>Analyses, conseils et opportunités pour accélérer votre transformation digitale.</p>
+</section>
 
 <main class="blog-list">
 
