@@ -393,3 +393,57 @@ header .logo {
   margin-bottom: 10px;
   line-height: 1.6;
 }
+/* Masquer le bloc "Processus de réalisation" sur mobile */
+@media (max-width: 768px) {
+  .service-block {
+    display: none;
+  }
+}
+/* Boutons génériques */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;          /* réduit légèrement la largeur */
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.95em;           /* taille de texte adaptée */
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: 6px;
+}
+
+/* Bouton principal (WhatsApp) */
+.btn.primary {
+  background: #25D366;         /* vert WhatsApp */
+  color: #fff;
+}
+.btn.primary:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+/* Bouton secondaire (Tarifs) */
+.btn {
+  background: var(--primary-color);
+  color: #fff;
+}
+.btn:hover {
+  background: var(--secondary-color);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* ✅ Responsive : pleine largeur sur mobile */
+@media (max-width: 768px) {
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;                 /* espace entre les boutons */
+  }
+  .btn {
+    width: 100%;               /* chaque bouton prend toute la largeur */
+    margin: 0;
+    padding: 12px 20px;        /* un peu plus de confort tactile */
+    font-size: 1em;
+  }
+}
