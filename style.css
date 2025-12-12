@@ -677,3 +677,44 @@ header .logo {
     font-size: 0.95em;
   }
 }
+.site-footer {
+  background: #111; /* fond premium sombre */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+}
+
+.site-footer a {
+  color: #00bfa5; /* accent turquoise premium */
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #fff; /* effet hover élégant */
+}
+
+.footer-contact i {
+  margin-right: 6px;
+  color: #00bfa5;
+}
+
+.footer-social {
+  margin: 15px 0;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  font-size: 20px;
+  color: #00bfa5;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  font-size: 13px;
+  opacity: 0.7;
+}
