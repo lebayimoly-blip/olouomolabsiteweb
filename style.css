@@ -718,3 +718,8 @@ header .logo {
   font-size: 13px;
   opacity: 0.7;
 }
+#google_translate_element {
+  float: right;
+  margin: 10px;
+  font-size: 14px;
+}

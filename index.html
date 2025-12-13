@@ -71,18 +71,24 @@
     </ul>
   </nav>
 <!-- Sélecteur de langue Google Translate -->
-<div id="google_translate_element"></div>
-
 <script type="text/javascript">
   function googleTranslateElementInit() {
     new google.translate.TranslateElement(
       {
-        pageLanguage: 'fr', // langue par défaut de ton site
-        includedLanguages: 'en,es,de', // langues proposées (ajoute d'autres si besoin)
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        pageLanguage: 'fr',
+        includedLanguages: 'en,es,de',
+        autoDisplay: false
       },
       'google_translate_element'
     );
+  }
+
+  function translatePage(lang) {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
   }
 </script>
 
