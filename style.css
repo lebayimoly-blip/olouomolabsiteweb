@@ -723,3 +723,65 @@ header .logo {
   margin: 10px;
   font-size: 14px;
 }
+.site-footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between; /* aligne les 3 blocs sur une ligne */
+  flex-wrap: wrap; /* permet de passer en colonne sur mobile */
+  margin-bottom: 20px;
+}
+
+.footer-top > div {
+  flex: 1;
+  min-width: 250px; /* largeur minimale pour garder lisible */
+  margin: 10px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  margin: 5px 0;
+}
+
+.footer-nav ul li a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-nav ul li a:hover {
+  color: #0073e6;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  font-size: 1.5em;
+  color: #ddd;
+}
+
+.footer-social a:hover {
+  color: #0073e6;
+}
+
+.footer-mission {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 10px;
+}
