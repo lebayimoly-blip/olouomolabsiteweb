@@ -99,6 +99,32 @@
       <li><a href="outils.html">Nos Outils</a></li>
     </ul>
   </nav>
+<!-- Sélecteur de langue Google Translate -->
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'fr',
+        includedLanguages: 'en,es,de',
+        autoDisplay: false
+      },
+      'google_translate_element'
+    );
+  }
+
+  function translatePage(lang) {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    }
+  }
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </header>
 
 <!-- Hero placé en dehors du header -->
@@ -202,35 +228,51 @@
     <p>Notre objectif est de positionner <strong>OLOUOMO LAB</strong> comme le partenaire digital incontournable au Gabon et en Afrique, en offrant des solutions rapides, fiables et accessibles qui renforcent la compétitivité des entreprises locales et internationales.</p>
   </section>
 </main>
-
-<!-- Bouton devis -->
-<div class="devis-btn-container">
-  <a href="contact.html" class="devis-btn">Demandez votre devis</a>
-</div>
-
-<!-- Footer enrichi -->
+</body>
 <footer class="site-footer">
-  <div class="footer-contact">
-    <p>
-      <i class="fa-solid fa-envelope"></i> 
-      <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a> |
-      <i class="fa-solid fa-phone"></i> 
-      <a href="tel:+24165629599">+241 65 62 95 99</a> |
-      <i class="fa-solid fa-location-dot"></i> Libreville, Gabon
-    </p>
+  <div class="footer-top">
+    <!-- Navigation rapide -->
+    <div class="footer-nav">
+      <h3>Navigation rapide</h3>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="outils.html">Nos Outils</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p><i class="fa-solid fa-envelope"></i> 
+        <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a>
+      </p>
+      <p><i class="fa-solid fa-phone"></i> 
+        <a href="tel:+24165629599">+241 65 62 95 99</a>
+      </p>
+      <p><i class="fa-solid fa-location-dot"></i> Libreville, Gabon</p>
+    </div>
+
+    <!-- Suivez-nous -->
+    <div class="footer-social">
+      <h3>Suivez-nous</h3>
+      <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+    </div>
   </div>
 
-  <div class="footer-social">
-    <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
-      <i class="fa-brands fa-facebook"></i>
-    </a>
-    <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank" aria-label="LinkedIn">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
+  <!-- Mission + Copyright -->
+  <div class="footer-mission">
+    <p>Olouomo Lab – Startup gabonaise dédiée à la transformation digitale des entreprises africaines.</p>
   </div>
-
   <p class="footer-copy">© 2025 OLOUOMO LAB – Tous droits réservés</p>
 </footer>
 
-</body>
 </html>
