@@ -393,12 +393,7 @@ header .logo {
   margin-bottom: 10px;
   line-height: 1.6;
 }
-/* Masquer le bloc "Processus de réalisation" sur mobile */
-@media (max-width: 768px) {
-  .service-block {
-    display: none;
-  }
-}
+
 /* Boutons génériques */
 .btn {
   display: inline-block;
