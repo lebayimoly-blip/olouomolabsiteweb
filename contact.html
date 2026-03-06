@@ -1,232 +1,229 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHQL3KS0YN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHQL3KS0YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EHQL3KS0YN');
+  </script>
 
-  gtag('config', 'G-EHQL3KS0YN');
-</script>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Olouomo Lab - Contact</title>
-  <!-- Font Awesome pour les icônes -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
-        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- GSAP animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
   <!-- CSS unique -->
   <link rel="stylesheet" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Normalise l'URL actuelle
-    const loc = window.location;
-    const currentPath = loc.pathname.replace(/\/+$/, ''); // retire slash final
-    const currentPage = currentPath.split('/').pop() || 'index.html'; // homepage
 
-    // Gère aussi les URLs absolues vers le même domaine
-    const currentOrigin = loc.origin;
-
-    // Sélectionne les liens du menu
-    const navLinks = document.querySelectorAll('nav ul li a');
-
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href');
-
-      // Cas 1: lien relatif (index.html, about.html, etc.)
-      const isRelativeMatch = href === currentPage;
-
-      // Cas 2: lien vers la homepage quand href = "index.html" et currentPage = "index.html"
-      const isHomeMatch = (href === 'index.html' && currentPage === 'index.html');
-
-      // Cas 3: URL absolue (rare mais possible), on compare l’origin + pathname
-      let isAbsoluteMatch = false;
-      try {
-        const url = new URL(href, currentOrigin); // résout éventuellement relatif -> absolu
-        const linkPath = url.pathname.replace(/\/+$/, '');
-        const linkPage = linkPath.split('/').pop() || 'index.html';
-        isAbsoluteMatch = (linkPage === currentPage);
-      } catch (e) {
-        // ignore les erreurs de parsing
-      }
-
-      if (isRelativeMatch || isHomeMatch || isAbsoluteMatch) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
-
-    if (!toggle || !navMenu) return;
-
-    toggle.setAttribute('aria-expanded', 'false');
-
-    toggle.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('show');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  });
-</script>
 <body>
-<header>
-<a href="index.html">
-  <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
-</a>
+  <!-- Header aligné avec le reste du site -->
+  <header>
+    <a href="index.html">
+      <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
+    </a>
 
-  <!-- Bouton hamburger -->
-  <button class="menu-toggle" aria-label="Ouvrir le menu">
-    <i class="fa-solid fa-bars"></i>
-  </button>
+    <!-- Bouton hamburger -->
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
-  <!-- Menu -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="outils.html">Nos Outils</a></li>
-    </ul>
-  </nav>
-<!-- Sélecteur de langue Google Translate -->
-<div id="google_translate_element"></div>
-
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      {
-        pageLanguage: 'fr',
-        includedLanguages: 'en,es,de',
-        autoDisplay: false
-      },
-      'google_translate_element'
-    );
-  }
-
-  function translatePage(lang) {
-    const select = document.querySelector(".goog-te-combo");
-    if (select) {
-      select.value = lang;
-      select.dispatchEvent(new Event("change"));
-    }
-  }
-</script>
-
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-</header>
-
-<!-- Hero placé en dehors du header -->
-<section class="hero">
-   <h1>OLOUOMO LAB – Agence web au Gabon</h1>
-  <p>
-     <strong>OLOUOMO LAB</strong> votre <strong>agence web au Gabon</strong> spécialisée dans la 
-    <strong>création de sites internet à Libreville</strong>, le développement d’applications modernes et la 
-    gestion professionnelle des réseaux sociaux. 
-  </p>
-</section>
-
-<main>
-  <div class="contact-container">
-    <!-- Coordonnées -->
-    <section class="contact-info">
-      <h2>Nos coordonnées</h2>
-      <p><i class="fa-solid fa-envelope"></i> contact@olouomolab.com</p>
-      <p><i class="fa-solid fa-phone"></i> +241 65629599</p>
-      <p><i class="fa-solid fa-location-dot"></i> 8FVR+W32, Owendo, derrière la pédiatrie, Libreville</p>
-
-      <!-- Réseaux sociaux -->
-      <div class="social-links">
-        <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank" class="social-btn facebook">
-          <i class="fa-brands fa-facebook"></i> Facebook
-        </a>
-        <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank" class="social-btn linkedin">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn
-        </a>
-      </div>
-    </section>
-
-    <!-- Formulaire -->
-    <section class="contact-form">
-      <h2>Envoyez-nous un message</h2>
-      <form name="contact" method="POST" data-netlify="true">
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Envoyer</button>
-      </form>
-      <p class="form-success" style="display:none;">✅ Merci, votre message a bien été envoyé !</p>
-    </section>
-  </div>
-</main>
-
-<!-- Footer enrichi -->
-<footer class="site-footer">
-  <div class="footer-top">
-    <!-- Navigation rapide -->
-    <div class="footer-nav">
-      <h3>Navigation rapide</h3>
+    <!-- Menu -->
+    <nav>
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">À propos</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
         <li><a href="outils.html">Nos Outils</a></li>
       </ul>
+    </nav>
+
+    <!-- Sélecteur de langue Google Translate -->
+    <div id="google_translate_element"></div>
+  </header>
+
+  <!-- Script Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'fr',
+          includedLanguages: 'en,es,de',
+          autoDisplay: false
+        },
+        'google_translate_element'
+      );
+    }
+
+    function translatePage(lang) {
+      const select = document.querySelector(".goog-te-combo");
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+      }
+    }
+  </script>
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Hero aligné au reste du site -->
+  <section class="hero">
+    <h1><span>Olouomo Lab –</span> Contact</h1>
+    <p>
+      Nous accompagnons les entreprises gabonaises et africaines dans leur transformation digitale.
+      Avec OLOUOMO LAB comme <strong>agence web au Gabon</strong> spécialisée dans la
+      <strong>création de sites internet à Libreville</strong>, le développement d’applications modernes
+      et la gestion professionnelle des réseaux sociaux.
+    </p>
+  </section>
+
+  <main>
+    <!-- Cartes coordonnées + formulaire -->
+    <section class="grid-container" style="max-width: 1200px; margin: 0 auto;">
+      <!-- Coordonnées -->
+      <div class="card blue">
+        <h3><i class="fa-solid fa-map-marker-alt"></i> Nos coordonnées</h3>
+        <div class="contact-list">
+          <p><i class="fa-solid fa-envelope"></i> contact@olouomolab.com</p>
+          <p><i class="fa-solid fa-phone"></i> +241 65 62 95 99 / 074 41 72 44</p>
+          <p><i class="fa-solid fa-location-dot"></i> , Owendo, Carrefour Touré derrière la pédiatrie, Libreville</p>
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <div class="social-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+          <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank" class="social-btn facebook">
+            <i class="fa-brands fa-facebook"></i> Facebook
+          </a>
+          <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank" class="social-btn linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://wa.me/+24165629599" target="_blank" class="social-btn whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="card yellow">
+        <h3><i class="fa-solid fa-message"></i> Envoyez‑nous un message</h3>
+        <form name="contact" method="POST" data-netlify="true" class="contact-form">
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" name="subject" value="Contact via site web (Gabon)">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Envoyer
+          </button>
+        </form>
+        <p class="form-success" style="display: none; margin-top: 1rem; color: #10b981; font-weight: 500;">
+          ✅ Merci, votre message a bien été envoyé !
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer aligné avec index/services -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>Olouomo Lab</h3>
+        <p>Startup tech #1 Libreville : Web, Apps, Caméras IP, Cybersécurité PME.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation rapide</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="outils.html">Nos Outils</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+24165629599">+241 65 62 95 99</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> Libreville, Gabon
+        </p>
+      </div>
     </div>
+    <div class="footer-copy">© 2026 Olouomo Lab - Tous droits réservés.</div>
+  </footer>
 
-    <!-- Contact -->
-    <div class="footer-contact">
-      <h3>Contact</h3>
-      <p><i class="fa-solid fa-envelope"></i> 
-        <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a>
-      </p>
-      <p><i class="fa-solid fa-phone"></i> 
-        <a href="tel:+24165629599">+241 65 62 95 99</a>
-      </p>
-      <p><i class="fa-solid fa-location-dot"></i> Libreville, Gabon</p>
-    </div>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    document.addEventListener('DOMContentLoaded', () => {
+      // Menu mobile
+      const toggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('nav ul');
+      if (toggle && navMenu) {
+        toggle.addEventListener('click', () => {
+          navMenu.classList.toggle('show');
+          toggle.setAttribute('aria-expanded', navMenu.classList.contains('show'));
+        });
+      }
 
-    <!-- Suivez-nous -->
-    <div class="footer-social">
-      <h3>Suivez-nous</h3>
-      <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
-        <i class="fa-brands fa-facebook"></i>
-      </a>
-      <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank" aria-label="LinkedIn">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-    </div>
-  </div>
+      // Active nav link
+      document.querySelectorAll('nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        const currentPage = location.pathname.split('/').pop() || 'index.html';
+        if (href === currentPage) link.classList.add('active');
+      });
 
-  <!-- Mission + Copyright -->
-  <div class="footer-mission">
-    <p>Olouomo Lab – Startup gabonaise dédiée à la transformation digitale des entreprises africaines.</p>
-  </div>
-  <p class="footer-copy">© 2025 OLOUOMO LAB – Tous droits réservés</p>
-</footer>
+      // Hero animation
+      gsap.from('.hero h1', { duration: 1.2, y: 60, opacity: 0, ease: 'back.out(1.7)' });
+      gsap.from('.hero p', { duration: 1, y: 40, opacity: 0, ease: 'power2.out', delay: 0.3 });
 
-<!-- Script confirmation -->
-<script>
-document.querySelector("form").addEventListener("submit", function(e) {
-  e.preventDefault();
-  document.querySelector(".form-success").style.display = "block";
-  this.reset();
-});
-</script>
+      // Contact cards
+      gsap.utils.toArray('.grid-container').forEach((grid, i) => {
+        gsap.from(grid.children, {
+          scrollTrigger: { trigger: grid, start: 'top 80%' },
+          duration: 0.7,
+          y: 50,
+          opacity: 0,
+          ease: 'back.out(1.7)',
+          stagger: 0.15
+        });
+      });
+
+      // Form success
+      document.querySelector("form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        document.querySelector(".form-success").style.display = "block";
+        this.reset();
+      });
+    });
+  </script>
 </body>
 </html>

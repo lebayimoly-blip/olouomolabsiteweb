@@ -1,72 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHQL3KS0YN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHQL3KS0YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EHQL3KS0YN');
+  </script>
 
-  gtag('config', 'G-EHQL3KS0YN');
-</script>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Olouomo Lab - Nos Outils IA et Applications">
   <meta name="keywords" content="IA, outils, applications, Olouomo Lab, Libreville Gabon">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Olouomo Lab - Nos Outils</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
   <!-- CSS unique -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const normalize = (path) => {
-      path = path.split('?')[0].split('#')[0];
-      path = path.replace(/\/+$/, '');
-      let last = path.split('/').pop() || '';
-      if (last === '') last = 'index';
-      last = last.replace(/\.html$/i, '');
-      return last.toLowerCase();
-    };
-
-    const current = normalize(window.location.pathname);
-    const navLinks = document.querySelectorAll('nav ul li a');
-
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href') || '';
-      const url = new URL(href, window.location.origin);
-      const linkNorm = normalize(url.pathname);
-
-      if (linkNorm === current) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-
-    // Gestion hamburger
-    const toggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
-    if (toggle && navMenu) {
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.addEventListener('click', () => {
-        const isOpen = navMenu.classList.toggle('show');
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    }
-  });
-</script>
-
 <body>
+  <!-- Header aligné avec le reste du site -->
   <header>
     <a href="index.html">
-  <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
-</a>
+      <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
+    </a>
 
     <!-- Bouton hamburger -->
-    <button class="menu-toggle" aria-label="Ouvrir le menu">
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
       <i class="fa-solid fa-bars"></i>
     </button>
 
@@ -81,72 +50,173 @@
         <li><a href="outils.html" class="active">Nos Outils</a></li>
       </ul>
     </nav>
+
+    <!-- Google Translate -->
+    <div id="google_translate_element"></div>
   </header>
 
-  <!-- Hero -->
+  <!-- Script Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'fr',
+          includedLanguages: 'en,es,de',
+          autoDisplay: false
+        },
+        'google_translate_element'
+      );
+    }
+    function translatePage(lang) {
+      const select = document.querySelector(".goog-te-combo");
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+      }
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Hero aligné au style global -->
   <section class="hero">
     <h1>Nos Outils Premium</h1>
     <p>Découvrez comment évoluer avec l’IA et tester nos applications innovantes.</p>
   </section>
 
-  <!-- Contenu -->
-  <main class="tools-overview">
-    <h2><i class="fa-solid fa-robot"></i> 1. Évoluer avec l’IA</h2>
-    <ul>
-      <li><i class="fa-solid fa-code"></i> <strong>1.1 Développer avec l’IA :</strong> Assistance intelligente pour vos projets de développement.</li>
-    </ul>
+  <main>
+    <!-- Outils disposés en grille de cartes -->
+    <div class="grid-container" style="padding: 3rem 0; max-width: 1200px; margin: auto;">
+      <!-- Outil 1 – IA pour le développement -->
+      <div class="card blue">
+        <i class="fa-solid fa-robot fa-3x"></i>
+        <h3>Évoluer avec l’IA</h3>
+        <p>Assistance intelligente pour vos projets de développement : génération de code, optimisation et aide à la conception.</p>
+        <a href="https://wa.me/+24165629599?text=Je%20veux%20essayer%20votre%20outil%20IA" class="btn btn-primary">
+          <i class="fa-solid fa-robot"></i> Demander la démo IA
+        </a>
+      </div>
 
-    <h2><i class="fa-solid fa-vial"></i> 2. Tester nos applications</h2>
-    <ul>
-      <li><i class="fa-solid fa-keyboard"></i> <strong>2.1 Application de transcription de texte :</strong> Transformez vos paroles en texte instantanément.</li>
-    </ul>
+      <!-- Outil 2 – App de transcription audio → texte -->
+      <div class="card yellow">
+        <i class="fa-solid fa-vial fa-3x"></i>
+        <h3>Application de transcription</h3>
+        <p>Transformez instantanément vos paroles en texte, idéal pour réunions, interview, notes rapides et prise de notes en temps réel.</p>
+        <a href="https://wa.me/+24165629599?text=Je%20veux%20tester%20votre%20outil%20de%20transcription" class="btn btn-primary">
+          <i class="fa-solid fa-keyboard"></i> Tester la transcription
+        </a>
+      </div>
+    </div>
+
+    <!-- Section "Bénéfices" pour expliquer comment ça aide -->
+    <section class="benefits">
+      <h2 class="section-title">Pourquoi tester nos outils IA ?</h2>
+      <div class="grid-container">
+        <div class="card blue">
+          <i class="fa-solid fa-clock fa-3x"></i>
+          <h3>Gain de temps</h3>
+          <p>Réduisez la durée de vos tâches répétitives grâce à l’automatisation intelligente.</p>
+        </div>
+        <div class="card blue">
+          <i class="fa-solid fa-lightbulb fa-3x"></i>
+          <h3>Innovation</h3>
+          <p>Testez des fonctionnalités IA avant qu’elles ne deviennent courantes dans votre secteur.</p>
+        </div>
+        <div class="card yellow">
+          <i class="fa-solid fa-users fa-3x"></i>
+          <h3>Appui local</h3>
+          <p>Support technique et accompagnement en français, depuis Libreville.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-top">
-    <!-- Navigation rapide -->
-    <div class="footer-nav">
-      <h3>Navigation rapide</h3>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="outils.html">Nos Outils</a></li>
-      </ul>
+  <!-- Footer aligné avec index/services -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>Olouomo Lab</h3>
+        <p>Startup tech #1 à Libreville : transformation digitale, IA, web et applications mobiles.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation rapide</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="outils.html" class="active">Nos Outils</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+24165629599">+241 65 62 95 99</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> Libreville, Gabon
+        </p>
+      </div>
     </div>
+    <div class="footer-copy">© 2026 Olouomo Lab - Tous droits réservés.</div>
+  </footer>
 
-    <!-- Contact -->
-    <div class="footer-contact">
-      <h3>Contact</h3>
-      <p><i class="fa-solid fa-envelope"></i> 
-        <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a>
-      </p>
-      <p><i class="fa-solid fa-phone"></i> 
-        <a href="tel:+24165629599">+241 65 62 95 99</a>
-      </p>
-      <p><i class="fa-solid fa-location-dot"></i> Libreville, Gabon</p>
-    </div>
+  <!-- GSAP animations -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
 
-    <!-- Suivez-nous -->
-    <div class="footer-social">
-      <h3>Suivez-nous</h3>
-      <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
-        <i class="fa-brands fa-facebook"></i>
-      </a>
-      <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank" aria-label="LinkedIn">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-    </div>
-  </div>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Menu mobile
+      const toggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('nav ul');
+      if (toggle && navMenu) {
+        toggle.addEventListener('click', () => {
+          const isOpen = navMenu.classList.toggle('show');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
 
-  <!-- Mission + Copyright -->
-  <div class="footer-mission">
-    <p>Olouomo Lab – Startup gabonaise dédiée à la transformation digitale des entreprises africaines.</p>
-  </div>
-  <p class="footer-copy">© 2025 OLOUOMO LAB – Tous droits réservés</p>
-</footer>
+      // Active nav link
+      document.querySelectorAll('nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        const currentPage = location.pathname.split('/').pop() || 'index.html';
+        if (href === currentPage) link.classList.add('active');
+      });
+
+      // Hero animation
+      gsap.from('.hero h1', { duration: 1.2, y: 60, opacity: 0, ease: 'back.out(1.7)', delay: 0.2 });
+      gsap.from('.hero p', { duration: 1, y: 40, opacity: 0, ease: 'power2.out', delay: 0.3 });
+
+      // Outils cartes
+      gsap.utils.toArray('.tools-overview .card').forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: { trigger: card, start: 'top 80%' },
+          duration: 0.8,
+          y: 50,
+          opacity: 0,
+          ease: 'back.out(1.7)',
+          delay: i * 0.1
+        });
+      });
+
+      // Bénéfices cartes hover
+      gsap.utils.toArray('.benefits .card').forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: { trigger: card, start: 'top 85%' },
+          duration: 0.7,
+          x: i % 2 ? -50 : 50,
+          y: 40,
+          opacity: 0,
+          ease: 'power2.out',
+          delay: i * 0.1
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,299 +1,394 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHQL3KS0YN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EHQL3KS0YN');
-</script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHQL3KS0YN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EHQL3KS0YN');
+  </script>
+  
   <meta charset="UTF-8">
-  <title>Olouomo Lab - Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sites web professionnels dès 150.000 FCFA au Gabon et en Afrique. Livraison 2–5 jours. Développement d'apps, sécurité, SEO.">
-  <link rel="stylesheet" href="style.css">       <!-- Styles globaux -->
-  <!-- Font Awesome pour les icônes modernes -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Olouomo Lab - Sites pros dès 150.000 FCFA, livraison 2–5 jours">
-  <meta property="og:description" content="Création de sites web et applications sécurisées, design moderne, SEO, audit sécurité.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tarifs sites web dès 150k FCFA livrés en 2-5 jours. Apps mobiles, caméras IP biométriques, cybersécurité entreprises Gabon.">
+  <title>Services & Tarifs | Olouomo Lab - Dès 150k FCFA | Libreville</title>
+  
+  <!-- SEO Open Graph 2026 -->
+  <meta property="og:title" content="Olouomo Lab - Sites pro 150k FCFA, Caméras IP, Cybersécurité">
+  <meta property="og:description" content="Startup tech Libreville : web, apps, surveillance 4K, contrôle accès biométrique.">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://www.olouomolab.com/services.html">
+  <meta property="og:image" content="https://www.olouomolab.com/assets/og-services.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Styles CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- GSAP Animations Premium (60kb) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Normalise l'URL actuelle
-    const loc = window.location;
-    const currentPath = loc.pathname.replace(/\/+$/, ''); // retire slash final
-    const currentPage = currentPath.split('/').pop() || 'index.html'; // homepage
 
-    // Gère aussi les URLs absolues vers le même domaine
-    const currentOrigin = loc.origin;
+<body>
+  <!-- Header Pro -->
+  <header>
+    <a href="index.html"><img src="assets/logo.png" alt="Olouomo Lab - Startup Tech Libreville" class="logo"></a>
+    <button class="menu-toggle" aria-label="Toggle Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">À Propos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="outils.html">Outils</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    // Sélectionne les liens du menu
-    const navLinks = document.querySelectorAll('nav ul li a');
-
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href');
-
-      // Cas 1: lien relatif (index.html, about.html, etc.)
-      const isRelativeMatch = href === currentPage;
-
-      // Cas 2: lien vers la homepage quand href = "index.html" et currentPage = "index.html"
-      const isHomeMatch = (href === 'index.html' && currentPage === 'index.html');
-
-      // Cas 3: URL absolue (rare mais possible), on compare l’origin + pathname
-      let isAbsoluteMatch = false;
-      try {
-        const url = new URL(href, currentOrigin); // résout éventuellement relatif -> absolu
-        const linkPath = url.pathname.replace(/\/+$/, '');
-        const linkPage = linkPath.split('/').pop() || 'index.html';
-        isAbsoluteMatch = (linkPage === currentPage);
-      } catch (e) {
-        // ignore les erreurs de parsing
-      }
-
-      if (isRelativeMatch || isHomeMatch || isAbsoluteMatch) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
-
-    // Sécurité: si éléments introuvables, on sort
-    if (!toggle || !navMenu) return;
-
-    // Accessibilité (optionnel)
-    toggle.setAttribute('aria-expanded', 'false');
-
-    toggle.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('show');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  });
-</script>
-
-<body id="services-page">
-
-<header>
-  <!-- Logo cliquable -->
-<a href="index.html">
-  <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
-</a>
-
-  <!-- Bouton hamburger -->
-  <button class="menu-toggle" aria-label="Ouvrir le menu">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-
-  <!-- Menu -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">À propos</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="outils.html">Nos Outils</a></li>
-    </ul>
-  </nav>
-<!-- Sélecteur de langue Google Translate -->
-<div id="google_translate_element"></div>
-
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      {
-        pageLanguage: 'fr',
-        includedLanguages: 'en,es,de',
-        autoDisplay: false
-      },
-      'google_translate_element'
-    );
-  }
-
-  function translatePage(lang) {
-    const select = document.querySelector(".goog-te-combo");
-    if (select) {
-      select.value = lang;
-      select.dispatchEvent(new Event("change"));
-    }
-  }
-</script>
-
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-</header>
-
-
-
-<section class="hero">
-  <h1>Un site web professionnel dès 150.000 FCFA — livré en 2 à 5 jours max</h1>
-  <p>Design moderne, sécurité, SEO et performance. Pensé pour le Gabon et l’Afrique.</p>
-  <div class="hero-cta">
-    <a class="btn primary" href="https://wa.me/+24165629599?text=Bonjour%20Olouomo%20Lab%20!%20Je%20veux%20un%20site%20pro.%20">Contact WhatsApp</a>
-    <a class="btn" href="#tarifs">Les tarifs</a>
-    <!-- Bouton vers portfolio retiré -->
-  </div>
-</section>
-
-<main id="services">
-  <section class="benefits">
-  <h2>Pourquoi nous choisir</h2>
-  <ul class="grid-list">
-    <li><i class="fa-solid fa-display icon-benefit"></i> <strong>Design responsive:</strong> élégant sur mobile, tablette et desktop.</li>
-    <li><i class="fa-solid fa-shield-halved icon-benefit"></i> <strong>Sécurité renforcée:</strong> HTTPS, durcissement, bonnes pratiques OWASP.</li>
-    <li><i class="fa-solid fa-truck-fast icon-benefit"></i> <strong>Livraison rapide:</strong> 2 à 5 jours selon complexité et contenu fourni.</li>
-    <li><i class="fa-solid fa-chart-line icon-benefit"></i> <strong>SEO prêt:</strong> balises, performance, structuration, sitemap et robots.</li>
-    <li><i class="fa-solid fa-screwdriver-wrench icon-benefit"></i> <strong>Maintenance:</strong> assistance et mises à jour essentielles.</li>
-    <li><i class="fa-solid fa-earth-africa icon-benefit"></i> <strong>Contenu local:</strong> identités visuelles adaptées au contexte gabonais/africain.</li>
-  </ul>
-</section>
-
-  <!-- Bloc regroupé avec icônes modernes -->
-  <section class="services-overview" id="services">
-    <h2>Nos services principaux</h2>
-    <div class="grid-list">
-      <div class="service-block">
-        <i class="fa-solid fa-mobile-screen-button fa-2x icon" aria-hidden="true"></i>
-        <h3>Développement d'applications</h3>
-        <p>Applications mobiles Android/iOS, applications web sur mesure, intégration de bases de données et API.</p>
-      </div>
-
-      <div class="service-block">
-        <i class="fa-solid fa-globe fa-2x icon" aria-hidden="true"></i>
-        <h3>Création de sites web</h3>
-        <p>Sites vitrine, e-commerce, blogs, design responsive et optimisation SEO.</p>
-      </div>
-
-      <div class="service-block">
-        <i class="fa-solid fa-share-nodes fa-2x icon" aria-hidden="true"></i>
-        <h3>Gestion & Création de vos réseaux sociaux</h3>
-        <ul>
-          <li><strong>Création de pages:</strong> Facebook, LinkedIn, Instagram.</li>
-          <li><strong>Animation & contenu:</strong> posts, visuels, calendriers éditoriaux.</li>
-          <li><strong>Campagnes sponsorisées:</strong> ciblage, optimisation, reporting.</li>
-          <li><strong>Modération & engagement:</strong> réponses, interactions, croissance.</li>
-        </ul>
-      </div>
-
-      <div class="service-block">
-        <i class="fa-solid fa-computer fa-2x icon" aria-hidden="true"></i>
-        <h3>Maintenance informatique</h3>
-        <ul>
-          <li><strong>Diagnostic réseau:</strong> audit, optimisation des performances et de la sécurité.</li>
-          <li><strong>Assistance technique:</strong> dépannage matériel/logiciel, mises à jour.</li>
-          <li><strong>Gestion du parc:</strong> suivi matériel, inventaire, bonnes pratiques.</li>
-          <li><strong>Continuité:</strong> sauvegardes, restauration, plan de reprise.</li>
-        </ul>
-      </div>
-
-      <div class="service-block">
-        <i class="fa-solid fa-shield-halved fa-2x icon" aria-hidden="true"></i>
-        <h3>Services secondaires</h3>
-        <ul>
-          <li><strong>Audit sécurité:</strong> évaluation, recommandations, durcissement.</li>
-          <li><strong>Pentest:</strong> tests d’intrusion contrôlés.</li>
-          <li><strong>Formation:</strong> sensibilisation cybersécurité.</li>
-          <li><strong>Protection des données:</strong> conseils conformité.</li>
-        </ul>
-      </div>
-
-      <div class="service-block">
-        <i class="fa-solid fa-diagram-project fa-2x icon" aria-hidden="true"></i>
-        <h3>Processus de réalisation</h3>
-        <ol>
-          <li><strong>Brief:</strong> objectifs, audience, contenu, identité.</li>
-          <li><strong>Maquette:</strong> structure, UX, validation rapide.</li>
-          <li><strong>Développement:</strong> intégration, sécurité, SEO.</li>
-          <li><strong>Tests:</strong> performance, accessibilité, mobiles.</li>
-          <li><strong>Livraison:</strong> déploiement, prise en main, support.</li>
-        </ol>
+  <!-- Hero Services - Focus Tarifs -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Sites Web Pro dès <span>150 000 FCFA</span></h1>
+      <p><strong>Livraison 2-5 jours</strong> | Design moderne | Sécurité incluse | SEO Gabon/Afrique</p>
+      <div class="cta-buttons">
+        <a href="#tarifs" class="btn btn-primary">
+          <i class="fa-solid fa-tags"></i> Voir Tarifs Détaillés
+        </a>
+        <a href="https://wa.me/+24165629599?text=Devis%20site%20150k%20FCFA" class="btn btn-secondary">
+          <i class="fab fa-whatsapp"></i> WhatsApp Immédiat
+        </a>
       </div>
     </div>
   </section>
 
-  <section id="tarifs">
-    <h2>Tarifs</h2>
-    <div class="pricing grid-list">
-      <article class="card">
-        <i class="fa-solid fa-seedling fa-2x icon" aria-hidden="true"></i>
-        <h3>Starter</h3>
-        <p><strong>À partir de:</strong> 150.000 FCFA</p>
+  <main>
+    <!-- Avantages Clés - 6 Cards -->
+    <section class="benefits">
+      <h2 class="section-title">Pourquoi Olouomo Lab ?</h2>
+      <div class="grid-container">
+        <div class="card blue">
+          <i class="fa-solid fa-truck-fast fa-3x"></i>
+          <h3>🚀 Livraison Rapide</h3>
+          <p>Sites web : 2-5 jours | Apps : 3 semaines | Caméras : 48h installation.</p>
+        </div>
+        <div class="card blue">
+          <i class="fa-solid fa-lock fa-3x"></i>
+          <h3>🔒 Sécurité Renforcée</h3>
+          <p>HTTPS, OWASP Top10, monitoring 24/7, biométrie certifiée.</p>
+        </div>
+        <div class="card yellow">
+          <i class="fa-solid fa-mobile-alt fa-3x"></i>
+          <h3>📱 100% Mobile</h3>
+          <p>Responsive parfait, PWA, apps natives Android/iOS.</p>
+        </div>
+        <div class="card yellow">
+          <i class="fa-solid fa-chart-line fa-3x"></i>
+          <h3>📈 SEO Gabon #1</h3>
+          <p>Google My Business, mots-clés locaux, PageSpeed 95+.</p>
+        </div>
+        <div class="card blue">
+          <i class="fa-solid fa-headset fa-3x"></i>
+          <h3>🇬🇦 Support Libreville</h3>
+          <p>Assistance physique, maintenance annuelle, contrat PME.</p>
+        </div>
+        <div class="card yellow">
+          <i class="fa-solid fa-users fa-3x"></i>
+          <h3>💼 Entreprises Gabonaises</h3>
+          <p>PME, commerces, ONG, administrations – 15+ clients satisfaits.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Détailés avec Caméras -->
+    <section class="services-overview" id="services">
+      <h2 class="section-title">Nos 6 Services Tech</h2>
+      <div class="grid-container">
+        <div class="card blue">
+          <i class="fa-solid fa-globe fa-3x"></i>
+          <h3>Sites Web Pro</h3>
+          <p>Vitrine, e-commerce, blog, PWA. SEO local + performance.</p>
+          <ul>
+            <li>3-15 pages selon formule</li>
+            <li>Design sur mesure logo</li>
+            <li>CMS simple (option)</li>
+          </ul>
+          <a href="#tarifs" class="btn btn-primary">Tarifs Web</a>
+        </div>
+
+        <div class="card blue">
+          <i class="fa-solid fa-mobile-screen fa-3x"></i>
+          <h3>Applications Mobiles</h3>
+          <p>Android/iOS natif, Progressive Web Apps sécurisées.</p>
+          <ul>
+            <li>APK signé Google Play</li>
+            <li>Base données cloud</li>
+            <li>Push notifications</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Devis App</a>
+        </div>
+
+        <div class="card yellow">
+          <i class="fa-solid fa-video fa-3x"></i>
+          <h3>Caméras IP 4K</h3>
+          <p>Surveillance biométrique, contrôle accès, détection IA.</p>
+          <ul>
+            <li>Hikvision Dahua pro</li>
+            <li>Stockage cloud 30j</li>
+            <li>Accès mobile 24/7</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Audit Sécurité</a>
+        </div>
+
+        <div class="card yellow">
+          <i class="fa-solid fa-shield-halved fa-3x"></i>
+          <h3>Cybersécurité PME</h3>
+          <p>Audit, pentest, formation, backup automatique.</p>
+          <ul>
+            <li>Scan vulnérabilités</li>
+            <li>Formation 4h staff</li>
+            <li>Firewall + antivirus</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Audit Gratuit</a>
+        </div>
+
+        <div class="card blue">
+          <i class="fa-solid fa-share-nodes fa-3x"></i>
+          <h3>Réseaux Sociaux</h3>
+          <p>Création pages + animation 100% locale.</p>
+          <ul>
+            <li>Facebook/Instagram Ads</li>
+            <li>12 posts/mois</li>
+            <li>Rapport analytics</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Stratégie SMM</a>
+        </div>
+
+        <div class="card yellow">
+          <i class="fa-solid fa-screwdriver-wrench fa-3x"></i>
+          <h3>Maintenance Info</h3>
+          <p>Support technique entreprises Libreville.</p>
+          <ul>
+            <li>Intervention 24h</li>
+            <li>Sauvegarde mensuelle</li>
+            <li>Contrat annuel</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Contrat Maint.</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Pro 3 Colonnes -->
+    <section id="tarifs" class="pricing-section">
+      <h2 class="section-title">Tarifs Clairs & Transparents</h2>
+      <div class="pricing-grid">
+        <article class="pricing-card popular">
+          <div class="ribbon">⭐ Le Plus Choisi</div>
+          <i class="fa-solid fa-seedling fa-3x"></i>
+          <h3>Starter</h3>
+          <div class="price">150 000<span>FCFA</span></div>
+          <ul>
+            <li>5 pages max</li>
+            <li>Design responsive</li>
+            <li>SEO de base</li>
+            <li>Hébergement 1 an</li>
+            <li>Formation 1h</li>
+          </ul>
+          <a href="https://wa.me/+24165629599?text=Site%20Starter%20150k" class="btn btn-primary">Commander</a>
+        </article>
+        
+        <article class="pricing-card">
+          <i class="fa-solid fa-rocket fa-3x"></i>
+          <h3>Pro</h3>
+          <div class="price">350 000<span>FCFA</span></div>
+          <ul>
+            <li>15 pages + blog</li>
+            <li>Formulaires avancés</li>
+            <li>SEO pro + Analytics</li>
+            <li>Maintenance 3 mois</li>
+          </ul>
+          <a href="https://wa.me/+24165629599?text=Site%20Pro%20350k" class="btn btn-primary">Commander</a>
+        </article>
+        
+        <article class="pricing-card">
+          <i class="fa-solid fa-crown fa-3x"></i>
+          <h3>Entreprise</h3>
+          <div class="price">Devis<span>sur mesure</span></div>
+          <ul>
+            <li>E-commerce complet</li>
+            <li>App mobile incluse</li>
+            <li>Caméras + cybersécu</li>
+            <li>Support 24/7</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary">Devis Personnalisé</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ Moderne -->
+    <section id="faq" class="faq-section">
+      <h2 class="section-title">FAQ - Réponses Rapides</h2>
+      <div class="faq-grid">
+        <details>
+          <summary>⏱️ Site web en 2-5 jours, c'est réaliste ?</summary>
+          <p>Oui si vous fournissez textes/images/logo dès J1. Maquettes validées J1, code J2-3, tests/livraison J4-5.</p>
+        </details>
+        <details>
+          <summary>💳 Paiement comment ?</summary>
+          <p>50% à la commande, 50% à livraison. Mobile Money, virement bancaire, cash Libreville.</p>
+        </details>
+        <details>
+          <summary>📱 Caméras IP, quelles marques ?</summary>
+          <p>Hikvision/Dahua pro + intégration cloud. Accès mobile, détection IA, stockage 30 jours.</p>
+        </details>
+        <details>
+          <summary>🔒 Cybersécurité, vous auditez vraiment ?</summary>
+          <p>Oui. Scan automatisé + pentest manuel. Rapport PDF + roadmap priorisée 7 jours.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- CTA WhatsApp Final -->
+  <section class="devis-btn-container">
+    <a href="https://wa.me/+24165629599?text=Bonjour%20Olouomo%20Lab%2C%20je%20veux%20un%20devis%20!" class="devis-btn">
+      <i class="fab fa-whatsapp"></i> Devis WhatsApp Gratuit (Réponse &lt;2h)
+    </a>
+  </section>
+
+  <!-- Footer Premium -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>Olouomo Lab</h3>
+        <p>Startup tech #1 Libreville : Web, Apps, Caméras IP, Cybersécurité PME.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Services Populaires</h3>
         <ul>
-          <li><strong>Pages:</strong> 3–5 (Accueil, À propos, Contact)</li>
-          <li><strong>SEO:</strong> configuration de base</li>
-          <li><strong>Sécurité:</strong> HTTPS, durcissement initial</li>
-          <li><strong>Livraison:</strong> 2–5 jours</li>
+          <li><a href="#tarifs">Sites Web 150k FCFA</a></li>
+          <li><a href="#services">Caméras IP 4K</a></li>
+          <li><a href="contact.html">Audit Sécurité</a></li>
         </ul>
-      </article>
-      <article class="card">
-        <i class="fa-solid fa-rocket fa-2x icon" aria-hidden="true"></i>
-        <h3>Pro</h3>
-        <p><strong>Indicatif:</strong> 300.000–600.000 FCFA</p>
-        <ul>
-          <li><strong>Fonctions:</strong> blog, formulaires, analytics</li>
-          <li><strong>SEO:</strong> avancé, schémas, performance</li>
-          <li><strong>Sécurité:</strong> WAF, monitoring</li>
-          <li><strong>Livraison:</strong> 5–10 jours</li>
-        </ul>
-      </article>
+      </div>
+      <div class="footer-section">
+        <h3><i class="fa-solid fa-phone"></i> +241 65 62 95 99</h3>
+        <p>contact@olouomolab.com</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/olouomolab" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://linkedin.com/company/olouomo-lab" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/+24165629599" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
     </div>
-  </section>
+    <div class="footer-copy">
+      © 2026 Olouomo Lab - Transformation Digitale Gabon. Tous droits réservés.
+    </div>
+  </footer>
 
-  <section id="faq">
-    <h2>FAQ</h2>
-    <details>
-      <summary><strong>Quelles sont les prérequis pour livrer en 2–5 jours ?</strong></summary>
-      <p>Contenu (textes, images, logo) fourni dès le début, et validation rapide des maquettes.</p>
-    </details>
-    <details>
-      <summary><strong>Pouvons-nous évoluer vers e-commerce ?</strong></summary>
-      <p>Oui. Nous concevons des architectures évolutives avec paiement sécurisé et gestion catalogue.</p>
-    </details>
-    <details>
-      <summary><strong>Proposez-vous la maintenance ?</strong></summary>
-      <p>Oui. Mises à jour, sécurité, performance, et support selon vos besoins.</p>
-    </details>
-  </section>
+  <!-- GSAP Animations Premium -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      // Menu mobile
+      document.querySelector('.menu-toggle').addEventListener('click', () => {
+        document.querySelector('nav ul').classList.toggle('show');
+      });
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><strong>WhatsApp:</strong> <a href="https://wa.me/+24165629599">+241 65 629 599</a></p>
-    <p><strong>Email:</strong> <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a></p>
-  </section>
-</main>
+      // 🎬 HERO - Texte qui s'assemble
+      gsap.from('.hero h1', {
+        duration: 1.2, y: 50, opacity: 0, ease: 'back.out(1.7)', stagger: 0.05
+      });
+      gsap.from('.hero p', { duration: 1, y: 30, opacity: 0, delay: 0.3, ease: 'power2.out' });
+      gsap.from('.hero .btn', { 
+        duration: 0.8, y: 30, opacity: 0, delay: 0.5, 
+        stagger: 0.1, ease: 'back.out(1.7)' 
+      });
 
-<!-- Footer enrichi -->
-<footer class="site-footer">
-  <div class="footer-contact">
-    <p>
-      <i class="fa-solid fa-envelope"></i> 
-      <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a> |
-      <i class="fa-solid fa-phone"></i> 
-      <a href="tel:+24165629599">+241 65 62 95 99</a> |
-      <i class="fa-solid fa-location-dot"></i> Libreville, Gabon
-    </p>
-  </div>
+      // 🎯 SERVICES - Cascade 3D
+      gsap.utils.toArray('.services-overview .card').forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: { trigger: card, start: 'top 85%' },
+          duration: 0.8, y: 60, opacity: 0, rotationX: -15,
+          ease: 'back.out(1.7)', delay: i * 0.1
+        });
+      });
 
-  <div class="footer-social">
-    <a href="https://www.facebook.com/share/17ixhRiDDx/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
-      <i class="fa-brands fa-facebook"></i>
-    </a>
-    <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank" aria-label="LinkedIn">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-  </div>
+      // 🚀 BENEFITS - Flottement naturel
+      gsap.utils.toArray('.benefits .card').forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: { trigger: card, start: 'top 85%' },
+          duration: 0.9, x: i % 2 ? -50 : 50, y: 50, opacity: 0,
+          ease: 'power3.out', delay: i * 0.08
+        });
+        gsap.to(card, {
+          y: -8, rotation: 1, duration: 3, ease: 'power2.inOut',
+          repeat: -1, yoyo: true
+        });
+      });
 
-  <p class="footer-copy">© 2025 OLOUOMO LAB – Tous droits réservés</p>
-</footer>
+      // 💰 PRICING - Explosion 3D
+      gsap.utils.toArray('.pricing-card').forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: { trigger: '.pricing-grid', start: 'top 80%' },
+          duration: 1, y: 80, opacity: 0, scale: 0.8,
+          rotationY: i === 1 ? 180 : 0, ease: 'back.out(1.7)',
+          delay: i * 0.15
+        });
 
+        // Hover 3D premium
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, {
+            duration: 0.6, y: -25, rotationY: 10, rotationX: 5,
+            scale: 1.05, ease: 'power3.out'
+          });
+        });
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, { duration: 0.4, y: 0, rotationY: 0, rotationX: 0, scale: 1 });
+        });
+      });
+
+      // 🎪 FAQ fluide
+      document.querySelectorAll('details').forEach(detail => {
+        detail.addEventListener('toggle', () => {
+          const content = detail.querySelector('div');
+          if (detail.open) {
+            gsap.from(content, { duration: 0.4, height: 0, opacity: 0 });
+          }
+        });
+      });
+
+      // 📱 CTA pulse
+      gsap.to('.devis-btn', {
+        scale: 1.03, duration: 2, repeat: -1, yoyo: true, ease: 'power2.inOut'
+      });
+
+      // Smooth scroll + Active nav
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', e => {
+          e.preventDefault();
+          document.querySelector(anchor.getAttribute('href'))?.scrollIntoView({
+            behavior: 'smooth', block: 'start'
+          });
+        });
+      });
+      
+      document.querySelectorAll('nav a').forEach(link => {
+        if (link.getAttribute('href') === 'services.html') link.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
