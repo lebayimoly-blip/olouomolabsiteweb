@@ -89,7 +89,7 @@ nav a.active { color: var(--secondary-color); }
 }
 
 /* ------------------- */
-/* Hero Startup        */
+/* Hero Startup - CORRIGÉ */
 /* ------------------- */
 .hero {
   position: relative;
@@ -97,7 +97,7 @@ nav a.active { color: var(--secondary-color); }
   background: linear-gradient(135deg, var(--primary-color), #0066cc),
               url("assets/hero-bg.jpg") center/cover;
   background-blend-mode: overlay;
-  padding: 120px 2rem;
+  padding: 120px 2rem 120px;
   color: white;
   text-align: center;
   display: flex;
@@ -105,25 +105,43 @@ nav a.active { color: var(--secondary-color); }
   justify-content: center;
   align-items: center;
 }
+
+.hero-content {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .hero-content h1 { 
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin: 0;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  line-height: 1.2;
 }
+
 .hero-content p { 
   font-size: 1.25rem;
   max-width: 600px;
-  margin: 0 auto 2rem;
+  margin: 0;
   opacity: 0.95;
+  line-height: 1.6;
 }
+
+/* BOUTONS CTA VISIBLES */
 .hero .cta-buttons {
-  display: flex;
-  gap: 1rem;
+  display: flex !important;
+  gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
+  margin-top: 1rem;
 }
+
 
 /* ------------------- */
 /* Sections Pro        */
