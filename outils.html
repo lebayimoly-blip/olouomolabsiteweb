@@ -77,19 +77,19 @@
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  <!-- Hero aligné au style global -->
+  <!-- Hero -->
   <section class="hero">
     <h1>Nos Outils Premium</h1>
-    <p>Découvrez comment évoluer avec l’IA et tester nos applications innovantes.</p>
+    <p>Découvrez comment évoluer avec l'IA et tester nos applications innovantes.</p>
   </section>
 
   <main>
-    <!-- Outils disposés en grille de cartes -->
     <div class="grid-container" style="padding: 3rem 0; max-width: 1200px; margin: auto;">
+
       <!-- Outil 1 – IA pour le développement -->
       <div class="card blue">
         <i class="fa-solid fa-robot fa-3x"></i>
-        <h3>Évoluer avec l’IA</h3>
+        <h3>Évoluer avec l'IA</h3>
         <p>Assistance intelligente pour vos projets de développement : génération de code, optimisation et aide à la conception.</p>
         <a href="https://wa.me/+24165629599?text=Je%20veux%20essayer%20votre%20outil%20IA" class="btn btn-primary">
           <i class="fa-solid fa-robot"></i> Demander la démo IA
@@ -105,21 +105,53 @@
           <i class="fa-solid fa-keyboard"></i> Tester la transcription
         </a>
       </div>
+
+      <!-- ✅ Outil 3 – FinanceAfrique (NOUVEAU) -->
+      <div class="card blue" style="position:relative; overflow:hidden;">
+        <!-- Badge "Nouveau" -->
+        <span style="
+          position: absolute;
+          top: 16px; right: 16px;
+          background: #F5C200;
+          color: #0D47A1;
+          font-size: 10px;
+          font-weight: 700;
+          padding: 3px 10px;
+          border-radius: 20px;
+          letter-spacing: .5px;
+          text-transform: uppercase;
+        ">Nouveau</span>
+
+        <i class="fa-solid fa-coins fa-3x"></i>
+        <h3>FinanceAfrique</h3>
+        <p>
+          Retrouvez tous les financements, concours et appels à projets
+          disponibles pour les entrepreneurs et PME d'Afrique Centrale —
+          mis à jour par intelligence artificielle.
+        </p>
+        <a href="https://finance-dy4i.onrender.com"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Accéder à FinanceAfrique
+        </a>
+      </div>
+
     </div>
 
-    <!-- Section "Bénéfices" pour expliquer comment ça aide -->
+    <!-- Section "Bénéfices" -->
     <section class="benefits">
       <h2 class="section-title">Pourquoi tester nos outils IA ?</h2>
       <div class="grid-container">
         <div class="card blue">
           <i class="fa-solid fa-clock fa-3x"></i>
           <h3>Gain de temps</h3>
-          <p>Réduisez la durée de vos tâches répétitives grâce à l’automatisation intelligente.</p>
+          <p>Réduisez la durée de vos tâches répétitives grâce à l'automatisation intelligente.</p>
         </div>
         <div class="card blue">
           <i class="fa-solid fa-lightbulb fa-3x"></i>
           <h3>Innovation</h3>
-          <p>Testez des fonctionnalités IA avant qu’elles ne deviennent courantes dans votre secteur.</p>
+          <p>Testez des fonctionnalités IA avant qu'elles ne deviennent courantes dans votre secteur.</p>
         </div>
         <div class="card yellow">
           <i class="fa-solid fa-users fa-3x"></i>
@@ -130,7 +162,7 @@
     </section>
   </main>
 
-  <!-- Footer aligné avec index/services -->
+  <!-- Footer -->
   <footer>
     <div class="footer-grid">
       <div class="footer-section">
@@ -190,12 +222,12 @@
 
       // Hero animation
       gsap.from('.hero h1', { duration: 1.2, y: 60, opacity: 0, ease: 'back.out(1.7)', delay: 0.2 });
-      gsap.from('.hero p', { duration: 1, y: 40, opacity: 0, ease: 'power2.out', delay: 0.3 });
+      gsap.from('.hero p',  { duration: 1,   y: 40, opacity: 0, ease: 'power2.out',    delay: 0.3 });
 
-      // Outils cartes
-      gsap.utils.toArray('.tools-overview .card').forEach((card, i) => {
+      // Toutes les cartes — animation à l'entrée
+      gsap.utils.toArray('.grid-container .card').forEach((card, i) => {
         gsap.from(card, {
-          scrollTrigger: { trigger: card, start: 'top 80%' },
+          scrollTrigger: { trigger: card, start: 'top 85%' },
           duration: 0.8,
           y: 50,
           opacity: 0,
@@ -204,7 +236,7 @@
         });
       });
 
-      // Bénéfices cartes hover
+      // Bénéfices
       gsap.utils.toArray('.benefits .card').forEach((card, i) => {
         gsap.from(card, {
           scrollTrigger: { trigger: card, start: 'top 85%' },
