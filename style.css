@@ -352,7 +352,7 @@ details p {
 /* Footer Premium      */
 /* ------------------- */
 footer {
-  background: linear-gradient(135deg, #111, #1a1a1a);
+  background: var(--primary-color); /* même bleu que le header */
   color: #e5e7eb;
   padding: 4rem 2rem 2rem;
   margin-top: 5rem;
@@ -369,6 +369,17 @@ footer {
   margin-bottom: 1rem;
   font-family: 'Montserrat', sans-serif;
 }
+
+.footer-section ul li a {
+  color: #e5e7eb; /* blanc/gris clair uniforme */
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+  color: var(--secondary-color); /* jaune premium au survol */
+}
+
 .footer-social {
   display: flex;
   gap: 1rem;
@@ -624,5 +635,74 @@ footer {
     border: none;
     border-top: 4px solid var(--secondary-color);
     border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+}
+.partners {
+  background: var(--bg-light);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.partners-logos {
+  overflow: hidden;
+  position: relative;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+}
+
+.logo-slide {
+  display: flex;
+  gap: 3rem;
+  animation: slide 20s linear infinite;
+}
+
+.logo-slide img {
+  height: 190px;
+  width: auto;
+  filter: grayscale(30%);
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.logo-slide img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ----------------------------- */
+/* RESPONSIVE - Tablette */
+/* ----------------------------- */
+@media (max-width: 768px) {
+  .logo-slide img {
+    height: 50px;
+  }
+}
+
+/* ----------------------------- */
+/* RESPONSIVE - Mobile (Grille fixe) */
+/* ----------------------------- */
+@media (max-width: 480px) {
+  .partners-logos {
+    overflow: visible;
+  }
+
+  .logo-slide {
+    animation: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .logo-slide img {
+    height: 45px;
+    opacity: 1;
+    filter: grayscale(0%);
   }
 }
