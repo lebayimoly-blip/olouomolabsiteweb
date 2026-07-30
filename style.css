@@ -530,18 +530,32 @@ footer {
   gap: 3rem;
   animation: slide 20s linear infinite;
 }
+/* Desktop et grands écrans */
 .logo-slide img {
-  height: 190px;
+  height: 150px; /* taille contrôlée */
   width: auto;
   filter: grayscale(30%);
   opacity: 0.8;
   transition: var(--transition);
 }
+
 .logo-slide img:hover {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.05);
 }
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logo-slide img {
+    max-width: 100%;
+    height: auto;       /* responsive */
+    min-height: 80px;   /* taille minimum garantie */
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+}
+
 @keyframes slide {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -677,4 +691,11 @@ footer {
     opacity: 1;
     filter: grayscale(0%);
   }
+}
+.section-subtitle {
+  text-align: center;
+  font-size: 1.5rem; /* plus petit que le titre principal */
+  margin-bottom: 15px;
+  color: var(--secondary-color); /* couleur secondaire harmonisée */
+  font-weight: 600;
 }
