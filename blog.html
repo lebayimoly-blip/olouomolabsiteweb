@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHQL3KS0YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,146 +11,98 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Olouomo Lab - Blog</title>
-  <!-- Meta SEO -->
-  <meta name="description" content="Blog Olouomo Lab - Transformation digitale au Gabon et en Afrique. Applications mobiles, sites web professionnels et opportunités internationales.">
-
-  <!-- Font Awesome -->
+  <title>Blog | Olouomo Lab</title>
+  <meta name="description" content="Blog Olouomo Lab - Transformation digitale au Gabon et en Afrique. Applications mobiles, sites web professionnels et cybersécurité.">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- CSS unique -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Header aligné avec le reste du site -->
   <header>
-    <a href="index.html">
-      <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
-    </a>
-
-    <!-- Bouton hamburger -->
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
-    <!-- Menu -->
+    <a href="index.html"><img src="assets/logo.png" alt="Olouomo Lab" class="logo"></a>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     <nav>
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
         <li><a href="blog.html" class="active">Blog</a></li>
-        <li><a href="outils.html">Nos Outils</a></li>
+        <li><a href="outils.html">Outils</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-
-    <!-- Sélecteur de langue Google Translate -->
-    <div id="google_translate_element"></div>
   </header>
 
-  <!-- Script Google Translate -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'fr',
-          includedLanguages: 'en,es,de',
-          autoDisplay: false
-        },
-        'google_translate_element'
-      );
-    }
-    function translatePage(lang) {
-      const select = document.querySelector(".goog-te-combo");
-      if (select) {
-        select.value = lang;
-        select.dispatchEvent(new Event("change"));
-      }
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Hero aligné au style global -->
-  <section class="hero">
-    <h1>Le Blog d’Olouomo Lab</h1>
-    <p>Analyses, conseils et opportunités pour accélérer votre transformation digitale au Gabon et en Afrique.</p>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow"><span class="pulse"></span>BLOG</span>
+      <h1>Le blog d'<span>Olouomo Lab</span></h1>
+      <p>Analyses, conseils et opportunités pour accélérer votre transformation digitale au Gabon et en Afrique.</p>
+    </div>
   </section>
 
   <main class="blog-list">
-    <!-- Grille d’articles alignée avec le design global -->
-    <div class="grid-container" style="padding: 2rem 0; max-width: 1200px; margin: auto;">
-      <!-- Article 0 – Nouveau -->
-      <article class="blog-card featured">
+    <div class="grid-container">
+      <article class="blog-card featured reveal">
         <div class="badge-new">Nouveau</div>
         <img src="https://images.pexels.com/photos/7965040/pexels-photo-7965040.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Professionnels africains collaborant sur des projets digitaux" loading="lazy">
         <div class="blog-content">
           <h2><a href="article-transformation-numerique-gabon.html">La transformation numérique au Gabon : opportunités pour les entreprises</a></h2>
-          <p>Réformes, infrastructures et programmes digitaux : découvrez comment profiter de la dynamique numérique au Gabon pour innover et croître.</p>
+          <p>Réformes, infrastructures et programmes digitaux : comment profiter de la dynamique numérique au Gabon pour innover et croître.</p>
           <a href="article-transformation-numerique-gabon.html" class="read-more">Lire la suite</a>
         </div>
       </article>
 
-      <!-- Article 1 -->
-      <article class="blog-card">
+      <article class="blog-card reveal">
         <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Équipe africaine en réunion digitale" loading="lazy">
         <div class="blog-content">
-          <h2><a href="article-site-internet.html">Pourquoi votre entreprise a besoin d’un site internet dès aujourd’hui</a></h2>
-          <p>Un site internet est un levier stratégique : crédibilité, accessibilité, conversion, ouverture internationale et augmentation du chiffre d’affaires…</p>
+          <h2><a href="article-site-internet.html">Pourquoi votre entreprise a besoin d'un site internet dès aujourd'hui</a></h2>
+          <p>Un site internet est un levier stratégique : crédibilité, accessibilité, conversion et ouverture internationale.</p>
           <a href="article-site-internet.html" class="read-more">Lire la suite</a>
         </div>
       </article>
 
-      <!-- Article 2 -->
-      <article class="blog-card">
+      <article class="blog-card reveal">
         <img src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Développeur africain travaillant sur une application mobile" loading="lazy">
         <div class="blog-content">
-          <h2><a href="article-application-mobile.html">Pourquoi votre entreprise a besoin d’une application mobile au Gabon</a></h2>
-          <p>Les applications mobiles rapprochent les entreprises de leurs clients, renforcent la fidélisation et valorisent l’image de marque.</p>
+          <h2><a href="article-application-mobile.html">Pourquoi votre entreprise a besoin d'une application mobile au Gabon</a></h2>
+          <p>Les applications mobiles rapprochent les entreprises de leurs clients et renforcent la fidélisation.</p>
           <a href="article-application-mobile.html" class="read-more">Lire la suite</a>
         </div>
       </article>
 
-      <!-- Article 3 -->
-      <article class="blog-card">
+      <article class="blog-card reveal">
         <img src="https://images.pexels.com/photos/1181353/pexels-photo-1181353.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Entrepreneur africain utilisant un ordinateur" loading="lazy">
         <div class="blog-content">
-          <h2><a href="article-site-web-pro.html">Les 5 clés d’un site web professionnel</a></h2>
-          <p>Rapidité, sécurité, responsive design, SEO et attractivité : découvrez les fondamentaux d’un site performant.</p>
+          <h2><a href="article-site-web-pro.html">Les 5 clés d'un site web professionnel</a></h2>
+          <p>Rapidité, sécurité, responsive design, SEO et attractivité : les fondamentaux d'un site performant.</p>
           <a href="article-site-web-pro.html" class="read-more">Lire la suite</a>
         </div>
       </article>
 
-      <!-- Article 4 – Nouveau -->
-      <article class="blog-card featured">
+      <article class="blog-card featured reveal">
         <div class="badge-new">Nouveau</div>
         <img src="https://images.pexels.com/photos/4033321/pexels-photo-4033321.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Écran d'ordinateur affichant un message de virus LoveLetter" loading="lazy">
         <div class="blog-content">
-          <h2><a href="article-loveletter.html">🛡️ La Leçon de LoveLetter : Histoire, Impact Global et Sécurité pour l’Afrique</a></h2>
-          <p>Découvrez l’histoire du ver LoveLetter (ILOVEYOU), son coût de 15 milliards de dollars et les leçons de cybersécurité que OLOUOMO LAB applique pour protéger les entreprises au Gabon et en Afrique.</p>
+          <h2><a href="article-loveletter.html">La leçon de LoveLetter : histoire, impact global et sécurité pour l'Afrique</a></h2>
+          <p>L'histoire du ver LoveLetter, son coût de 15 milliards de dollars et les leçons de cybersécurité applicables au Gabon.</p>
           <a href="article-loveletter.html" class="read-more">Lire la suite</a>
         </div>
       </article>
 
-      <!-- Article 5 – Nouveau -->
-      <article class="blog-card featured">
+      <article class="blog-card featured reveal">
         <div class="badge-new">Nouveau</div>
         <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="PME gabonaises en pleine transformation digitale" loading="lazy">
         <div class="blog-content">
-          <h2><a href="article-pme-transformation-digitale.html">PME au Gabon : Les clés de la transformation digitale en 2025</a></h2>
-          <p>Découvrez comment les PME gabonaises peuvent réussir leur transition numérique grâce aux réseaux sociaux, applications mobiles et stratégies digitales adaptées.</p>
+          <h2><a href="article-pme-transformation-digitale.html">PME au Gabon : les clés de la transformation digitale</a></h2>
+          <p>Comment les PME gabonaises réussissent leur transition numérique grâce aux réseaux sociaux et aux applications mobiles.</p>
           <a href="article-pme-transformation-digitale.html" class="read-more">Lire la suite</a>
         </div>
       </article>
     </div>
   </main>
 
-  <!-- Footer aligné avec index/services -->
   <footer>
     <div class="footer-grid">
       <div class="footer-section">
@@ -165,78 +116,18 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html">À propos</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
-          <li><a href="outils.html">Nos Outils</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h3>Contact</h3>
-        <p>
-          <i class="fa-solid fa-envelope"></i>
-          <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a>
-        </p>
-        <p>
-          <i class="fa-solid fa-phone"></i>
-          <a href="tel:+24165629599">+241 65 62 95 99</a>
-        </p>
-        <p>
-          <i class="fa-solid fa-location-dot"></i> Libreville, Gabon
-        </p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a></p>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+24165629599">+241 65 62 95 99</a></p>
+        <p><i class="fa-solid fa-location-dot"></i> Owendo, Libreville, Gabon</p>
       </div>
     </div>
-    <div class="footer-copy">© 2026 Olouomo Lab - Tous droits réservés.</div>
+    <div class="footer-copy">© 2026 Olouomo Lab — Tous droits réservés.</div>
   </footer>
 
-  <!-- GSAP animations -->
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Menu mobile
-      const toggle = document.querySelector('.menu-toggle');
-      const navMenu = document.querySelector('nav ul');
-      if (toggle && navMenu) {
-        toggle.addEventListener('click', () => {
-          navMenu.classList.toggle('show');
-          toggle.setAttribute('aria-expanded', navMenu.classList.contains('show'));
-        });
-      }
-
-      // Active nav link
-      document.querySelectorAll('nav a').forEach(link => {
-        const href = link.getAttribute('href');
-        const currentPage = location.pathname.split('/').pop() || 'index.html';
-        if (href === currentPage) link.classList.add('active');
-      });
-
-      // Hero animation
-      gsap.from('.hero h1', { duration: 1.2, y: 60, opacity: 0, ease: 'back.out(1.7)', delay: 0.2 });
-      gsap.from('.hero p', { duration: 1, y: 40, opacity: 0, ease: 'power2.out', delay: 0.4 });
-
-      // Articles stagger on scroll
-      const articles = document.querySelectorAll('.blog-card');
-      articles.forEach((card, i) => {
-        gsap.from(card, {
-          scrollTrigger: { trigger: card, start: 'top 80%' },
-          duration: 0.8,
-          y: 50,
-          opacity: 0,
-          ease: 'back.out(1.7)',
-          delay: i * 0.1
-        });
-      });
-
-      // Featured badge pulse
-      gsap.fromTo('.badge-new', {
-        opacity: 0.8
-      }, {
-        opacity: 1,
-        duration: 1.8,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power2.inOut'
-      });
-    });
-  </script>
+  <script src="animations.js"></script>
 </body>
 </html>

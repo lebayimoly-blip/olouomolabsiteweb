@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHQL3KS0YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,150 +10,76 @@
   </script>
 
   <meta charset="UTF-8">
-  <title>Olouomo Lab - À propos</title>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- GSAP animations (GSAP 100% compatible avec ton CSS) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- CSS unique -->
-  <link rel="stylesheet" href="style.css">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Olouomo Lab - Agence digitale au Gabon spécialisée dans la création de sites web, applications mobiles, stratégie digitale et solutions IT.">
+  <title>À propos | Olouomo Lab</title>
+  <meta name="description" content="Olouomo Lab - Startup gabonaise spécialisée dans le développement d'applications, sites web et sécurité numérique/physique.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Header aligné avec index/services -->
   <header>
-    <a href="index.html">
-      <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
-    </a>
-
-    <!-- Bouton hamburger -->
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
-    <!-- Menu -->
+    <a href="index.html"><img src="assets/logo.png" alt="Olouomo Lab" class="logo"></a>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     <nav>
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html" class="active">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="outils.html">Nos Outils</a></li>
+        <li><a href="outils.html">Outils</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-
-    <!-- Sélecteur de langue Google Translate -->
-    <div id="google_translate_element"></div>
   </header>
 
-  <!-- Script Google Translate -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'fr',
-          includedLanguages: 'en,es,de',
-          autoDisplay: false
-        },
-        'google_translate_element'
-      );
-    }
-
-    function translatePage(lang) {
-      const select = document.querySelector(".goog-te-combo");
-      if (select) {
-        select.value = lang;
-        select.dispatchEvent(new Event("change"));
-      }
-    }
-  </script>
-
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Hero aligné au reste du site -->
-  <section class="hero">
-    <h1>À propos de <span>Olouomo Lab</span></h1>
-    <p>
-      Nous accompagnons les entreprises gabonaises et africaines dans leur transformation digitale,
-      en proposant des solutions rapides, sécurisées et visuellement premium.
-      Que vous soyez une PME, une startup ou une grande organisation,
-      nous vous aidons à renforcer votre présence en ligne et à atteindre vos objectifs.
-    </p>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow"><span class="pulse"></span>À PROPOS</span>
+      <h1>L'équipe derrière <span>Olouomo Lab</span></h1>
+      <p>Nous accompagnons les entreprises gabonaises et africaines dans leur transformation digitale, avec des solutions rapides, sécurisées et pensées pour durer.</p>
+    </div>
   </section>
 
   <main>
-    <!-- Intro -->
-    <section class="intro">
-      <h2 class="section-title">Notre Histoire</h2>
-      <p>
-        <strong>Olouomo Lab</strong> est une startup gabonaise innovante, spécialisée dans le développement d’applications et la création de sites web.
-        Nous accompagnons les entreprises et institutions dans leur transformation digitale grâce à des solutions sur mesure, sécurisées et performantes.
+    <section>
+      <span class="section-tag">NOTRE HISTOIRE</span>
+      <h2 class="section-title">Une startup gabonaise, une exigence technique</h2>
+      <p class="section-sub" style="max-width:760px;">
+        Olouomo Lab est une startup gabonaise spécialisée dans le développement d'applications, la création de sites web et la sécurité numérique et physique. Nous accompagnons les entreprises et institutions dans leur transformation digitale grâce à des solutions sur mesure, sécurisées et performantes — de l'audit à l'appel d'offres jusqu'à la mise en production.
       </p>
     </section>
 
-    <!-- Services posés sur le même grid que services.html -->
     <section class="services">
-      <h2 class="section-title">Nos services</h2>
+      <span class="section-tag">NOS SERVICES</span>
+      <h2 class="section-title">Ce que nous livrons</h2>
       <div class="grid-container">
-        <div class="card blue">
-          <i class="fa-solid fa-globe fa-3x"></i>
-          <h3>Création de sites web</h3>
-          <p>Sites vitrines, e-commerce, blogs et plateformes sur mesure, rapides et sécurisés.</p>
-          <a href="services.html" class="btn btn-primary">En savoir plus</a>
-        </div>
-        <div class="card blue">
-          <i class="fa-solid fa-mobile-screen fa-3x"></i>
-          <h3>Applications mobiles</h3>
-          <p>Développement Android et iOS, adaptées aux besoins des entreprises et des utilisateurs.</p>
-          <a href="services.html" class="btn btn-primary">En savoir plus</a>
-        </div>
-        <div class="card yellow">
-          <i class="fa-solid fa-bullseye fa-3x"></i>
-          <h3>Stratégie digitale</h3>
-          <p>Campagnes digitales, communication et accompagnement pour booster votre visibilité.</p>
-          <a href="services.html" class="btn btn-primary">En savoir plus</a>
-        </div>
-        <div class="card yellow">
-          <i class="fa-solid fa-paintbrush fa-3x"></i>
-          <h3>Design UI/UX</h3>
-          <p>Interfaces modernes, ergonomiques et attractives pour une meilleure expérience utilisateur.</p>
-          <a href="contact.html" class="btn btn-primary">Discuter du projet</a>
-        </div>
-        <div class="card blue">
-          <i class="fa-solid fa-server fa-3x"></i>
-          <h3>Solutions IT & hébergement</h3>
-          <p>Configuration de serveurs, hébergement cloud, sécurité et maintenance technique.</p>
-          <a href="services.html" class="btn btn-primary">En savoir plus</a>
-        </div>
-        <div class="card blue">
-          <i class="fa-solid fa-magnifying-glass fa-3x"></i>
-          <h3>SEO & optimisation</h3>
-          <p>Amélioration de la visibilité sur Google, audits et optimisation continue.</p>
-          <a href="services.html" class="btn btn-primary">En savoir plus</a>
-        </div>
+        <div class="card reveal"><i class="fa-solid fa-globe"></i><h3>Création de sites web</h3><p>Sites vitrines, e-commerce, blogs et plateformes sur mesure, rapides et sécurisés.</p><a href="services.html" class="btn btn-primary">En savoir plus</a></div>
+        <div class="card reveal"><i class="fa-solid fa-mobile-screen"></i><h3>Applications mobiles</h3><p>Développement Android et iOS, adapté aux besoins des entreprises et des utilisateurs.</p><a href="services.html" class="btn btn-primary">En savoir plus</a></div>
+        <div class="card reveal"><i class="fa-solid fa-bullseye"></i><h3>Stratégie digitale</h3><p>Campagnes, communication et accompagnement pour booster votre visibilité.</p><a href="services.html" class="btn btn-primary">En savoir plus</a></div>
+        <div class="card reveal"><i class="fa-solid fa-paintbrush"></i><h3>Design UI/UX</h3><p>Interfaces modernes, ergonomiques et attractives pour une meilleure expérience.</p><a href="contact.html" class="btn btn-primary">Discuter du projet</a></div>
+        <div class="card reveal"><i class="fa-solid fa-server"></i><h3>Solutions IT & hébergement</h3><p>Configuration serveurs, hébergement cloud, sécurité et maintenance technique.</p><a href="services.html" class="btn btn-primary">En savoir plus</a></div>
+        <div class="card reveal"><i class="fa-solid fa-magnifying-glass"></i><h3>SEO & optimisation</h3><p>Amélioration de la visibilité sur Google, audits et optimisation continue.</p><a href="services.html" class="btn btn-primary">En savoir plus</a></div>
       </div>
     </section>
 
-    <!-- Mission -->
-    <section class="mission">
-      <h2 class="section-title">Notre mission</h2>
-      <p>
-        Notre objectif est de positionner <strong>Olouomo Lab</strong> comme le partenaire digital incontournable au Gabon et en Afrique,
-        en offrant des solutions rapides, fiables et accessibles qui renforcent la compétitivité des entreprises.
+    <section class="dark-band">
+      <span class="section-tag">NOTRE MISSION</span>
+      <h2 class="section-title">Le partenaire digital incontournable au Gabon</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.65);max-width:700px;">
+        Positionner Olouomo Lab comme le partenaire digital de référence au Gabon et en Afrique Centrale, en offrant des solutions rapides, fiables et accessibles qui renforcent la compétitivité des entreprises que nous accompagnons.
       </p>
     </section>
   </main>
 
-  <!-- Footer aligné avec index/services -->
-  <footer class="site-footer">
+  <section class="devis-btn-container">
+    <a href="https://wa.me/+24165629599?text=Bonjour%20Olouomo%20Lab" class="devis-btn">
+      <i class="fab fa-whatsapp"></i> Discuter de votre projet
+    </a>
+  </section>
+
+  <footer>
     <div class="footer-grid">
       <div class="footer-section">
         <h3>Olouomo Lab</h3>
@@ -165,81 +90,20 @@
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">À propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="outils.html">Nos Outils</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h3>Contact</h3>
-        <p>
-          <i class="fa-solid fa-envelope"></i>
-          <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a>
-        </p>
-        <p>
-          <i class="fa-solid fa-phone"></i>
-          <a href="tel:+24165629599">+241 65 62 95 99</a>
-        </p>
-        <p>
-          <i class="fa-solid fa-location-dot"></i> Libreville, Gabon
-        </p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a></p>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+24165629599">+241 65 62 95 99</a></p>
+        <p><i class="fa-solid fa-location-dot"></i> Owendo, Libreville, Gabon</p>
       </div>
     </div>
-    <div class="footer-copy">© 2026 Olouomo Lab - Tous droits réservés.</div>
+    <div class="footer-copy">© 2026 Olouomo Lab — Tous droits réservés.</div>
   </footer>
 
-  <!-- GSAP animations -->
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-    document.addEventListener('DOMContentLoaded', () => {
-      // Menu mobile
-      const toggle = document.querySelector('.menu-toggle');
-      const navMenu = document.querySelector('nav ul');
-      if (toggle && navMenu) {
-        toggle.addEventListener('click', () => {
-          navMenu.classList.toggle('show');
-          toggle.setAttribute('aria-expanded', navMenu.classList.contains('show'));
-        });
-      }
-
-      // Active nav link
-      document.querySelectorAll('nav a').forEach(link => {
-        const href = link.getAttribute('href');
-        const currentPage = location.pathname.split('/').pop() || 'index.html';
-        if (href === currentPage) link.classList.add('active');
-      });
-
-      // Hero animation
-      gsap.from('.hero h1', { duration: 1.2, y: 60, opacity: 0, ease: 'back.out(1.7)', delay: 0.2 });
-      gsap.from('.hero p', { duration: 1, y: 40, opacity: 0, ease: 'power2.out', delay: 0.4 });
-
-      // Intro
-      gsap.from('.intro > p', { duration: 0.9, y: 40, opacity: 0, ease: 'power2.out', delay: 0.6 });
-
-      // Services cards staggered
-      gsap.utils.toArray('.services .card').forEach((card, i) => {
-        gsap.from(card, {
-          scrollTrigger: { trigger: card, start: 'top 80%' },
-          duration: 0.8,
-          y: 60,
-          opacity: 0,
-          ease: 'back.out(1.7)',
-          delay: i * 0.1
-        });
-
-        // Hover 3D
-        card.addEventListener('mouseenter', () => {
-          gsap.to(card, { duration: 0.4, y: -15, scale: 1.02, ease: 'power3.out' });
-        });
-        card.addEventListener('mouseleave', () => {
-          gsap.to(card, { duration: 0.3, y: 0, scale: 1, ease: 'power2.out' });
-        });
-      });
-
-      // Mission text
-      gsap.from('.mission > p', { duration: 0.9, x: 50, opacity: 0, ease: 'power2.out' });
-    });
-  </script>
+  <script src="animations.js"></script>
 </body>
 </html>

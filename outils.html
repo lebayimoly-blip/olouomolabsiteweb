@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHQL3KS0YN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,184 +11,83 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Olouomo Lab - Nos Outils IA et Applications">
-  <meta name="keywords" content="IA, outils, applications, Olouomo Lab, Libreville Gabon">
-  <title>Olouomo Lab - Nos Outils</title>
-
-  <!-- Font Awesome -->
+  <meta name="description" content="Olouomo Lab - Nos outils IA et applications : FinanceAfrique, transcription, générateur d'affiches.">
+  <title>Nos outils | Olouomo Lab</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- CSS unique -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Header aligné avec le reste du site -->
   <header>
-    <a href="index.html">
-      <img src="assets/logo.png" alt="Logo Olouomo Lab" class="logo">
-    </a>
-
-    <!-- Bouton hamburger -->
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
-    <!-- Menu -->
+    <a href="index.html"><img src="assets/logo.png" alt="Olouomo Lab" class="logo"></a>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     <nav>
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="outils.html" class="active">Nos Outils</a></li>
+        <li><a href="outils.html" class="active">Outils</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-
-    <!-- Google Translate -->
-    <div id="google_translate_element"></div>
   </header>
 
-  <!-- Script Google Translate -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'fr',
-          includedLanguages: 'en,es,de',
-          autoDisplay: false
-        },
-        'google_translate_element'
-      );
-    }
-    function translatePage(lang) {
-      const select = document.querySelector(".goog-te-combo");
-      if (select) {
-        select.value = lang;
-        select.dispatchEvent(new Event("change"));
-      }
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Nos Outils Premium</h1>
-    <p>Découvrez comment évoluer avec l'IA et tester nos applications innovantes.</p>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow"><span class="pulse"></span>OUTILS & IA</span>
+      <h1>Nos outils <span>premium</span></h1>
+      <p>Découvrez comment évoluer avec l'IA et testez nos applications développées en interne.</p>
+    </div>
   </section>
 
   <main>
-    <div class="grid-container" style="padding: 3rem 0; max-width: 1200px; margin: auto;">
+    <section>
+      <div class="grid-container">
+        <div class="card reveal">
+          <i class="fa-solid fa-robot"></i>
+          <h3>Évoluer avec l'IA</h3>
+          <p>Assistance intelligente pour vos projets de développement : génération de code, optimisation et aide à la conception.</p>
+          <a href="https://wa.me/+24165629599?text=Je%20veux%20essayer%20votre%20outil%20IA" class="btn btn-primary"><i class="fa-solid fa-robot"></i> Demander la démo</a>
+        </div>
 
-      <!-- Outil 1 – IA pour le développement -->
-      <div class="card blue">
-        <i class="fa-solid fa-robot fa-3x"></i>
-        <h3>Évoluer avec l'IA</h3>
-        <p>Assistance intelligente pour vos projets de développement : génération de code, optimisation et aide à la conception.</p>
-        <a href="https://wa.me/+24165629599?text=Je%20veux%20essayer%20votre%20outil%20IA" class="btn btn-primary">
-          <i class="fa-solid fa-robot"></i> Demander la démo IA
-        </a>
+        <div class="card reveal">
+          <i class="fa-solid fa-keyboard"></i>
+          <h3>Application de transcription</h3>
+          <p>Transformez instantanément vos paroles en texte : réunions, interviews, notes rapides en temps réel.</p>
+          <a href="https://wa.me/+24165629599?text=Je%20veux%20tester%20votre%20outil%20de%20transcription" class="btn btn-primary"><i class="fa-solid fa-keyboard"></i> Tester l'outil</a>
+        </div>
+
+        <div class="card reveal" style="position:relative;">
+          <span class="badge-new" style="position:absolute;top:16px;right:16px;left:auto;">Nouveau</span>
+          <i class="fa-solid fa-coins"></i>
+          <h3>FinanceAfrique</h3>
+          <p>Tous les financements, concours et appels à projets disponibles pour les entrepreneurs et PME d'Afrique Centrale — mis à jour par IA.</p>
+          <a href="https://finance-dy4i.onrender.com" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Accéder à FinanceAfrique</a>
+        </div>
+
+        <div class="card reveal" style="position:relative;">
+          <span class="badge-new" style="position:absolute;top:16px;right:16px;left:auto;">Nouveau</span>
+          <i class="fa-solid fa-image"></i>
+          <h3>Affiche TSOUMOU</h3>
+          <p>Générez votre affiche personnalisée « J'y serai » pour la 41ᵉ Assemblée Générale : votre photo est automatiquement détourée et intégrée au cadre officiel.</p>
+          <a href="/tsoumou/" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Créer mon affiche</a>
+        </div>
       </div>
+    </section>
 
-      <!-- Outil 2 – App de transcription audio → texte -->
-      <div class="card yellow">
-        <i class="fa-solid fa-vial fa-3x"></i>
-        <h3>Application de transcription</h3>
-        <p>Transformez instantanément vos paroles en texte, idéal pour réunions, interview, notes rapides et prise de notes en temps réel.</p>
-        <a href="https://wa.me/+24165629599?text=Je%20veux%20tester%20votre%20outil%20de%20transcription" class="btn btn-primary">
-          <i class="fa-solid fa-keyboard"></i> Tester la transcription
-        </a>
-      </div>
-
-      <!-- ✅ Outil 3 – FinanceAfrique (NOUVEAU) -->
-      <div class="card blue" style="position:relative; overflow:hidden;">
-        <!-- Badge "Nouveau" -->
-        <span style="
-          position: absolute;
-          top: 16px; right: 16px;
-          background: #F5C200;
-          color: #0D47A1;
-          font-size: 10px;
-          font-weight: 700;
-          padding: 3px 10px;
-          border-radius: 20px;
-          letter-spacing: .5px;
-          text-transform: uppercase;
-        ">Nouveau</span>
-
-        <i class="fa-solid fa-coins fa-3x"></i>
-        <h3>FinanceAfrique</h3>
-        <p>
-          Retrouvez tous les financements, concours et appels à projets
-          disponibles pour les entrepreneurs et PME d'Afrique Centrale —
-          mis à jour par intelligence artificielle.
-        </p>
-        <a href="https://finance-dy4i.onrender.com"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn btn-primary">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Accéder à FinanceAfrique
-        </a>
-      </div>
-
-      <!-- ✅ Outil 4 – Affiche TSOUMOU (NOUVEAU) -->
-      <div class="card yellow" style="position:relative; overflow:hidden;">
-        <span style="
-          position: absolute;
-          top: 16px; right: 16px;
-          background: #F5C200;
-          color: #0D47A1;
-          font-size: 10px;
-          font-weight: 700;
-          padding: 3px 10px;
-          border-radius: 20px;
-          letter-spacing: .5px;
-          text-transform: uppercase;
-        ">Nouveau</span>
-
-        <i class="fa-solid fa-image fa-3x"></i>
-        <h3>Affiche TSOUMOU</h3>
-        <p>
-          Générez votre affiche personnalisée « J'y serai » pour la 41ème
-          Assemblée Générale : chargez votre photo, elle est automatiquement
-          détourée et intégrée dans le cadre officiel.
-        </p>
-        <a href="/tsoumou/" class="btn btn-primary">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Créer mon affiche
-        </a>
-      </div>
-
-    </div>
-
-    <!-- Section "Bénéfices" -->
-    <section class="benefits">
+    <section class="dark-band">
+      <span class="section-tag">POURQUOI CES OUTILS</span>
       <h2 class="section-title">Pourquoi tester nos outils IA ?</h2>
       <div class="grid-container">
-        <div class="card blue">
-          <i class="fa-solid fa-clock fa-3x"></i>
-          <h3>Gain de temps</h3>
-          <p>Réduisez la durée de vos tâches répétitives grâce à l'automatisation intelligente.</p>
-        </div>
-        <div class="card blue">
-          <i class="fa-solid fa-lightbulb fa-3x"></i>
-          <h3>Innovation</h3>
-          <p>Testez des fonctionnalités IA avant qu'elles ne deviennent courantes dans votre secteur.</p>
-        </div>
-        <div class="card yellow">
-          <i class="fa-solid fa-users fa-3x"></i>
-          <h3>Appui local</h3>
-          <p>Support technique et accompagnement en français, depuis Libreville.</p>
-        </div>
+        <div class="card reveal"><i class="fa-solid fa-clock"></i><h3>Gain de temps</h3><p>Réduisez la durée de vos tâches répétitives grâce à l'automatisation.</p></div>
+        <div class="card reveal"><i class="fa-solid fa-lightbulb"></i><h3>Innovation</h3><p>Testez des fonctionnalités IA avant qu'elles ne deviennent courantes dans votre secteur.</p></div>
+        <div class="card reveal"><i class="fa-solid fa-users"></i><h3>Appui local</h3><p>Support technique et accompagnement en français, depuis Libreville.</p></div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-grid">
       <div class="footer-section">
@@ -201,81 +99,20 @@
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">À propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="outils.html" class="active">Nos Outils</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h3>Contact</h3>
-        <p>
-          <i class="fa-solid fa-envelope"></i>
-          <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a>
-        </p>
-        <p>
-          <i class="fa-solid fa-phone"></i>
-          <a href="tel:+24165629599">+241 65 62 95 99</a>
-        </p>
-        <p>
-          <i class="fa-solid fa-location-dot"></i> Libreville, Gabon
-        </p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a></p>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+24165629599">+241 65 62 95 99</a></p>
+        <p><i class="fa-solid fa-location-dot"></i> Owendo, Libreville, Gabon</p>
       </div>
     </div>
-    <div class="footer-copy">© 2026 Olouomo Lab - Tous droits réservés.</div>
+    <div class="footer-copy">© 2026 Olouomo Lab — Tous droits réservés.</div>
   </footer>
 
-  <!-- GSAP animations -->
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Menu mobile
-      const toggle = document.querySelector('.menu-toggle');
-      const navMenu = document.querySelector('nav ul');
-      if (toggle && navMenu) {
-        toggle.addEventListener('click', () => {
-          const isOpen = navMenu.classList.toggle('show');
-          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
-      }
-
-      // Active nav link
-      document.querySelectorAll('nav a').forEach(link => {
-        const href = link.getAttribute('href');
-        const currentPage = location.pathname.split('/').pop() || 'index.html';
-        if (href === currentPage) link.classList.add('active');
-      });
-
-      // Hero animation
-      gsap.from('.hero h1', { duration: 1.2, y: 60, opacity: 0, ease: 'back.out(1.7)', delay: 0.2 });
-      gsap.from('.hero p',  { duration: 1,   y: 40, opacity: 0, ease: 'power2.out',    delay: 0.3 });
-
-      // Toutes les cartes — animation à l'entrée
-      gsap.utils.toArray('.grid-container .card').forEach((card, i) => {
-        gsap.from(card, {
-          scrollTrigger: { trigger: card, start: 'top 85%' },
-          duration: 0.8,
-          y: 50,
-          opacity: 0,
-          ease: 'back.out(1.7)',
-          delay: i * 0.1
-        });
-      });
-
-      // Bénéfices
-      gsap.utils.toArray('.benefits .card').forEach((card, i) => {
-        gsap.from(card, {
-          scrollTrigger: { trigger: card, start: 'top 85%' },
-          duration: 0.7,
-          x: i % 2 ? -50 : 50,
-          y: 40,
-          opacity: 0,
-          ease: 'power2.out',
-          delay: i * 0.1
-        });
-      });
-    });
-  </script>
+  <script src="animations.js"></script>
 </body>
 </html>
