@@ -157,6 +157,52 @@ section{padding:5rem 2rem;}
   gap:1.6rem;max-width:1180px;margin:0 auto;padding:0 2rem;
 }
 
+/* ---------- scan divider ---------- */
+.scan-divider{
+  max-width:1180px;margin:0 auto;padding:0 2rem;height:1px;position:relative;
+  background:var(--line);overflow:visible;
+}
+.scan-divider span{
+  position:absolute;top:-1px;left:0;height:2px;width:120px;
+  background:linear-gradient(90deg,transparent,var(--amber),transparent);
+  box-shadow:0 0 12px var(--amber);animation:divider-sweep 4.5s linear infinite;
+}
+@keyframes divider-sweep{
+  0%{left:-10%;}
+  100%{left:100%;}
+}
+@media (prefers-reduced-motion: reduce){
+  .scan-divider span{animation:none;left:0;}
+}
+
+/* ---------- process (comment ça marche) ---------- */
+.process{background:var(--paper-2);}
+.process-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;max-width:1180px;margin:0 auto;
+  position:relative;
+}
+.process-grid::before{
+  content:'';position:absolute;top:34px;left:12%;right:12%;height:1px;
+  background:repeating-linear-gradient(90deg,var(--amber) 0 6px,transparent 6px 12px);
+  opacity:.5;z-index:0;
+}
+.process-step{position:relative;z-index:1;text-align:center;padding:0 .6rem;}
+.process-num{
+  width:64px;height:64px;border-radius:50%;background:var(--ink);color:var(--amber);
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:600;
+  margin:0 auto 1rem;border:1px solid rgba(232,169,59,0.35);
+}
+.process-step h3{font-size:1rem;margin-bottom:.5rem;}
+.process-step p{color:var(--muted);font-size:.88rem;}
+
+/* ---------- card status pill ---------- */
+.card-status{
+  position:absolute;top:1.4rem;right:1.4rem;display:flex;align-items:center;gap:.4rem;
+  font-family:'IBM Plex Mono';font-size:.68rem;letter-spacing:.03em;color:var(--green);
+  text-transform:uppercase;
+}
+.card-status .pulse{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 1.8s infinite;}
+
 /* ---------- cards ---------- */
 .card{
   background:#fff;border:1px solid var(--line);border-radius:12px;
@@ -325,6 +371,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:3.5rem 2rem 2re
   .hero-grid{grid-template-columns:1fr;}
   .stats-widgets{grid-template-columns:repeat(2,1fr);}
   .stats-widgets .widget:nth-child(2n){border-right:none;}
+  .process-grid{grid-template-columns:repeat(2,1fr);gap:2rem 1.2rem;}
+  .process-grid::before{display:none;}
 }
 @media (max-width: 768px){
   header{padding:.9rem 1.2rem;}

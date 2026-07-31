@@ -41,78 +41,151 @@
     </nav>
   </header>
 
-  <section class="page-hero">
-    <div class="wrap">
-      <span class="eyebrow"><span class="pulse"></span>SERVICES & TARIFS</span>
-      <h1>Sites web pro dès <span>150 000 FCFA</span></h1>
-      <p>Livraison 2-5 jours · Design sur mesure · Sécurité incluse · SEO Gabon & Afrique Centrale</p>
-      <div class="cta-buttons" style="justify-content:center;margin-top:1.6rem;">
-        <a href="#tarifs" class="btn btn-primary"><i class="fa-solid fa-tags"></i> Voir les tarifs</a>
-        <a href="https://wa.me/+24165629599?text=Devis%20site%20150k%20FCFA" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp immédiat</a>
+  <!-- HERO — même langage visuel que l'accueil, décliné "diagnostic" -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="pulse"></span>SERVICES & TARIFS</span>
+        <h1>Le bon service, le bon prix, <span>livré vite</span>.</h1>
+        <p>Sites web, applications, cybersécurité et sécurité physique connectée — six expertises pensées pour les entreprises et institutions du Gabon, avec des tarifs annoncés dès le départ.</p>
+        <div class="cta-buttons">
+          <a href="#tarifs" class="btn btn-primary"><i class="fa-solid fa-tags"></i> Voir les tarifs</a>
+          <a href="https://wa.me/+24165629599?text=Devis%20site%20150k%20FCFA" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp immédiat</a>
+        </div>
+        <div class="hero-trust">
+          <span><i class="fa-solid fa-check"></i> Devis clair sous 2h</span>
+          <span><i class="fa-solid fa-check"></i> Paiement 50/50, Mobile Money accepté</span>
+          <span><i class="fa-solid fa-check"></i> Intervention Libreville & Owendo</span>
+        </div>
+      </div>
+
+      <div class="console">
+        <div class="console-head">
+          <span>DIAGNOSTIC_BESOIN // v3.1</span>
+          <span class="status">● ANALYSE EN COURS</span>
+        </div>
+        <div class="scan-area"><div class="scanline"></div></div>
+        <div class="readout">
+          <div class="row"><span>Site web professionnel</span><span class="ok">DISPONIBLE</span></div>
+          <div class="row"><span>Application mobile</span><span class="ok">DISPONIBLE</span></div>
+          <div class="row"><span>Caméras IP & biométrie</span><span class="ok">DISPONIBLE</span></div>
+          <div class="row"><span>Audit cybersécurité</span><span class="warn">SUR DEVIS</span></div>
+        </div>
       </div>
     </div>
   </section>
 
   <main>
 
+    <!-- séparateur animé -->
+    <div class="scan-divider reveal"><span></span></div>
+
     <section class="dark-band benefits">
       <span class="section-tag">POURQUOI OLOUOMO LAB</span>
       <h2 class="section-title">Six raisons de nous confier votre projet</h2>
+      <p class="section-sub">Pas de promesses en l'air : des délais, une sécurité et un support qu'on tient vraiment.</p>
       <div class="grid-container">
         <div class="card reveal"><i class="fa-solid fa-truck-fast"></i><h3>Livraison rapide</h3><p>Sites : 2-5 jours · Apps : 3 semaines · Caméras : 48h d'installation.</p></div>
-        <div class="card reveal"><i class="fa-solid fa-lock"></i><h3>Sécurité renforcée</h3><p>HTTPS, OWASP Top 10, monitoring, biométrie certifiée.</p></div>
-        <div class="card reveal"><i class="fa-solid fa-mobile-screen"></i><h3>100% mobile</h3><p>Responsive, PWA, apps natives Android/iOS.</p></div>
-        <div class="card reveal"><i class="fa-solid fa-magnifying-glass-chart"></i><h3>SEO local</h3><p>Google My Business, mots-clés locaux, PageSpeed 95+.</p></div>
-        <div class="card reveal"><i class="fa-solid fa-headset"></i><h3>Support Libreville</h3><p>Assistance physique, maintenance annuelle, contrat PME.</p></div>
-        <div class="card reveal"><i class="fa-solid fa-building-shield"></i><h3>Clients institutionnels</h3><p>PME, ONG, administrations — 15+ clients accompagnés.</p></div>
+        <div class="card reveal"><i class="fa-solid fa-lock"></i><h3>Sécurité renforcée</h3><p>HTTPS, OWASP Top 10, monitoring, biométrie certifiée sur chaque installation.</p></div>
+        <div class="card reveal"><i class="fa-solid fa-mobile-screen"></i><h3>100% mobile</h3><p>Responsive natif, PWA, apps Android/iOS pensées pour le terrain.</p></div>
+        <div class="card reveal"><i class="fa-solid fa-magnifying-glass-chart"></i><h3>SEO local</h3><p>Google My Business, mots-clés locaux, PageSpeed 95+ garanti.</p></div>
+        <div class="card reveal"><i class="fa-solid fa-headset"></i><h3>Support Libreville</h3><p>Assistance physique, maintenance annuelle, contrat dédié PME.</p></div>
+        <div class="card reveal"><i class="fa-solid fa-building-shield"></i><h3>Confiance institutionnelle</h3><p>PME, ONG, administrations — 15+ clients accompagnés durablement.</p></div>
       </div>
     </section>
+
+    <div class="scan-divider reveal"><span></span></div>
 
     <section class="services-overview" id="services">
       <span class="section-tag">NOS SERVICES</span>
       <h2 class="section-title">Six expertises, une seule équipe</h2>
+      <p class="section-sub">Chaque service est piloté en interne — pas de sous-traitance en cascade, pas de mauvaise surprise sur les délais.</p>
       <div class="grid-container">
+
         <div class="card reveal">
+          <div class="card-status"><span class="pulse"></span>Disponible</div>
           <i class="fa-solid fa-globe"></i>
           <h3>Sites web pro</h3>
-          <p>Vitrine, e-commerce, blog, PWA. SEO local + performance.</p>
-          <ul><li>3 à 15 pages selon formule</li><li>Design sur mesure logo</li><li>CMS simple en option</li></ul>
+          <p>Vitrine, e-commerce ou blog : un site rapide, sécurisé et pensé pour convertir vos visiteurs en clients.</p>
+          <ul><li>3 à 15 pages selon formule</li><li>Design sur mesure à partir de votre logo</li><li>CMS simple en option pour tout modifier seul</li></ul>
           <a href="#tarifs" class="btn btn-primary">Tarifs web</a>
         </div>
+
         <div class="card reveal">
+          <div class="card-status"><span class="pulse"></span>Disponible</div>
           <i class="fa-solid fa-mobile-screen"></i>
           <h3>Applications mobiles</h3>
-          <p>Android/iOS natif, Progressive Web Apps sécurisées.</p>
-          <ul><li>APK signé Google Play</li><li>Base de données cloud</li><li>Notifications push</li></ul>
+          <p>Une app Android/iOS ou PWA qui garde vos clients connectés à votre activité, où qu'ils soient.</p>
+          <ul><li>APK signé, prêt pour Google Play</li><li>Base de données cloud incluse</li><li>Notifications push pour rester présent</li></ul>
           <a href="contact.html" class="btn btn-primary">Devis app</a>
         </div>
+
         <div class="card reveal">
+          <div class="card-status"><span class="pulse"></span>Disponible</div>
           <i class="fa-solid fa-video"></i>
           <h3>Caméras IP & biométrie</h3>
-          <p>Surveillance 4K, contrôle d'accès, détection IA.</p>
-          <ul><li>Matériel Hikvision / Dahua pro</li><li>Stockage cloud 30 jours</li><li>Accès mobile 24/7</li></ul>
+          <p>Surveillance 4K et contrôle d'accès biométrique pour sécuriser vos locaux, vos équipes et vos biens.</p>
+          <ul><li>Matériel professionnel Hikvision / Dahua</li><li>Stockage cloud 30 jours</li><li>Supervision à distance depuis votre téléphone</li></ul>
           <a href="contact.html" class="btn btn-primary">Audit sécurité</a>
         </div>
+
         <div class="card reveal">
+          <div class="card-status"><span class="pulse"></span>Disponible</div>
           <i class="fa-solid fa-shield-halved"></i>
           <h3>Cybersécurité PME</h3>
-          <p>Audit, pentest, formation, sauvegarde automatique.</p>
-          <ul><li>Scan de vulnérabilités</li><li>Formation équipe (4h)</li><li>Pare-feu + antivirus</li></ul>
+          <p>On cherche vos failles avant que quelqu'un d'autre ne les trouve — puis on forme votre équipe à les éviter.</p>
+          <ul><li>Scan de vulnérabilités + pentest manuel</li><li>Formation équipe (4h)</li><li>Pare-feu, antivirus et sauvegarde automatique</li></ul>
           <a href="contact.html" class="btn btn-primary">Audit gratuit</a>
         </div>
+
         <div class="card reveal">
+          <div class="card-status"><span class="pulse"></span>Disponible</div>
           <i class="fa-solid fa-share-nodes"></i>
           <h3>Réseaux sociaux</h3>
-          <p>Création de pages + animation 100% locale.</p>
-          <ul><li>Facebook / Instagram Ads</li><li>12 publications / mois</li><li>Rapport analytics</li></ul>
+          <p>Une présence Facebook/Instagram qui vit vraiment : contenus réguliers, ton local, résultats mesurés.</p>
+          <ul><li>Création et habillage des pages</li><li>12 publications par mois</li><li>Rapport analytics mensuel</li></ul>
           <a href="contact.html" class="btn btn-primary">Stratégie SMM</a>
         </div>
+
         <div class="card reveal">
+          <div class="card-status"><span class="pulse"></span>Disponible</div>
           <i class="fa-solid fa-screwdriver-wrench"></i>
           <h3>Maintenance informatique</h3>
-          <p>Support technique aux entreprises de Libreville.</p>
-          <ul><li>Intervention sous 24h</li><li>Sauvegarde mensuelle</li><li>Contrat annuel</li></ul>
+          <p>Un partenaire technique sur qui compter au quotidien, pas seulement le jour du problème.</p>
+          <ul><li>Intervention sous 24h à Libreville</li><li>Sauvegarde mensuelle automatique</li><li>Contrat annuel à prix fixe</li></ul>
           <a href="contact.html" class="btn btn-primary">Contrat maintenance</a>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="scan-divider reveal"><span></span></div>
+
+    <!-- Comment ça marche -->
+    <section class="process">
+      <span class="section-tag">COMMENT ÇA MARCHE</span>
+      <h2 class="section-title">De l'échange WhatsApp à la mise en ligne</h2>
+      <p class="section-sub">Un processus court, transparent, avec un point de contact unique du premier message à la livraison.</p>
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <div class="process-num mono">01</div>
+          <h3>Échange & devis</h3>
+          <p>Vous décrivez votre besoin sur WhatsApp ou par le formulaire. Devis clair sous 2h ouvrées.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="process-num mono">02</div>
+          <h3>Conception</h3>
+          <p>Maquette ou architecture technique validée avec vous avant tout développement.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="process-num mono">03</div>
+          <h3>Réalisation</h3>
+          <p>Développement, tests de sécurité, points d'étape réguliers jusqu'à validation finale.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="process-num mono">04</div>
+          <h3>Livraison & suivi</h3>
+          <p>Mise en ligne, formation à l'usage, puis maintenance et support selon votre formule.</p>
         </div>
       </div>
     </section>
@@ -120,6 +193,7 @@
     <section id="tarifs" class="pricing-section">
       <span class="section-tag">TARIFS</span>
       <h2 class="section-title">Clairs et transparents</h2>
+      <p class="section-sub">Trois formules pour sites web. Apps, caméras et cybersécurité sont chiffrées sur devis selon votre cahier des charges.</p>
       <div class="pricing-grid">
         <article class="pricing-card popular reveal">
           <div class="ribbon">Le plus choisi</div>
@@ -165,6 +239,10 @@
         <details>
           <summary>L'audit cybersécurité, c'est du concret ?</summary>
           <p>Oui : scan automatisé et pentest manuel, rapport PDF avec feuille de route priorisée sous 7 jours.</p>
+        </details>
+        <details>
+          <summary>Travaillez-vous sur des dossiers d'appel d'offres ?</summary>
+          <p>Oui, régulièrement — seuls ou en consortium avec des partenaires techniques régionaux, avec les documents administratifs et financiers requis.</p>
         </details>
       </div>
     </section>
