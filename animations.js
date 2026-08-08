@@ -31,6 +31,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // FAQ accordéon fluide (natif <details>, pas de JS nécessaire au-delà du CSS)
 
+  // Compteurs animés (chiffres qui montent au scroll)
+  const counters = document.querySelectorAll('[data-count]');
+  if (counters.length) {
+    const counterIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-count'), 10) || 0;
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1400;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        counterIO.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(el => counterIO.observe(el));
+  }
+
   // Formulaire de contact (retour visuel simple, envoi géré par Netlify Forms)
   const form = document.querySelector('form[name="contact"]');
   if (form) {
