@@ -65,4 +65,10 @@
   <priority>0.90</priority>
 </url>
 
+<url>
+  <loc>https://www.olouomolab.com/legal</loc>
+  <lastmod>2026-09-02T00:00:00+00:00</lastmod>
+  <priority>0.30</priority>
+</url>
+
 </urlset>
