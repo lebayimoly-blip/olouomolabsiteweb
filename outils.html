@@ -11,11 +11,40 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Olouomo Lab - Nos outils IA et applications : FinanceAfrique, transcription, générateur d'affiches, et notre formation gratuite IA & bureautique.">
-  <title>Nos outils | Olouomo Lab</title>
+  <meta name="description" content="Hub des IA d'Olouomo Lab : l'annuaire des meilleures intelligences artificielles (ChatGPT, Claude, Gemini, Midjourney, Runway, Suno…) classées par usage, plus nos applications maison et notre formation gratuite IA & bureautique.">
+  <title>Nos outils & Hub des IA | Olouomo Lab</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ---------- Hub des IA (annuaire) ---------- */
+    .aihub{max-width:1200px;margin:0 auto;padding:0 20px}
+    .aihub-controls{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:2rem 0 2.4rem}
+    .aihub-search{flex:1 1 260px;display:flex;align-items:center;gap:.6rem;background:#fff;border:1px solid rgba(18,21,28,.12);border-radius:10px;padding:.7rem 1rem}
+    .aihub-search i{color:var(--muted,#6B7280)}
+    .aihub-search input{border:0;outline:0;font:inherit;width:100%;background:none;color:var(--text,#1A1D24)}
+    .aihub-chip{border:1px solid rgba(27,42,74,.25);background:#fff;color:var(--navy,#1B2A4A);border-radius:999px;padding:.45rem .9rem;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s}
+    .aihub-chip:hover{border-color:var(--amber,#E8A93B)}
+    .aihub-chip.active{background:var(--navy,#1B2A4A);color:#fff;border-color:var(--navy,#1B2A4A)}
+    .aihub-cat{margin:2.4rem 0}
+    .aihub-cat h3{display:flex;align-items:center;gap:.6rem;font-size:1.15rem;margin-bottom:1rem;color:var(--text,#1A1D24)}
+    .aihub-cat h3 i{width:38px;height:38px;flex:none;border-radius:9px;background:var(--navy,#1B2A4A);color:var(--amber,#E8A93B);display:grid;place-items:center;font-size:1rem}
+    .aihub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:1rem}
+    .aihub-tool{display:flex;flex-direction:column;gap:.5rem;background:#fff;border:1px solid rgba(18,21,28,.1);border-radius:12px;padding:1.05rem 1.1rem;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .aihub-tool:hover{transform:translateY(-4px);border-color:var(--amber,#E8A93B);box-shadow:0 8px 24px rgba(18,21,28,.08)}
+    .aihub-tool-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem}
+    .aihub-tool-name{font-weight:700;font-size:.96rem;color:var(--navy,#1B2A4A)}
+    .aihub-tool-name i{margin-left:.35rem;font-size:.68rem;color:var(--muted,#6B7280)}
+    .aihub-tag{font-size:.62rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:.22rem .5rem;border-radius:999px;white-space:nowrap;flex:none}
+    .aihub-tag.free{background:rgba(63,166,107,.16);color:#2f7d51}
+    .aihub-tag.freemium{background:rgba(232,169,59,.18);color:#946618}
+    .aihub-tag.paid{background:rgba(27,42,74,.1);color:var(--navy,#1B2A4A)}
+    .aihub-tool p{font-size:.8rem;color:var(--muted,#6B7280);margin:0;line-height:1.5}
+    .aihub-empty{text-align:center;color:var(--muted,#6B7280);padding:2.5rem 1rem;display:none}
+    .aihub-note{text-align:center;font-size:.8rem;color:var(--muted,#6B7280);margin-top:2.5rem}
+    @media(max-width:600px){.aihub-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:430px){.aihub-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 
 <body>
@@ -46,6 +75,14 @@
   <main>
     <section>
       <div class="grid-container">
+        <div class="card reveal" style="position:relative;">
+          <span class="badge-new" style="position:absolute;top:16px;right:16px;left:auto;">Nouveau</span>
+          <i class="fa-solid fa-layer-group"></i>
+          <h3>Hub des IA</h3>
+          <p>L'annuaire des meilleures intelligences artificielles du moment — assistants, image, vidéo, audio, code, productivité — classées par usage et réunies en un seul endroit.</p>
+          <a href="#hub-ia" class="btn btn-primary"><i class="fa-solid fa-arrow-down"></i> Explorer le Hub des IA</a>
+        </div>
+
         <div class="card reveal">
           <i class="fa-solid fa-robot"></i>
           <h3>Évoluer avec l'IA</h3>
@@ -83,6 +120,143 @@
           <p>Améliorer ses résultats scolaires grâce à l'IA, + découverte de Word, Excel, PowerPoint et OneNote. Samedi 12 septembre 2026 à Owendo, 09h–15h — gratuit, places limitées.</p>
           <a href="formation-ia.html" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Découvrir la formation</a>
         </div>
+      </div>
+    </section>
+
+    <section id="hub-ia">
+      <span class="section-tag">HUB DES IA</span>
+      <h2 class="section-title">Toutes les meilleures IA, en un seul endroit</h2>
+      <p class="section-sub">Un annuaire des outils d'intelligence artificielle les plus utiles, classés par usage. Filtrez par catégorie ou lancez une recherche, puis cliquez pour ouvrir l'outil dans un nouvel onglet.</p>
+
+      <div class="aihub">
+        <div class="aihub-controls">
+          <label class="aihub-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="aihubSearch" type="search" placeholder="Rechercher une IA (image, vidéo, code, voix…)" aria-label="Rechercher une IA">
+          </label>
+          <button class="aihub-chip active" data-cat="all">Tout</button>
+          <button class="aihub-chip" data-cat="assistants">Assistants</button>
+          <button class="aihub-chip" data-cat="recherche">Recherche</button>
+          <button class="aihub-chip" data-cat="images">Images</button>
+          <button class="aihub-chip" data-cat="video">Vidéo</button>
+          <button class="aihub-chip" data-cat="audio">Audio &amp; musique</button>
+          <button class="aihub-chip" data-cat="productivite">Productivité</button>
+          <button class="aihub-chip" data-cat="code">Développement</button>
+          <button class="aihub-chip" data-cat="reunions">Réunions</button>
+          <button class="aihub-chip" data-cat="automatisation">Automatisation</button>
+        </div>
+
+        <div class="aihub-cat" data-cat="assistants">
+          <h3><i class="fa-solid fa-comments"></i> Assistants conversationnels</h3>
+          <div class="aihub-grid">
+            <a class="aihub-tool" href="https://chat.openai.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">ChatGPT <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Le plus connu et polyvalent : rédaction, analyse, images, voix et code.</p></a>
+            <a class="aihub-tool" href="https://claude.ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Claude <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Excellent en rédaction, en code et sur l'analyse de longs documents.</p></a>
+            <a class="aihub-tool" href="https://gemini.google.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Gemini <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>L'IA de Google, intégrée à ses services, forte en multimodal.</p></a>
+            <a class="aihub-tool" href="https://copilot.microsoft.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Microsoft Copilot <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag free">Gratuit</span></span><p>Assistant gratuit intégré à Windows et au navigateur Edge.</p></a>
+            <a class="aihub-tool" href="https://chat.mistral.ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Le Chat — Mistral <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>IA française et rapide, hébergement de données en Europe.</p></a>
+            <a class="aihub-tool" href="https://grok.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Grok <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>L'assistant de X (Twitter), avec accès à l'actualité en temps réel.</p></a>
+            <a class="aihub-tool" href="https://chat.deepseek.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">DeepSeek <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag free">Gratuit</span></span><p>Modèle open-source performant en raisonnement et en programmation.</p></a>
+            <a class="aihub-tool" href="https://www.perplexity.ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Perplexity <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Répond avec des sources citées : idéal pour la recherche factuelle.</p></a>
+          </div>
+        </div>
+
+        <div class="aihub-cat" data-cat="recherche">
+          <h3><i class="fa-solid fa-magnifying-glass"></i> Recherche &amp; rédaction</h3>
+          <div class="aihub-grid">
+            <a class="aihub-tool" href="https://www.perplexity.ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Perplexity <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Moteur de réponse avec sources, une alternative à Google.</p></a>
+            <a class="aihub-tool" href="https://notebooklm.google.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">NotebookLM <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag free">Gratuit</span></span><p>Analyse vos documents et en génère résumés et podcasts audio.</p></a>
+            <a class="aihub-tool" href="https://consensus.app" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Consensus <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Cherche les réponses directement dans les publications scientifiques.</p></a>
+            <a class="aihub-tool" href="https://elicit.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Elicit <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Automatise la revue de littérature académique.</p></a>
+            <a class="aihub-tool" href="https://www.deepl.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">DeepL <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Traduction et réécriture d'une qualité supérieure.</p></a>
+            <a class="aihub-tool" href="https://www.grammarly.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Grammarly <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Correction et amélioration de vos textes en anglais.</p></a>
+          </div>
+        </div>
+
+        <div class="aihub-cat" data-cat="images">
+          <h3><i class="fa-solid fa-palette"></i> Images &amp; design</h3>
+          <div class="aihub-grid">
+            <a class="aihub-tool" href="https://www.midjourney.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Midjourney <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag paid">Payant</span></span><p>La référence pour la qualité artistique des images générées.</p></a>
+            <a class="aihub-tool" href="https://www.bing.com/images/create" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">DALL·E 3 <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag free">Gratuit</span></span><p>Génération d'images gratuite via Bing et Copilot.</p></a>
+            <a class="aihub-tool" href="https://firefly.adobe.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Adobe Firefly <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Images sûres pour un usage commercial, intégrées à Photoshop.</p></a>
+            <a class="aihub-tool" href="https://ideogram.ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Ideogram <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Le meilleur pour intégrer du texte lisible dans une image.</p></a>
+            <a class="aihub-tool" href="https://leonardo.ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Leonardo AI <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Populaire pour le jeu vidéo, le design et les assets graphiques.</p></a>
+            <a class="aihub-tool" href="https://www.canva.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Canva Magic Studio <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Outils IA intégrés à Canva : images, textes, retouche, redimensionnement.</p></a>
+            <a class="aihub-tool" href="https://www.recraft.ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Recraft <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Spécialisé dans les icônes, illustrations et styles cohérents.</p></a>
+          </div>
+        </div>
+
+        <div class="aihub-cat" data-cat="video">
+          <h3><i class="fa-solid fa-clapperboard"></i> Vidéo &amp; avatars</h3>
+          <div class="aihub-grid">
+            <a class="aihub-tool" href="https://sora.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Sora <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag paid">Payant</span></span><p>Génération de vidéos réalistes à partir d'une simple description.</p></a>
+            <a class="aihub-tool" href="https://runwayml.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Runway <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Suite vidéo IA complète : génération, montage et effets spéciaux.</p></a>
+            <a class="aihub-tool" href="https://pika.art" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Pika <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Création et animation de courtes vidéos créatives.</p></a>
+            <a class="aihub-tool" href="https://lumalabs.ai/dream-machine" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Luma Dream Machine <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Vidéos fluides et réalistes depuis un texte ou une image.</p></a>
+            <a class="aihub-tool" href="https://klingai.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Kling AI <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Générateur vidéo performant, plans longs et cohérents.</p></a>
+            <a class="aihub-tool" href="https://www.heygen.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">HeyGen <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Avatars parlants et doublage vidéo multilingue.</p></a>
+            <a class="aihub-tool" href="https://www.synthesia.io" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Synthesia <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag paid">Payant</span></span><p>Vidéos de formation avec présentateurs IA dans plus de 140 langues.</p></a>
+          </div>
+        </div>
+
+        <div class="aihub-cat" data-cat="audio">
+          <h3><i class="fa-solid fa-music"></i> Voix, audio &amp; musique</h3>
+          <div class="aihub-grid">
+            <a class="aihub-tool" href="https://elevenlabs.io" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">ElevenLabs <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Voix de synthèse ultra-réalistes et clonage vocal.</p></a>
+            <a class="aihub-tool" href="https://suno.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Suno <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Compose des chansons complètes, avec paroles et voix.</p></a>
+            <a class="aihub-tool" href="https://www.udio.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Udio <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Génération musicale de haute qualité, dans des styles variés.</p></a>
+            <a class="aihub-tool" href="https://podcast.adobe.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Adobe Podcast <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag free">Gratuit</span></span><p>Nettoie et améliore la qualité des enregistrements de voix.</p></a>
+            <a class="aihub-tool" href="https://github.com/openai/whisper" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Whisper <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag free">Gratuit</span></span><p>Transcription audio open-source, précise et multilingue.</p></a>
+          </div>
+        </div>
+
+        <div class="aihub-cat" data-cat="productivite">
+          <h3><i class="fa-solid fa-briefcase"></i> Productivité &amp; présentations</h3>
+          <div class="aihub-grid">
+            <a class="aihub-tool" href="https://www.microsoft.com/microsoft-365/copilot" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Microsoft 365 Copilot <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag paid">Payant</span></span><p>L'IA dans Word, Excel, PowerPoint, Outlook et Teams.</p></a>
+            <a class="aihub-tool" href="https://workspace.google.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Gemini pour Workspace <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag paid">Payant</span></span><p>Assistant IA dans Gmail, Docs, Sheets et Slides.</p></a>
+            <a class="aihub-tool" href="https://www.notion.so/product/ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Notion AI <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Rédaction, résumés et recherche dans votre espace Notion.</p></a>
+            <a class="aihub-tool" href="https://gamma.app" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Gamma <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Crée présentations, documents et sites web en quelques secondes.</p></a>
+            <a class="aihub-tool" href="https://tome.app" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Tome <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Génère des présentations narratives à partir d'une idée.</p></a>
+            <a class="aihub-tool" href="https://www.napkin.ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Napkin AI <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Transforme votre texte en schémas et visuels clairs.</p></a>
+          </div>
+        </div>
+
+        <div class="aihub-cat" data-cat="code">
+          <h3><i class="fa-solid fa-code"></i> Développement &amp; no-code</h3>
+          <div class="aihub-grid">
+            <a class="aihub-tool" href="https://github.com/features/copilot" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">GitHub Copilot <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Autocomplétion et suggestions de code dans votre éditeur.</p></a>
+            <a class="aihub-tool" href="https://cursor.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Cursor <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Un éditeur de code entièrement repensé autour de l'IA.</p></a>
+            <a class="aihub-tool" href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Claude Code <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag paid">Payant</span></span><p>Agent de développement qui travaille dans le terminal.</p></a>
+            <a class="aihub-tool" href="https://windsurf.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Windsurf <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>IDE agentique qui code des fonctionnalités entières.</p></a>
+            <a class="aihub-tool" href="https://v0.dev" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">v0 <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Génère des interfaces web à partir d'une description.</p></a>
+            <a class="aihub-tool" href="https://lovable.dev" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Lovable <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Crée des applications web complètes en langage naturel.</p></a>
+            <a class="aihub-tool" href="https://bolt.new" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Bolt.new <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Prototype et déploie une application depuis le navigateur.</p></a>
+            <a class="aihub-tool" href="https://replit.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Replit <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Environnement de développement en ligne avec agent IA intégré.</p></a>
+          </div>
+        </div>
+
+        <div class="aihub-cat" data-cat="reunions">
+          <h3><i class="fa-solid fa-microphone-lines"></i> Réunions &amp; transcription</h3>
+          <div class="aihub-grid">
+            <a class="aihub-tool" href="https://otter.ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Otter.ai <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Transcription et résumé de réunions en direct (anglais).</p></a>
+            <a class="aihub-tool" href="https://fireflies.ai" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Fireflies.ai <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Un preneur de notes IA qui rejoint vos visioconférences.</p></a>
+            <a class="aihub-tool" href="https://tldv.io" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">tl;dv <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Enregistre, transcrit et résume Zoom, Meet et Teams.</p></a>
+            <a class="aihub-tool" href="https://fathom.video" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Fathom <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Résumés de réunions gratuits et illimités.</p></a>
+          </div>
+        </div>
+
+        <div class="aihub-cat" data-cat="automatisation">
+          <h3><i class="fa-solid fa-robot"></i> Automatisation &amp; agents</h3>
+          <div class="aihub-grid">
+            <a class="aihub-tool" href="https://zapier.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Zapier <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Connecte vos applications et automatise sans écrire de code.</p></a>
+            <a class="aihub-tool" href="https://www.make.com" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Make <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Automatisations visuelles avancées entre services.</p></a>
+            <a class="aihub-tool" href="https://n8n.io" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">n8n <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Automatisation open-source, hébergeable sur vos serveurs.</p></a>
+            <a class="aihub-tool" href="https://manus.im" target="_blank" rel="noopener"><span class="aihub-tool-top"><span class="aihub-tool-name">Manus <i class="fa-solid fa-arrow-up-right-from-square"></i></span><span class="aihub-tag freemium">Freemium</span></span><p>Agent IA autonome qui exécute des tâches de bout en bout.</p></a>
+          </div>
+        </div>
+
+        <p id="aihubEmpty" class="aihub-empty">Aucune IA ne correspond à votre recherche.</p>
+        <p class="aihub-note">Sélection Olouomo Lab — mise à jour septembre 2026. Le paysage des IA évolue vite : signalez-nous un outil manquant via la page <a href="contact.html">Contact</a>.</p>
       </div>
     </section>
 
@@ -125,5 +299,44 @@
   </footer>
 
   <script src="animations.js"></script>
+  <script>
+    // ---------- Hub des IA : filtre catégorie + recherche ----------
+    (function () {
+      var search = document.getElementById('aihubSearch');
+      if (!search) return;
+      var chips = document.querySelectorAll('.aihub-chip');
+      var cats = document.querySelectorAll('.aihub-cat');
+      var empty = document.getElementById('aihubEmpty');
+      var activeCat = 'all';
+
+      function apply() {
+        var q = (search.value || '').trim().toLowerCase();
+        var visible = 0;
+        cats.forEach(function (cat) {
+          var okCat = activeCat === 'all' || activeCat === cat.getAttribute('data-cat');
+          var catText = (cat.querySelector('h3') ? cat.querySelector('h3').textContent : '').toLowerCase();
+          var shown = 0;
+          cat.querySelectorAll('.aihub-tool').forEach(function (tool) {
+            var hay = (tool.textContent + ' ' + catText).toLowerCase();
+            var match = okCat && (!q || hay.indexOf(q) !== -1);
+            tool.style.display = match ? '' : 'none';
+            if (match) { shown++; visible++; }
+          });
+          cat.style.display = shown ? '' : 'none';
+        });
+        empty.style.display = visible ? 'none' : 'block';
+      }
+
+      search.addEventListener('input', apply);
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          chips.forEach(function (c) { c.classList.remove('active'); });
+          chip.classList.add('active');
+          activeCat = chip.getAttribute('data-cat');
+          apply();
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
