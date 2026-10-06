@@ -97,6 +97,12 @@ function parseQuiz(text) {
     const questions = (q.questions || []).filter((x) =>
       x && x.question && Array.isArray(x.choix) && x.choix.length >= 2 &&
       Number.isInteger(x.bonne) && x.bonne >= 0 && x.bonne < x.choix.length);
+    // Mélange les choix pour que la bonne réponse ne soit pas toujours à la même place
+    for (const x of questions) {
+      const good = x.choix[x.bonne];
+      for (let i = x.choix.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [x.choix[i], x.choix[j]] = [x.choix[j], x.choix[i]]; }
+      x.bonne = x.choix.indexOf(good);
+    }
     return questions.length ? { titre: q.titre || 'Quiz', questions } : null;
   } catch { return null; }
 }
@@ -158,16 +164,23 @@ export default async (req, context) => {
   if (ctx.length) system += `\n\nCONTEXTE : ${ctx.join(' ')}`;
 
   try {
-    const r = await fetch(API_URL, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': process.env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({ model: MODEL, max_tokens: mode === 'quiz' ? 3000 : 1800, system, messages: hist }),
-    });
-    const data = await r.json();
+    // Jusqu'à 3 essais si l'API est surchargée ou limite le débit (429 / 5xx)
+    let r, data;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      r = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': process.env.ANTHROPIC_API_KEY,
+          'anthropic-version': '2023-06-01',
+        },
+        body: JSON.stringify({ model: MODEL, max_tokens: mode === 'quiz' ? 3000 : 1800, system, messages: hist }),
+      });
+      data = await r.json().catch(() => ({}));
+      if (r.ok || !(r.status === 429 || r.status >= 500) || attempt === 2) break;
+      console.warn('[RévisIA] Anthropic', r.status, '— nouvel essai');
+      await new Promise((res) => setTimeout(res, 1500 * (attempt + 1)));
+    }
     if (!r.ok) {
       console.error('[RévisIA] Anthropic', r.status, data?.error?.message);
       await setUsed(key, used); // demande non facturée à l'élève

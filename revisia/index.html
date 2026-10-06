@@ -56,6 +56,7 @@
   .msg.ia h2:first-child,.msg.ia h3:first-child{margin-top:0}
   .msg.ia p{margin:6px 0}
   .msg.ia ul,.msg.ia ol{margin:6px 0;padding-left:20px}
+  .msg.ia hr{border:0;border-top:1px solid var(--bord);margin:12px 0}
   .msg.ia code{background:var(--bleu-c);padding:1px 5px;border-radius:4px}
   .msg.err{align-self:center;background:#fdecef;color:var(--ko);font-size:14px}
   .typing{align-self:flex-start;color:var(--gris);font-size:14px;padding:8px 4px}
@@ -336,6 +337,7 @@ $('#input').addEventListener('keydown', e => { if (e.key === 'Enter' && (e.ctrlK
 async function send(){
   let text = $('#input').value.trim();
   if (busy || (!text && !image)) return;
+  $('#input').dataset.typed = text ? '1' : '';
   if (!text) text = { expliquer:'Explique-moi ce cours.', fiche:'Fais-moi la fiche de révision de ce cours.', quiz:'Fais-moi un quiz sur ce cours.', exercice:'Aide-moi à faire cet exercice.' }[mode];
   const sentImg = image;
   addUser(text, sentImg);
@@ -346,7 +348,9 @@ async function send(){
 
   // Enregistrement local de la demande
   cur.mode = mode; cur.niveau = $('#niveau').value; cur.matiere = $('#matiere').value.trim();
-  if (!cur.titre) cur.titre = (sentImg ? '📷 ' : '') + text.slice(0, 70);
+  if (!cur.titre) cur.titre = sentImg && !$('#input').dataset.typed
+    ? `📷 ${NOMS[mode]}${cur.matiere ? ' – ' + cur.matiere : ''} (photo du cours)`
+    : (sentImg ? '📷 ' : '') + text.slice(0, 70);
   cur.items.push({ t:'u', text, img: sentImg ? await thumb(sentImg) : null });
   persist(); updateHistBtn();
 
@@ -396,6 +400,7 @@ function mdToHtml(md){
   for (const raw of md.split('\n')) {
     const l = raw.trimEnd(); let m;
     if (!l.trim()) { close(); continue; }
+    if (/^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(l)) { close(); out.push('<hr>'); continue; }
     if ((m = /^#{1,2}\s+(.*)/.exec(l))) { close(); out.push(`<h2>${inline(m[1])}</h2>`); }
     else if ((m = /^#{3,6}\s+(.*)/.exec(l))) { close(); out.push(`<h3>${inline(m[1])}</h3>`); }
     else if ((m = /^\s*[-*•]\s+(.*)/.exec(l))) { if (list !== 'ul') { close(); out.push('<ul>'); list = 'ul'; } out.push(`<li>${inline(m[1])}</li>`); }
