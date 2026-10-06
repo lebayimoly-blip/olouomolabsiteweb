@@ -1,0 +1,8 @@
+{
+  "name": "olouomolab-site",
+  "private": true,
+  "description": "Site OLOUOMO LAB — dépendances des fonctions Netlify (RévisIA)",
+  "dependencies": {
+    "@netlify/blobs": "^10.7.13"
+  }
+}

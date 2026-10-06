@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RévisIA — Réviser avec l'IA | OLOUOMO LAB</title>
+<meta name="theme-color" content="#0B3D91">
+<meta name="description" content="RévisIA, l'appli gratuite d'OLOUOMO LAB pour réviser avec l'IA : explication de leçon, fiche de révision, quiz QCM et aide aux exercices pas à pas. Sur téléphone, sans installation.">
+<link rel="canonical" href="https://www.olouomolab.com/revisia/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="RévisIA — Réviser avec l'IA | OLOUOMO LAB">
+<meta property="og:description" content="Explique une leçon, crée ta fiche de révision, entraîne-toi avec un quiz ou fais tes exercices pas à pas, avec l'IA.">
+<meta property="og:url" content="https://www.olouomolab.com/revisia/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bleu:#0B3D91; --bleu-f:#072a66; --bleu-c:#e8eefa;
+    --jaune:#FFC20E; --jaune-c:#fff6d9;
+    --txt:#1b2130; --gris:#6b7385; --bord:#dfe4ee; --fond:#f5f7fb; --blanc:#fff;
+    --ok:#18a058; --ko:#d03050;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Poppins,system-ui,sans-serif;background:var(--fond);color:var(--txt);min-height:100vh;display:flex;flex-direction:column}
+  header{background:var(--bleu);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:5}
+  .logo{width:40px;height:40px;border-radius:50%;border:4px solid var(--jaune);display:grid;place-items:center;font-weight:700;font-size:15px;flex:none}
+  header h1{margin:0;font-size:19px;line-height:1.1}
+  header small{display:block;font-weight:400;font-size:12px;opacity:.8}
+  .quota{margin-left:auto;background:rgba(255,255,255,.12);border-radius:20px;padding:5px 11px;font-size:12px;white-space:nowrap}
+  .quota b{color:var(--jaune)}
+  main{flex:1;width:100%;max-width:820px;margin:0 auto;padding:16px}
+  .hello{background:linear-gradient(135deg,var(--bleu),#1554c0);color:#fff;border-radius:16px;padding:18px;margin-bottom:16px}
+  .hello h2{margin:0 0 4px;font-size:18px}
+  .hello p{margin:0;opacity:.9;font-size:14px}
+  .modes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+  @media(min-width:640px){.modes{grid-template-columns:repeat(4,1fr)}}
+  .mode{background:#fff;border:2px solid var(--bord);border-radius:14px;padding:12px;text-align:left;cursor:pointer;font:inherit;color:inherit;transition:.15s}
+  .mode:hover{border-color:#9fb4dc}
+  .mode.on{border-color:var(--bleu);background:var(--bleu-c);box-shadow:inset 0 -4px 0 var(--jaune)}
+  .mode .ic{font-size:22px}
+  .mode b{display:block;font-size:14px;margin:4px 0 2px}
+  .mode span{font-size:12px;color:var(--gris)}
+  .params{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .params label{flex:1 1 150px;font-size:12px;color:var(--gris)}
+  .params select,.params input{display:block;width:100%;margin-top:4px;padding:10px;border:1px solid var(--bord);border-radius:10px;font:inherit;font-size:14px;background:#fff;color:var(--txt)}
+  #nbWrap{flex:0 1 110px}
+  .msg,.quiz{scroll-margin-top:80px}
+  #chat{display:flex;flex-direction:column;gap:12px;margin-bottom:12px}
+  .msg{padding:12px 14px;border-radius:14px;font-size:15px;line-height:1.55;max-width:92%;overflow-wrap:anywhere}
+  .msg.user{align-self:flex-end;background:var(--bleu);color:#fff;border-bottom-right-radius:4px;white-space:pre-wrap}
+  .msg.user img{display:block;max-width:180px;border-radius:8px;margin-bottom:6px}
+  .msg.ia{align-self:flex-start;background:#fff;border:1px solid var(--bord);border-bottom-left-radius:4px}
+  .msg.ia h2,.msg.ia h3{font-size:15px;color:var(--bleu);margin:12px 0 4px}
+  .msg.ia h2:first-child,.msg.ia h3:first-child{margin-top:0}
+  .msg.ia p{margin:6px 0}
+  .msg.ia ul,.msg.ia ol{margin:6px 0;padding-left:20px}
+  .msg.ia code{background:var(--bleu-c);padding:1px 5px;border-radius:4px}
+  .msg.err{align-self:center;background:#fdecef;color:var(--ko);font-size:14px}
+  .typing{align-self:flex-start;color:var(--gris);font-size:14px;padding:8px 4px}
+  .typing i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--bleu);margin:0 2px;animation:b 1s infinite}
+  .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+  @keyframes b{0%,80%,100%{opacity:.25}40%{opacity:1}}
+  /* Quiz */
+  .quiz{align-self:stretch;background:#fff;border:1px solid var(--bord);border-radius:14px;padding:14px}
+  .quiz h3{margin:0 0 10px;color:var(--bleu);font-size:16px}
+  .q{padding:12px 0;border-top:1px solid var(--bord)}
+  .q p{margin:0 0 8px;font-weight:500}
+  .q button{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;border:1px solid var(--bord);border-radius:10px;background:#fff;font:inherit;font-size:14px;cursor:pointer;color:var(--txt)}
+  .q button:hover:not(:disabled){border-color:var(--bleu)}
+  .q button.good{background:#e7f6ee;border-color:var(--ok)}
+  .q button.bad{background:#fdecef;border-color:var(--ko)}
+  .q button:disabled{cursor:default}
+  .q .exp{font-size:13px;color:var(--gris);margin-top:6px;display:none}
+  .q.done .exp{display:block}
+  .score{margin-top:10px;padding:12px;background:var(--jaune-c);border-radius:10px;font-weight:600;display:none}
+  /* Saisie */
+  .composer{position:sticky;bottom:0;background:var(--fond);padding:10px 0 14px}
+  .box{background:#fff;border:2px solid var(--bord);border-radius:16px;padding:8px;display:flex;flex-direction:column;gap:6px}
+  .box:focus-within{border-color:var(--bleu)}
+  #preview{display:none;align-items:center;gap:8px;font-size:12px;color:var(--gris)}
+  #preview img{height:48px;border-radius:6px}
+  #preview button{border:0;background:none;color:var(--ko);cursor:pointer;font:inherit}
+  textarea{border:0;outline:0;resize:none;font:inherit;font-size:15px;min-height:52px;max-height:200px;padding:4px 6px;color:var(--txt)}
+  .row{display:flex;align-items:center;gap:8px}
+  .photo{border:1px dashed #9fb4dc;background:var(--bleu-c);color:var(--bleu);border-radius:10px;padding:8px 12px;font:inherit;font-size:13px;cursor:pointer}
+  .new{border:0;background:none;color:var(--gris);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline}
+  #send{margin-left:auto;background:var(--jaune);color:var(--bleu-f);border:0;border-radius:10px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer}
+  #send:disabled{opacity:.5;cursor:wait}
+  footer{text-align:center;font-size:12px;color:var(--gris);padding:0 16px 16px}
+  /* Historique */
+  .histbar{display:flex;justify-content:space-between;align-items:center;margin:-4px 0 12px;gap:10px}
+  .histbar small{color:var(--gris);font-size:12px}
+  #histBtn{background:#fff;border:2px solid var(--bleu);color:var(--bleu);border-radius:12px;padding:8px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap}
+  #histPanel{position:fixed;inset:0;background:rgba(7,20,50,.55);z-index:20;display:none;align-items:flex-end;justify-content:center}
+  #histPanel.open{display:flex}
+  .hp{background:#fff;width:100%;max-width:820px;max-height:85vh;border-radius:20px 20px 0 0;display:flex;flex-direction:column}
+  .hp-head{display:flex;align-items:center;padding:16px;border-bottom:1px solid var(--bord)}
+  .hp-head h3{margin:0;font-size:17px;color:var(--bleu)}
+  .hp-head button{margin-left:auto;border:0;background:var(--fond);border-radius:50%;width:34px;height:34px;font-size:18px;cursor:pointer}
+  .hp-note{font-size:12px;color:var(--gris);padding:8px 16px 0}
+  #histList{overflow:auto;padding:8px 12px 12px}
+  .hi{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--bord);border-radius:12px;margin:6px 0;cursor:pointer}
+  .hi:hover{border-color:var(--bleu)}
+  .hi.cur{border-color:var(--bleu);background:var(--bleu-c)}
+  .hi .ic{font-size:22px;flex:none}
+  .hi div{flex:1;min-width:0}
+  .hi b{display:block;font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hi small{color:var(--gris);font-size:12px}
+  .hi .del{border:0;background:none;font-size:18px;cursor:pointer;padding:6px;flex:none}
+  .hp-empty{text-align:center;color:var(--gris);padding:30px 10px;font-size:14px}
+  .hp-foot{padding:10px 16px 16px;border-top:1px solid var(--bord);text-align:center}
+  .hp-foot button{border:0;background:none;color:var(--ko);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">OL</div>
+  <h1>RévisIA<small>par OLOUOMO LAB</small></h1>
+  <div class="quota" id="quota">…</div>
+</header>
+
+<main>
+  <section class="hello">
+    <h2>Révise plus malin avec l'IA 📚</h2>
+    <p>Choisis une option, colle ton cours ou prends-le en photo, et laisse-toi guider.</p>
+  </section>
+
+  <div class="histbar"><small>Tes séances sont enregistrées sur cet appareil</small><button id="histBtn">🕘 Mes révisions</button></div>
+
+  <div class="modes" id="modes">
+    <button class="mode on" data-mode="expliquer"><div class="ic">💡</div><b>Expliquer</b><span>Une leçon avec des mots simples</span></button>
+    <button class="mode" data-mode="fiche"><div class="ic">📝</div><b>Fiche de révision</b><span>L'essentiel du cours à retenir</span></button>
+    <button class="mode" data-mode="quiz"><div class="ic">✅</div><b>Quiz / QCM</b><span>Je m'entraîne et je me corrige</span></button>
+    <button class="mode" data-mode="exercice"><div class="ic">🧭</div><b>Exercice pas à pas</b><span>Des indices, pas la réponse</span></button>
+  </div>
+
+  <div class="params">
+    <label>Mon niveau<select id="niveau"></select></label>
+    <label>Matière<input id="matiere" placeholder="ex. SVT, Maths, Histoire…" maxlength="60"></label>
+    <label id="nbWrap" hidden>Questions<select id="nb"><option>5</option><option>8</option><option>10</option></select></label>
+  </div>
+
+  <div id="chat"></div>
+
+  <div class="composer">
+    <div class="box">
+      <div id="preview"><img alt=""><span>Photo jointe</span><button id="rmImg">Retirer</button></div>
+      <textarea id="input" rows="2"></textarea>
+      <div class="row">
+        <button class="photo" id="photoBtn">📷 Photo du cours</button>
+        <input type="file" id="file" accept="image/*" hidden>
+        <button class="new" id="reset">Nouvelle séance</button>
+        <button id="send">Envoyer</button>
+      </div>
+    </div>
+  </div>
+</main>
+<div id="histPanel"><div class="hp">
+  <div class="hp-head"><h3>🕘 Mes révisions</h3><button id="histClose" aria-label="Fermer">✕</button></div>
+  <div class="hp-note">Enregistrées uniquement sur ce téléphone / cet ordinateur. Rien n'est envoyé sur un serveur.</div>
+  <div id="histList"></div>
+  <div class="hp-foot"><button id="histClear">Tout effacer</button></div>
+</div></div>
+<footer><a href="https://www.olouomolab.com/outils" style="color:var(--bleu);font-weight:600">← Retour aux outils OLOUOMO LAB</a><br>RévisIA peut se tromper : vérifie toujours avec ton cours et ton professeur. © OLOUOMO LAB — Owendo, Gabon</footer>
+
+<script>
+  // Fonction Netlify RévisIA (garde la clé API Claude en sécurité)
+  window.REVISIA_API = '/revisia';
+</script>
+<script>
+const PH = {
+  expliquer: "Colle ici la leçon que tu ne comprends pas, ou pose ta question…",
+  fiche: "Colle ton cours (ou prends-le en photo) pour obtenir ta fiche de révision…",
+  quiz: "Sur quel cours ou thème veux-tu t'entraîner ? Colle le cours ou écris le thème…",
+  exercice: "Recopie l'énoncé de ton exercice (ou prends-le en photo)…",
+};
+const ICONS = { expliquer:'💡', fiche:'📝', quiz:'✅', exercice:'🧭' };
+const NOMS = { expliquer:'Explication', fiche:'Fiche de révision', quiz:'Quiz', exercice:'Exercice' };
+const $ = (s) => document.querySelector(s);
+// Adresse du serveur RévisIA : vide = même serveur (usage local), sinon défini par la page hôte
+const API = (window.REVISIA_API || '').replace(/\/$/, '');
+const NIVEAUX_DEFAUT = ['Primaire', 'Collège', 'Lycée', 'Université', 'Adulte / formation'];
+let mode = 'expliquer', cur = null, image = null, busy = false;
+
+// ================= Historique local (sur l'appareil de l'élève) =================
+// Rien n'est envoyé au serveur : tout reste dans le navigateur (localStorage).
+const KEY = 'revisia_seances_v1', KEY_CUR = 'revisia_seance_active', MAX_SEANCES = 40;
+function loadAll(){ try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch { return []; } }
+function saveAll(list){
+  // Si la mémoire du navigateur est pleine, on supprime les plus anciennes séances
+  while (true) {
+    try { localStorage.setItem(KEY, JSON.stringify(list)); return; }
+    catch { if (list.length <= 1) return; list.pop(); }
+  }
+}
+function persist(){
+  if (!cur || !cur.items.length) return;
+  cur.updated = Date.now();
+  const list = loadAll().filter(s => s.id !== cur.id);
+  list.unshift(cur);
+  saveAll(list.slice(0, MAX_SEANCES));
+  try { localStorage.setItem(KEY_CUR, cur.id); } catch {}
+}
+function newSession(){
+  cur = { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), mode, titre:'', niveau:'', matiere:'', updated: Date.now(), items: [] };
+  try { localStorage.removeItem(KEY_CUR); } catch {}
+}
+function setModeUI(m){
+  mode = m;
+  document.querySelectorAll('.mode').forEach(x => x.classList.toggle('on', x.dataset.mode === m));
+  $('#nbWrap').hidden = m !== 'quiz';
+  $('#input').placeholder = PH[m];
+}
+function openSession(s){
+  cur = s; setModeUI(s.mode);
+  if (s.niveau) $('#niveau').value = s.niveau;
+  $('#matiere').value = s.matiere || '';
+  $('#chat').innerHTML = ''; clearImg();
+  for (const it of s.items) {
+    if (it.t === 'u') addUser(it.text, it.img, false);
+    else if (it.t === 'a') addIA(it.text, false);
+    else if (it.t === 'q') renderQuiz(it, false);
+  }
+  try { localStorage.setItem(KEY_CUR, s.id); } catch {}
+  updateHistBtn();
+}
+// Historique envoyé à l'IA = messages texte de la séance (sans les photos)
+function apiHistory(){ return cur.items.filter(i => i.t === 'u' || i.t === 'a').map(i => ({ role: i.t === 'u' ? 'user' : 'assistant', content: i.text })); }
+
+// Panneau "Mes révisions"
+function updateHistBtn(){ const n = loadAll().length; $('#histBtn').textContent = n ? `🕘 Mes révisions (${n})` : '🕘 Mes révisions'; }
+function fmtDate(t){
+  const d = new Date(t), now = new Date();
+  const h = d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+  if (d.toDateString() === now.toDateString()) return "Aujourd'hui à " + h;
+  const y = new Date(now); y.setDate(now.getDate() - 1);
+  if (d.toDateString() === y.toDateString()) return 'Hier à ' + h;
+  return d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }) + ' à ' + h;
+}
+function renderHist(){
+  const list = loadAll(), box = $('#histList');
+  if (!list.length) { box.innerHTML = '<div class="hp-empty">Aucune séance pour l\'instant.<br>Tes révisions apparaîtront ici automatiquement.</div>'; $('#histClear').hidden = true; return; }
+  $('#histClear').hidden = false; box.innerHTML = '';
+  for (const s of list) {
+    const el = document.createElement('div'); el.className = 'hi' + (cur && s.id === cur.id ? ' cur' : '');
+    const info = [NOMS[s.mode], s.matiere, fmtDate(s.updated)].filter(Boolean).join(' · ');
+    el.innerHTML = `<span class="ic">${ICONS[s.mode] || '📚'}</span><div><b></b><small></small></div><button class="del" title="Supprimer">🗑️</button>`;
+    el.querySelector('b').textContent = s.titre || NOMS[s.mode];
+    el.querySelector('small').textContent = info;
+    el.onclick = () => { openSession(s); closeHist(); window.scrollTo({ top: 0 }); };
+    el.querySelector('.del').onclick = (e) => {
+      e.stopPropagation();
+      saveAll(loadAll().filter(x => x.id !== s.id));
+      if (cur && cur.id === s.id) { newSession(); $('#chat').innerHTML = ''; }
+      renderHist(); updateHistBtn();
+    };
+    box.append(el);
+  }
+}
+function closeHist(){ $('#histPanel').classList.remove('open'); }
+$('#histBtn').onclick = () => { renderHist(); $('#histPanel').classList.add('open'); };
+$('#histClose').onclick = closeHist;
+$('#histPanel').onclick = (e) => { if (e.target.id === 'histPanel') closeHist(); };
+$('#histClear').onclick = () => {
+  if (!confirm('Effacer toutes tes révisions enregistrées sur cet appareil ?')) return;
+  try { localStorage.removeItem(KEY); localStorage.removeItem(KEY_CUR); } catch {}
+  newSession(); $('#chat').innerHTML = ''; renderHist(); updateHistBtn();
+};
+
+// ================= Initialisation =================
+function start(){
+  // Reprend automatiquement la dernière séance ouverte
+  let id = null; try { id = localStorage.getItem(KEY_CUR); } catch {}
+  const s = id && loadAll().find(x => x.id === id);
+  if (s) openSession(s); else { setModeUI('expliquer'); newSession(); }
+  updateHistBtn();
+}
+function fillNiveaux(list){ $('#niveau').innerHTML = list.map(n => `<option${n==='Lycée'?' selected':''}>${n}</option>`).join(''); }
+fillNiveaux(NIVEAUX_DEFAUT); start();
+// Le serveur gratuit peut être en veille : on le réveille dès l'ouverture de la page
+async function loadConfig(tries = 4){
+  $('#quota').textContent = 'Connexion…';
+  for (let i = 0; i < tries; i++) {
+    try {
+      const r = await fetch(API + '/api/config'); const c = await r.json();
+      setQuota(c.remaining); return;
+    } catch { await new Promise(res => setTimeout(res, 5000)); }
+  }
+  setQuota(null);
+}
+loadConfig();
+function setQuota(n){ $('#quota').innerHTML = n==null ? 'Hors ligne' : `<b>${n}</b> demandes restantes`; }
+$('#input').placeholder = PH[mode];
+
+document.querySelectorAll('.mode').forEach(b => b.onclick = () => {
+  if (b.dataset.mode === mode) return;
+  setModeUI(b.dataset.mode);
+  resetChat();
+});
+$('#reset').onclick = resetChat;
+function resetChat(){ newSession(); $('#chat').innerHTML = ''; clearImg(); }
+
+// ---------- Photo (compressée avant envoi) ----------
+$('#photoBtn').onclick = () => $('#file').click();
+$('#file').onchange = async (e) => {
+  const f = e.target.files[0]; if (!f) return;
+  image = await compress(f);
+  $('#preview img').src = image; $('#preview').style.display = 'flex';
+  e.target.value = '';
+};
+$('#rmImg').onclick = clearImg;
+function clearImg(){ image = null; $('#preview').style.display = 'none'; }
+function resize(src, max, q){
+  return new Promise((ok, ko) => {
+    const img = new Image();
+    img.onload = () => {
+      const r = Math.min(1, max / Math.max(img.width, img.height));
+      const c = document.createElement('canvas');
+      c.width = Math.round(img.width * r); c.height = Math.round(img.height * r);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      ok(c.toDataURL('image/jpeg', q));
+    };
+    img.onerror = ko; img.src = src;
+  });
+}
+const compress = (file) => resize(URL.createObjectURL(file), 1600, 0.82);
+// Petite miniature (~15 Ko) pour l'historique : la photo complète n'est pas conservée
+const thumb = (dataUrl) => resize(dataUrl, 360, 0.6).catch(() => null);
+
+// ---------- Envoi ----------
+$('#send').onclick = send;
+$('#input').addEventListener('keydown', e => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) send(); });
+
+async function send(){
+  let text = $('#input').value.trim();
+  if (busy || (!text && !image)) return;
+  if (!text) text = { expliquer:'Explique-moi ce cours.', fiche:'Fais-moi la fiche de révision de ce cours.', quiz:'Fais-moi un quiz sur ce cours.', exercice:'Aide-moi à faire cet exercice.' }[mode];
+  const sentImg = image;
+  addUser(text, sentImg);
+  $('#input').value = ''; clearImg();
+
+  // Le quiz repart de zéro à chaque demande ; les autres options gardent la conversation
+  const msgs = mode === 'quiz' ? [{ role:'user', content:text }] : [...apiHistory(), { role:'user', content:text }];
+
+  // Enregistrement local de la demande
+  cur.mode = mode; cur.niveau = $('#niveau').value; cur.matiere = $('#matiere').value.trim();
+  if (!cur.titre) cur.titre = (sentImg ? '📷 ' : '') + text.slice(0, 70);
+  cur.items.push({ t:'u', text, img: sentImg ? await thumb(sentImg) : null });
+  persist(); updateHistBtn();
+
+  busy = true; $('#send').disabled = true;
+  const t = document.createElement('div'); t.className = 'typing'; t.innerHTML = 'RévisIA réfléchit <i></i><i></i><i></i>';
+  $('#chat').append(t); t.scrollIntoView({ behavior:'smooth' });
+  try {
+    const r = await fetch(API + '/api/revise', { method:'POST', headers:{ 'Content-Type':'application/json' },
+      body: JSON.stringify({ mode, niveau:$('#niveau').value, matiere:$('#matiere').value, nbQuestions:$('#nb').value, messages:msgs, image:sentImg }) });
+    const d = await r.json();
+    if (d.remaining != null) setQuota(d.remaining);
+    if (!r.ok) throw new Error(d.error || 'Erreur');
+    if (d.quiz) {
+      const item = { t:'q', titre:d.quiz.titre, questions:d.quiz.questions, rep:[] };
+      cur.items.push(item); persist(); renderQuiz(item);
+    } else {
+      cur.items.push({ t:'a', text:d.text }); persist();
+      addIA(d.text);
+    }
+  } catch (e) {
+    // La demande sans réponse est retirée pour ne pas fausser la conversation
+    if (cur.items.length && cur.items[cur.items.length - 1].t === 'u') cur.items.pop();
+    if (cur.items.length) persist(); else { saveAll(loadAll().filter(x => x.id !== cur.id)); updateHistBtn(); }
+    addErr(e instanceof TypeError || e instanceof SyntaxError ? 'Impossible de joindre RévisIA pour le moment. Vérifie ta connexion et réessaie dans un instant.' : (e.message || 'Connexion impossible.'));
+  }
+  finally { t.remove(); busy = false; $('#send').disabled = false; }
+}
+
+// ---------- Affichage ----------
+function addUser(text, img){
+  const d = document.createElement('div'); d.className = 'msg user';
+  if (img) { const i = new Image(); i.src = img; d.append(i); }
+  d.append(document.createTextNode(text));
+  $('#chat').append(d);
+}
+function addIA(md, scroll = true){
+  const d = document.createElement('div'); d.className = 'msg ia'; d.innerHTML = mdToHtml(md);
+  $('#chat').append(d); if (scroll) d.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+function addErr(m){ const d = document.createElement('div'); d.className = 'msg err'; d.textContent = m; $('#chat').append(d); }
+
+function esc(s){ return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function inline(s){ return esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/(^|[^*])\*([^*]+)\*/g,'$1<em>$2</em>').replace(/`([^`]+)`/g,'<code>$1</code>'); }
+function mdToHtml(md){
+  const out = []; let list = null;
+  const close = () => { if (list) { out.push(`</${list}>`); list = null; } };
+  for (const raw of md.split('\n')) {
+    const l = raw.trimEnd(); let m;
+    if (!l.trim()) { close(); continue; }
+    if ((m = /^#{1,2}\s+(.*)/.exec(l))) { close(); out.push(`<h2>${inline(m[1])}</h2>`); }
+    else if ((m = /^#{3,6}\s+(.*)/.exec(l))) { close(); out.push(`<h3>${inline(m[1])}</h3>`); }
+    else if ((m = /^\s*[-*•]\s+(.*)/.exec(l))) { if (list !== 'ul') { close(); out.push('<ul>'); list = 'ul'; } out.push(`<li>${inline(m[1])}</li>`); }
+    else if ((m = /^\s*\d+[.)]\s+(.*)/.exec(l))) { if (list !== 'ol') { close(); out.push('<ol>'); list = 'ol'; } out.push(`<li>${inline(m[1])}</li>`); }
+    else { close(); out.push(`<p>${inline(l)}</p>`); }
+  }
+  close(); return out.join('');
+}
+
+// Quiz : les réponses de l'élève sont enregistrées (item.rep) pour retrouver son score plus tard
+function renderQuiz(item, scroll = true){
+  const box = document.createElement('div'); box.className = 'quiz';
+  box.innerHTML = `<h3>✅ ${esc(item.titre || 'Quiz')}</h3>`;
+  const score = document.createElement('div'); score.className = 'score';
+  const n = item.questions.length;
+  const showScore = () => {
+    const done = item.rep.filter(x => x != null).length;
+    if (done < n) return;
+    const good = item.questions.filter((q, i) => item.rep[i] === q.bonne).length, pct = good / n;
+    score.textContent = `Score : ${good}/${n} — ` + (pct === 1 ? 'Parfait, bravo ! 🎉' : pct >= .6 ? 'Bien joué ! Revois les questions ratées.' : 'Courage ! Relis ta fiche puis refais un quiz.');
+    score.style.display = 'block';
+  };
+  item.questions.forEach((it, i) => {
+    const d = document.createElement('div'); d.className = 'q';
+    d.innerHTML = `<p>${i+1}. ${inline(it.question)}</p>`;
+    const mark = (j) => {
+      d.querySelectorAll('button').forEach((x, k) => { x.disabled = true; if (k === it.bonne) x.classList.add('good'); if (k === j && j !== it.bonne) x.classList.add('bad'); });
+      d.classList.add('done');
+    };
+    it.choix.forEach((c, j) => {
+      const b = document.createElement('button'); b.innerHTML = `${'ABCD'[j] || j+1}. ${inline(c)}`;
+      b.onclick = () => { item.rep[i] = j; mark(j); persist(); showScore(); };
+      d.append(b);
+    });
+    const e = document.createElement('div'); e.className = 'exp'; e.innerHTML = '💬 ' + inline(it.explication || '');
+    d.append(e); box.append(d);
+    if (item.rep[i] != null) mark(item.rep[i]);
+  });
+  box.append(score); $('#chat').append(box); showScore();
+  if (scroll) box.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+</script>
+</body>
+</html>

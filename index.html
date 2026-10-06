@@ -26,6 +26,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="hero-ia.css">
 
   <script type="application/ld+json">
 {
@@ -144,11 +145,12 @@
   </header>
 
   <section class="hero">
+    <canvas class="hero-neurons" aria-hidden="true"></canvas>
     <div class="hero-grid">
       <div>
         <span class="eyebrow"><span class="pulse"></span>OWENDO, LIBREVILLE — GABON</span>
         <h1>L'ingénierie numérique qui <span>passe les audits</span>, pas seulement les démos.</h1>
-        <p>Applications mobiles, sites web, cybersécurité, vidéosurveillance et contrôle d'accès biométrique. Conçu pour les PME, institutions et appels d'offres d'Afrique Centrale.</p>
+        <p>Formation à l'intelligence artificielle, applications mobiles, sites web, cybersécurité, vidéosurveillance et contrôle d'accès biométrique. Conçu pour les PME, institutions et appels d'offres d'Afrique Centrale.</p>
         <div class="cta-buttons">
           <a href="https://wa.me/+24165629599?text=Bonjour%20Olouomo%20Lab" class="btn btn-primary">
             <i class="fab fa-whatsapp"></i> Discuter du projet
@@ -163,18 +165,23 @@
           <span><i class="fa-solid fa-check"></i> Consortiums techniques régionaux</span>
         </div>
       </div>
-      <div class="console">
-        <div class="console-head">
-          <span>SYSTEME_SECURITE // v2.6</span>
-          <span class="status">● OPÉRATIONNEL</span>
+      <div class="neural-panel" aria-label="Nos services connectés par l'intelligence artificielle">
+        <div class="neural-head">
+          <span>RÉSEAU_NEURONAL // OLOUOMO_CORE</span>
+          <span class="status">● EN APPRENTISSAGE</span>
         </div>
-        <div class="scan-area"><div class="scanline"></div></div>
-        <div class="readout">
-          <div class="row"><span>Contrôle d'accès biométrique</span><span class="ok">ACTIF</span></div>
-          <div class="row"><span>Flux caméras IP</span><span class="ok">4/4 EN LIGNE</span></div>
-          <div class="row"><span>Audit cybersécurité</span><span class="warn">PROGRAMMÉ</span></div>
-          <div class="row"><span>Sauvegarde cloud</span><span class="ok">SYNCHRONISÉE</span></div>
+        <div class="neural">
+          <svg viewBox="0 0 100 100" aria-hidden="true"></svg>
+          <div class="core" aria-hidden="true"><div><i class="fa-solid fa-brain"></i><b>IA</b></div></div>
+          <a class="svc" href="formation.html" data-name="Formation IA &amp; bureautique" data-desc="Réviser, rédiger, analyser et automatiser avec l'IA. Plus de 200 personnes formées en 2026."><span class="dot"><i class="fa-solid fa-graduation-cap"></i></span><span>Formation IA</span></a>
+          <a class="svc" href="services.html" data-name="Applications mobiles" data-desc="Android/iOS natif, PWA et API sécurisées, livrées en 3 semaines."><span class="dot"><i class="fa-solid fa-mobile-screen"></i></span><span>Apps mobiles</span></a>
+          <a class="svc" href="services.html#tarifs" data-name="Sites web pro" data-desc="SEO, e-commerce, performance PageSpeed 95+. En ligne en 2 à 5 jours."><span class="dot"><i class="fa-solid fa-globe"></i></span><span>Sites web</span></a>
+          <a class="svc" href="services.html#faq" data-name="Cybersécurité PME" data-desc="Audit, pentest, sensibilisation des équipes et sauvegarde cloud."><span class="dot"><i class="fa-solid fa-shield-halved"></i></span><span>Cybersécurité</span></a>
+          <a class="svc" href="services.html#services" data-name="Vidéosurveillance" data-desc="Caméras IP 4K, installation et suivi à distance, à Libreville et Owendo."><span class="dot"><i class="fa-solid fa-video"></i></span><span>Caméras IP</span></a>
+          <a class="svc" href="services.html#services" data-name="Contrôle d'accès biométrique" data-desc="Empreinte et reconnaissance faciale pour bureaux, écoles et institutions."><span class="dot"><i class="fa-solid fa-fingerprint"></i></span><span>Biométrie</span></a>
+          <a class="svc" href="contact.html" data-name="Communication digitale" data-desc="Création et gestion de vos réseaux sociaux pour gagner en visibilité."><span class="dot"><i class="fa-solid fa-bullhorn"></i></span><span>Réseaux sociaux</span></a>
         </div>
+        <div class="neural-log" aria-live="off"></div>
       </div>
     </div>
   </section>
@@ -374,5 +381,6 @@
   </footer>
 
   <script src="animations.js"></script>
+  <script src="hero-ia.js"></script>
 </body>
 </html>
