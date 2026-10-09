@@ -463,10 +463,15 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:3.5rem 2rem 2re
 
 /* ---------- partners ---------- */
 .partners{background:var(--paper);text-align:center;}
-.partners-logos{overflow:hidden;position:relative;max-width:1180px;margin:2rem auto 0;}
-.logo-slide{display:flex;gap:3rem;animation:slide 22s linear infinite;align-items:center;}
-.logo-slide img{height:70px;width:auto;filter:grayscale(60%);opacity:.75;transition:var(--transition);}
-.logo-slide img:hover{filter:grayscale(0%);opacity:1;}
+.partners-logos{overflow:hidden;position:relative;max-width:1180px;margin:2rem auto 0;padding:.5rem 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+.logo-slide{display:flex;width:max-content;align-items:center;animation:slide 28s linear infinite;}
+.partners-logos:hover .logo-slide{animation-play-state:paused;}
+.partner-logo{flex:0 0 auto;width:220px;height:130px;margin-right:2rem;padding:14px 20px;background:#fff;border-radius:14px;
+  box-shadow:0 4px 18px rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.partner-logo img{width:100%;height:100%;max-width:none;object-fit:contain;filter:grayscale(25%);opacity:.9;transition:var(--transition);}
+.partner-logo:hover img{filter:grayscale(0%);opacity:1;transform:scale(1.04);}
+@media (max-width:600px){.partner-logo{width:160px;height:100px;margin-right:1.25rem;padding:10px 14px;}}
 @keyframes slide{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
 /* ---------- responsive ---------- */
