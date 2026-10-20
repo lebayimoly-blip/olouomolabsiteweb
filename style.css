@@ -646,12 +646,21 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:3.5rem 2rem 2re
   transition:opacity .6s ease,transform .35s ease,border-color .2s,box-shadow .2s;
 }
 .solution:hover{transform:translateY(-4px);border-color:var(--amber);box-shadow:var(--shadow-md);}
-.solution > i{
-  width:44px;height:44px;border-radius:9px;background:var(--navy);color:var(--amber);
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem;flex:0 0 auto;
+.app-logo{
+  width:60px;height:60px;border-radius:14px;flex:0 0 auto;margin-bottom:1.1rem;
+  box-shadow:0 6px 16px rgba(18,21,28,0.18);
+}
+.app-logo-new{
+  display:flex;align-items:center;justify-content:center;box-shadow:none;
+  border:2px dashed rgba(232,169,59,0.7);background:rgba(232,169,59,0.08);
+  color:var(--amber);font-size:1.4rem;
+}
+.app-type{
+  display:block;font-family:'IBM Plex Mono';font-size:.66rem;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--amber-dim);margin-bottom:.6rem;line-height:1.4;
 }
 .solution-body{display:flex;flex-direction:column;flex:1;min-width:0;}
-.solution h3{font-size:1rem;line-height:1.3;margin-bottom:.45rem;}
+.solution h3{font-size:1.15rem;line-height:1.25;margin-bottom:.2rem;}
 .solution p{font-size:.86rem;color:var(--muted);line-height:1.55;margin:0;}
 .solution-status{
   position:absolute;top:1.15rem;right:1.1rem;display:flex;align-items:center;gap:.3rem;
@@ -664,7 +673,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:3.5rem 2rem 2re
 /* Tuile « prochaine application » */
 .solution-next{background:var(--ink);border:1px dashed rgba(232,169,59,0.55);}
 .solution-next:hover{border-style:solid;}
-.solution-next > i{background:var(--amber);color:var(--ink);}
+.solution-next .app-type{color:var(--amber);}
 .solution-next h3{color:#fff;}
 .solution-next p{color:rgba(255,255,255,0.62);}
 .solution-next .solution-status{color:var(--amber);}
@@ -689,7 +698,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:3.5rem 2rem 2re
   .client-types{justify-content:center;}
   .solutions-grid{grid-template-columns:1fr;gap:.8rem;}
   .solution{flex-direction:row;align-items:flex-start;gap:1rem;padding:1.15rem 1.1rem;}
-  .solution > i{margin-bottom:0;width:40px;height:40px;}
+  .app-logo{margin-bottom:0;width:52px;height:52px;border-radius:12px;}
   .solution h3{padding-right:1.6rem;}
   .solution-status{top:1rem;right:1rem;}
   .solution-status .lbl{display:none;}
@@ -763,3 +772,18 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:3.5rem 2rem 2re
 .values-grid{grid-template-columns:repeat(4,1fr);gap:1.2rem;}
 @media (max-width:1000px){.values-grid{grid-template-columns:repeat(2,1fr);}}
 @media (max-width:640px){.values-grid{grid-template-columns:1fr;}}
+.devis-alt{margin-top:1rem;font-size:.9rem;color:rgba(255,255,255,0.7);}
+.devis-alt a{color:var(--amber);text-decoration:none;font-weight:600;}
+.devis-alt a:hover{text-decoration:underline;}
+#formulaire{scroll-margin-top:90px;}
+.contact-list a{color:inherit;text-decoration:none;}
+.contact-list a:hover{color:var(--amber-dim);text-decoration:underline;}
+/* Icônes en ligne dans les cartes (liste de contact, boutons, réseaux) : pas de pastille carrée */
+.card .contact-list i{
+  display:inline-block;width:22px;height:auto;margin:0 .45rem 0 0;background:none;border-radius:0;
+  font-size:.95rem;color:var(--amber-dim);text-align:center;
+}
+.card .btn i,.card .footer-social a i{
+  display:inline;width:auto;height:auto;margin:0;background:none;border-radius:0;font-size:inherit;color:inherit;
+}
+.card .footer-social a{font-size:1rem;}

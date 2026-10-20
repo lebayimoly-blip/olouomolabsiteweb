@@ -50,18 +50,17 @@
           <i class="fa-solid fa-map-marker-alt"></i>
           <h3>Nos coordonnées</h3>
           <div class="contact-list">
-            <p><i class="fa-solid fa-envelope"></i> contact@olouomolab.com</p>
-            <p><i class="fa-solid fa-phone"></i> +241 65 62 95 99 / 074 41 72 44</p>
+            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a></p>
+            <p><i class="fa-solid fa-phone"></i> <a href="tel:+24165629599">+241 65 62 95 99</a> / 074 41 72 44</p>
             <p><i class="fa-solid fa-location-dot"></i> Owendo, Carrefour Touré, derrière la pédiatrie, Libreville</p>
           </div>
           <div class="footer-social" style="margin-top:1.4rem;">
             <a href="https://www.facebook.com/Olouomolaboff/" target="_blank" rel="noopener" aria-label="Facebook" style="background:var(--paper-2);color:var(--text);"><i class="fa-brands fa-facebook"></i></a>
             <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank" rel="noopener" aria-label="LinkedIn" style="background:var(--paper-2);color:var(--text);"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://wa.me/+24165629599" target="_blank" rel="noopener" aria-label="WhatsApp" style="background:var(--paper-2);color:var(--text);"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
 
-        <div class="card reveal">
+        <div class="card reveal" id="formulaire">
           <i class="fa-solid fa-message"></i>
           <h3>Envoyez-nous un message</h3>
           <form name="contact" method="POST" data-netlify="true" class="contact-form">
@@ -120,5 +119,23 @@
   </footer>
 
   <script src="animations.js"></script>
+  <script>
+    // Pré-remplit le sujet et le message quand on arrive depuis un bouton du site (contact.html?sujet=...&message=...)
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search);
+        var sujet = q.get('sujet'), message = q.get('message');
+        if (sujet) document.getElementById('subject').value = sujet;
+        if (message) {
+          var t = document.getElementById('message');
+          if (!t.value) t.value = message;
+        }
+        if (sujet || message) {
+          var first = document.getElementById('name');
+          if (first) first.focus({ preventScroll: true });
+        }
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>
