@@ -9,7 +9,7 @@
 
 <url>
   <loc>https://www.olouomolab.com/</loc>
-  <lastmod>2025-12-12T00:40:09+00:00</lastmod>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
@@ -19,7 +19,7 @@
 </url>
 <url>
   <loc>https://www.olouomolab.com/about</loc>
-  <lastmod>2025-12-12T00:40:09+00:00</lastmod>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -77,4 +77,9 @@
   <priority>0.90</priority>
 </url>
 
+<url>
+  <loc>https://www.olouomolab.com/formation-ia-bureau</loc>
+  <lastmod>2026-10-11T00:00:00+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
 </urlset>

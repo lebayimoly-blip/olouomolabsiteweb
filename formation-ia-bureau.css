@@ -1,0 +1,75 @@
+/* =========================================================
+   OLOUOMO LAB — Page « L'IA au Bureau » (formation en ligne)
+   Complète formation-ia.css (préfixe .fia-) — préfixe .fib-
+   Reprend les variables du design system défini dans style.css
+   ========================================================= */
+
+/* ---------- prix dynamiques (lancement / normal) ---------- */
+.fib-normal{display:none !important;}
+body.fib-after .fib-launch{display:none !important;}
+body.fib-after .fib-normal{display:inline !important;}
+body.fib-after .fib-normal.fib-block{display:block !important;}
+
+.fib-price{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;}
+.fib-price b{display:inline;font-family:'Space Grotesk',sans-serif;font-size:1.55rem;color:var(--amber);line-height:1.1;}
+.fib-price s{color:rgba(255,255,255,.45);font-size:.95rem;}
+
+/* ---------- section « vous vous reconnaissez ? » ---------- */
+.fib-pain .grid-container{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.fib-pain .card{border-left:3px solid var(--amber);}
+.fib-pain .card i{background:var(--paper-2);color:var(--navy);}
+
+/* ---------- confidentialité ---------- */
+.fib-safe{max-width:1180px;margin:0 auto;padding:0 2rem;}
+.fib-safe-in{
+  display:grid;grid-template-columns:auto 1fr;gap:1.8rem;align-items:start;
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);
+  border-radius:14px;padding:2.2rem 2.2rem;box-shadow:var(--shadow-md);
+}
+.fib-safe-ico{
+  width:64px;height:64px;border-radius:14px;background:var(--navy);color:var(--amber);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem;
+}
+.fib-safe h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin-bottom:.6rem;}
+.fib-safe p{color:var(--muted);margin-bottom:1rem;}
+.fib-safe ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem 1.6rem;}
+.fib-safe li{position:relative;padding-left:1.6rem;font-size:.94rem;color:var(--text);}
+.fib-safe li i{position:absolute;left:0;top:.28rem;color:#c0392b;font-size:.85rem;}
+.fib-safe li.ok i{color:var(--green);}
+
+/* ---------- pour qui ---------- */
+.fib-roles{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;max-width:960px;margin:0 auto;padding:0 2rem;}
+.fib-roles span{
+  display:inline-flex;align-items:center;gap:.55rem;background:#fff;border:1px solid var(--line);
+  border-radius:999px;padding:.6rem 1.1rem;font-size:.93rem;font-weight:500;color:var(--navy);
+}
+.fib-roles i{color:var(--amber-dim);}
+
+/* ---------- tarifs ---------- */
+.fib-pricing .pricing-card{display:flex;flex-direction:column;}
+.fib-pricing .pricing-card .btn{margin-top:auto;justify-content:center;}
+.fib-pricing .price small{display:block;font-size:.42em;font-weight:500;color:var(--muted);font-family:'Inter',sans-serif;margin-top:.2rem;}
+.fib-pricing .pricing-card h3{font-size:1.15rem;}
+.fib-pay{
+  max-width:1000px;margin:2rem auto 0;text-align:center;color:var(--muted);font-size:.92rem;
+  display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;justify-content:center;
+}
+.fib-pay span{display:inline-flex;align-items:center;gap:.45rem;}
+.fib-pay i{color:var(--amber-dim);}
+
+/* ---------- programme : badge date ---------- */
+.fib-pgm .fia-tl-time{padding-right:.9rem;font-size:.78rem;}
+.fib-tl-date{display:block;font-size:.66rem;color:rgba(255,255,255,.5);margin-top:.15rem;letter-spacing:.04em;}
+.fib-tl-tag{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.06em;
+  color:var(--amber);border:1px solid rgba(232,169,59,.35);border-radius:4px;padding:.1rem .45rem;margin-bottom:.45rem;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:760px){
+  .fib-safe{padding:0 1.2rem;}
+  .fib-safe-in{grid-template-columns:1fr;padding:1.6rem 1.3rem;}
+  .fib-safe ul{grid-template-columns:1fr;}
+  .fib-roles{padding:0 1.2rem;}
+  .fib-pgm .fia-tl-time{padding-right:0;}
+}
