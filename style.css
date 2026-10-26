@@ -324,8 +324,9 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:3.5rem 2rem 2re
 
 /* ---------- team ---------- */
 .team-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;max-width:1180px;margin:0 auto;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:1.6rem;max-width:1080px;margin:0 auto;
 }
+.team-grid > .team-card{flex:0 1 calc((100% - 3.2rem) / 3);}
 .team-card{
   background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
   transition:transform .2s,border-color .2s,box-shadow .2s;text-align:center;
@@ -361,10 +362,10 @@ footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:3.5rem 2rem 2re
 }
 .team-links a:hover{background:var(--navy);color:#fff;}
 @media (max-width:900px){
-  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .team-grid > .team-card{flex-basis:calc((100% - 1.6rem) / 2);}
 }
 @media (max-width:600px){
-  .team-grid{grid-template-columns:1fr;}
+  .team-grid > .team-card{flex-basis:100%;max-width:380px;}
 }
 
 /* ---------- snapshot (à propos) ---------- */
