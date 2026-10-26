@@ -1,0 +1,4 @@
+Déposez ici le fichier de l'application, renommé exactement : ARCHIVA-AGP.apk
+(fichier d'origine : build\app\outputs\flutter-apk\app-arm64-v8a-release.apk dans le projet archiva).
+Il sera téléchargeable à l'adresse https://www.olouomolab.com/telechargements/archiva/ARCHIVA-AGP.apk
+et le QR code de la page https://www.olouomolab.com/archiva y mène directement.
