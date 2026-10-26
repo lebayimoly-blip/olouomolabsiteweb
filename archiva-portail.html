@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archives de l'Agence Gabonaise de Presse — recherche et commande</title>
+  <meta name="description" content="Recherchez dans les archives de l'Agence Gabonaise de Presse et obtenez une copie numérique des documents (dépêches, publications, photos) par Mobile Money.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0A3F7E;--deep:#082F5F;--sky:#36A9E1;--soft:#E3F2FB;--gold:#F5B800;--bg:#F2F5F9;--ink:#16233A;--mut:#62708A;--line:#DCE3EE;--ok:#1E9E6A;--red:#C6423A}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    a{color:var(--navy)}
+    header{background:linear-gradient(150deg,var(--deep),var(--navy));color:#fff;padding:2.2rem 1rem 4.5rem}
+    .wrap{max-width:1040px;margin:0 auto}
+    .marque{display:flex;align-items:center;gap:.7rem;font-weight:700;letter-spacing:.02em;opacity:.95}
+    .marque span{display:inline-block;background:var(--gold);color:var(--deep);border-radius:6px;padding:.1rem .45rem;font-size:.8rem}
+    h1{font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15;margin:1.2rem 0 .6rem}
+    header p{color:rgba(255,255,255,.82);max-width:42rem}
+    .recherche{margin-top:-2.6rem;background:#fff;border-radius:14px;box-shadow:0 12px 32px rgba(10,63,126,.15);padding:1rem;display:flex;gap:.6rem}
+    .recherche input{flex:1;border:1px solid var(--line);border-radius:10px;padding:.85rem 1rem;font-size:1rem;font-family:inherit;min-width:0}
+    .recherche input:focus{outline:2px solid var(--sky);border-color:transparent}
+    button{font-family:inherit;cursor:pointer;border:0;border-radius:10px;font-weight:600;font-size:.95rem;padding:.8rem 1.2rem}
+    .principal{background:var(--navy);color:#fff}
+    .principal:hover{background:var(--deep)}
+    .or{background:var(--gold);color:var(--deep)}
+    .secondaire{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+    .info{color:var(--mut);font-size:.9rem;margin:1.1rem .2rem}
+    .resultats{display:grid;gap:.9rem;margin-bottom:3rem}
+    .doc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center}
+    .doc h3{font-size:1.05rem;margin-bottom:.25rem}
+    .meta{font-size:.82rem;color:var(--mut)}
+    .cote{font-family:ui-monospace,Menlo,monospace;background:var(--soft);color:var(--navy);border-radius:5px;padding:.08rem .4rem;font-size:.78rem}
+    .extrait{font-size:.9rem;color:#3A4A63;margin-top:.45rem}
+    .prix{text-align:right}
+    .prix b{display:block;font-size:1.15rem;color:var(--navy);margin-bottom:.4rem;white-space:nowrap}
+    .vide{background:#fff;border:1px dashed var(--line);border-radius:12px;padding:2rem;text-align:center;color:var(--mut)}
+    .suite{text-align:center;margin:-1.5rem 0 3rem}
+    dialog{border:0;border-radius:16px;padding:0;max-width:460px;width:calc(100% - 2rem);box-shadow:0 24px 60px rgba(0,0,0,.3)}
+    dialog::backdrop{background:rgba(8,47,95,.55)}
+    .boite{padding:1.5rem}
+    .boite h2{font-size:1.2rem;margin-bottom:.3rem;color:var(--navy)}
+    .boite label{display:block;font-size:.82rem;color:var(--mut);margin:.8rem 0 .25rem}
+    .boite input{width:100%;border:1px solid var(--line);border-radius:9px;padding:.7rem .85rem;font-size:.95rem;font-family:inherit}
+    .actions{display:flex;gap:.6rem;justify-content:flex-end;margin-top:1.2rem;flex-wrap:wrap}
+    .erreur{color:var(--red);font-size:.88rem;margin-top:.8rem}
+    .test{background:#FFF4D6;border:1px solid #F0D27A;color:#7A5A00;border-radius:10px;padding:.7rem .85rem;font-size:.85rem;margin-top:1rem}
+    .succes{text-align:center}
+    .succes .rond{width:64px;height:64px;border-radius:50%;background:#E2F4EC;color:var(--ok);font-size:2rem;display:flex;align-items:center;justify-content:center;margin:0 auto .8rem}
+    footer{background:#fff;border-top:1px solid var(--line);padding:1.4rem 1rem;font-size:.82rem;color:var(--mut);text-align:center}
+    @media (max-width:640px){.doc{grid-template-columns:1fr}.prix{text-align:left;display:flex;align-items:center;justify-content:space-between}.prix b{margin:0}.recherche{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="marque">AGENCE GABONAISE DE PRESSE <span>ARCHIVES</span></div>
+      <h1>Retrouvez un document dans les archives de l'AGP</h1>
+      <p>Dépêches, publications, photos et documents publics de l'Agence. Recherchez librement ; une copie numérique vous est envoyée par e-mail après paiement par Mobile Money.</p>
+    </div>
+  </header>
+
+  <main class="wrap" style="padding:0 1rem">
+    <form class="recherche" id="formulaire">
+      <input id="q" type="search" placeholder="Mot-clé, lieu, sujet… (ex. cacao Woleu-Ntem)" aria-label="Rechercher dans les archives">
+      <button class="principal" type="submit">Rechercher</button>
+    </form>
+    <p class="info" id="info">Saisissez un mot-clé, ou parcourez les documents les plus récents ci-dessous.</p>
+    <div class="resultats" id="resultats"></div>
+    <div class="suite" id="suite" hidden><button class="secondaire" id="plus">Voir plus de résultats</button></div>
+  </main>
+
+  <dialog id="dlg">
+    <div class="boite" id="etape-commande">
+      <h2>Obtenir ce document</h2>
+      <p class="meta" id="dlg-titre"></p>
+      <form id="form-commande">
+        <label for="nom">Nom complet</label>
+        <input id="nom" required minlength="3" autocomplete="name">
+        <label for="email">Adresse e-mail (le document y sera envoyé)</label>
+        <input id="email" type="email" required autocomplete="email">
+        <label for="tel">Numéro Airtel Money ou Moov Money</label>
+        <input id="tel" type="tel" required placeholder="+241 …" autocomplete="tel">
+        <div class="erreur" id="err" hidden></div>
+        <div class="actions">
+          <button type="button" class="secondaire" id="annuler">Annuler</button>
+          <button type="submit" class="or" id="payer">Payer</button>
+        </div>
+      </form>
+    </div>
+    <div class="boite" id="etape-paiement" hidden>
+      <h2>Paiement</h2>
+      <p id="paiement-txt">Validez le paiement sur votre téléphone.</p>
+      <div class="test" id="zone-test" hidden>
+        <b>Mode test</b> : aucun paiement réel n'est demandé. Le bouton ci-dessous simule un paiement réussi.
+        <div class="actions"><button class="or" id="simuler">Simuler le paiement</button></div>
+      </div>
+      <div class="erreur" id="err2" hidden></div>
+    </div>
+    <div class="boite succes" id="etape-ok" hidden>
+      <div class="rond">✓</div>
+      <h2>Paiement confirmé</h2>
+      <p>Un e-mail avec votre lien de téléchargement vient d'être envoyé à <b id="ok-email"></b>.<br>
+        Le lien est valable 48 heures. Pensez à regarder dans les courriers indésirables.</p>
+      <p class="meta" style="margin-top:.6rem">Commande <span id="ok-num"></span></p>
+      <div class="actions" style="justify-content:center"><button class="principal" id="fermer">Fermer</button></div>
+    </div>
+  </dialog>
+
+  <footer>
+    Agence Gabonaise de Presse — portail des archives · Les copies délivrées sont réservées à un usage personnel ou documentaire ;
+    toute reproduction ou revente est interdite. · Service ARCHIVA réalisé par OLOUOMO LAB.
+  </footer>
+
+  <script>
+    const FONCTION = 'https://zqihaisbogulninjosuu.supabase.co/functions/v1/portail-public';
+    const CLE = 'sb_publishable_BcpXk3us790AE-UlKazHug_r18yfzH_';
+    const $ = (id) => document.getElementById(id);
+    let page = 0, requete = '', choisi = null, commande = null, mode = 'test';
+
+    async function appeler(corps) {
+      const r = await fetch(FONCTION, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', apikey: CLE },
+        body: JSON.stringify(corps),
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.erreur || 'Service momentanément indisponible');
+      return j;
+    }
+    const fcfa = (n) => new Intl.NumberFormat('fr-FR').format(n) + ' FCFA';
+    const dateFr = (d) => d ? new Date(d + 'T12:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+    const esc = (t) => String(t ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+    async function chercher(nouvelle) {
+      if (nouvelle) { page = 0; $('resultats').innerHTML = ''; }
+      $('info').textContent = 'Recherche…';
+      try {
+        const j = await appeler({ action: 'rechercher', q: requete, page });
+        mode = j.mode;
+        const n = Number(j.total || 0);
+        $('info').textContent = n === 0 ? '' : (requete ? `${n} document${n > 1 ? 's' : ''} pour « ${requete} »` : `${n} document${n > 1 ? 's' : ''} disponible${n > 1 ? 's' : ''}`);
+        if (n === 0 && page === 0) {
+          $('resultats').innerHTML = '<div class="vide">Aucun document ne correspond. Essayez un autre mot-clé.</div>';
+        }
+        for (const d of j.resultats) {
+          const el = document.createElement('article');
+          el.className = 'doc';
+          el.innerHTML = `<div>
+              <h3>${esc(d.titre)}</h3>
+              <div class="meta"><span class="cote">${esc(d.cote)}</span> · ${esc(d.type_document || 'Document')} · ${dateFr(d.date_document)}${d.province ? ' · ' + esc(d.province) : ''} · ${esc(d.rubrique)}${d.nb_pages ? ' · ' + d.nb_pages + ' p.' : ''}</div>
+              ${d.extrait ? `<p class="extrait">… ${esc(d.extrait).replace(/«/g, '<b>').replace(/»/g, '</b>')} …</p>` : ''}
+            </div>
+            <div class="prix"><b>${fcfa(d.prix)}</b><button class="principal">Obtenir</button></div>`;
+          el.querySelector('button').onclick = () => ouvrir(d);
+          $('resultats').appendChild(el);
+        }
+        $('suite').hidden = (page + 1) * 20 >= n;
+      } catch (e) {
+        $('info').textContent = e.message;
+      }
+    }
+
+    function ouvrir(d) {
+      choisi = d; commande = null;
+      $('dlg-titre').textContent = `${d.titre} — ${fcfa(d.prix)}`;
+      $('etape-commande').hidden = false; $('etape-paiement').hidden = true; $('etape-ok').hidden = true;
+      $('err').hidden = true; $('payer').disabled = false;
+      $('dlg').showModal();
+    }
+
+    async function confirme() {
+      const s = await appeler({ action: 'statut', commande_id: commande.commande_id });
+      $('ok-email').textContent = s.email; $('ok-num').textContent = s.numero;
+      $('etape-paiement').hidden = true; $('etape-ok').hidden = false;
+    }
+
+    $('formulaire').onsubmit = (e) => { e.preventDefault(); requete = $('q').value.trim(); chercher(true); };
+    $('plus').onclick = () => { page++; chercher(false); };
+    $('annuler').onclick = () => $('dlg').close();
+    $('fermer').onclick = () => $('dlg').close();
+
+    $('form-commande').onsubmit = async (e) => {
+      e.preventDefault();
+      $('err').hidden = true; $('payer').disabled = true;
+      try {
+        commande = await appeler({ action: 'commander', document_id: choisi.id, nom: $('nom').value, email: $('email').value, telephone: $('tel').value });
+        $('etape-commande').hidden = true; $('etape-paiement').hidden = false;
+        if (commande.mode === 'test') {
+          $('paiement-txt').textContent = `Commande ${commande.numero} — ${fcfa(commande.montant)}.`;
+          $('zone-test').hidden = false;
+        } else if (commande.paiement_url) {
+          window.location.href = commande.paiement_url; // page de paiement du prestataire
+        } else {
+          $('paiement-txt').textContent = 'Validez le paiement sur votre téléphone. Cette page se met à jour automatiquement.';
+          const minuteur = setInterval(async () => {
+            const s = await appeler({ action: 'statut', commande_id: commande.commande_id }).catch(() => null);
+            if (s && s.statut === 'payee') { clearInterval(minuteur); confirme(); }
+            if (s && s.statut === 'echouee') { clearInterval(minuteur); $('err2').textContent = 'Le paiement a échoué. Réessayez.'; $('err2').hidden = false; }
+          }, 4000);
+        }
+      } catch (err) {
+        $('err').textContent = err.message; $('err').hidden = false; $('payer').disabled = false;
+      }
+    };
+
+    $('simuler').onclick = async () => {
+      $('simuler').disabled = true;
+      try {
+        await appeler({ action: 'simuler-paiement', commande_id: commande.commande_id });
+        await confirme();
+      } catch (err) {
+        $('err2').textContent = err.message; $('err2').hidden = false;
+      } finally { $('simuler').disabled = false; }
+    };
+
+    chercher(true);
+  </script>
+</body>
+</html>
