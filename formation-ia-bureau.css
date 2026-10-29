@@ -11,27 +11,27 @@ body.fib-after .fib-normal{display:inline !important;}
 body.fib-after .fib-normal.fib-block{display:block !important;}
 
 .fib-price{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;}
-.fib-price b{display:inline;font-family:'Space Grotesk',sans-serif;font-size:1.55rem;color:var(--amber);line-height:1.1;}
+.fib-price b{display:inline;font-family:'Lexend',sans-serif;font-size:1.55rem;color:var(--amber);line-height:1.1;}
 .fib-price s{color:rgba(255,255,255,.45);font-size:.95rem;}
 
 /* ---------- section « vous vous reconnaissez ? » ---------- */
 .fib-pain .grid-container{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
-.fib-pain .card{border-left:3px solid var(--amber);}
-.fib-pain .card i{background:var(--paper-2);color:var(--navy);}
+.fib-pain .card{border-left:3px solid var(--accent);}
+.fib-pain .card i{background:var(--paper-2);color:var(--primary);}
 
 /* ---------- confidentialité ---------- */
 .fib-safe{max-width:1180px;margin:0 auto;padding:0 2rem;}
 .fib-safe-in{
   display:grid;grid-template-columns:auto 1fr;gap:1.8rem;align-items:start;
-  background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);
-  border-radius:14px;padding:2.2rem 2.2rem;box-shadow:var(--shadow-md);
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:var(--radius);padding:2.2rem 2.2rem;box-shadow:var(--shadow-md);
 }
 .fib-safe-ico{
-  width:64px;height:64px;border-radius:14px;background:var(--navy);color:var(--amber);
+  width:64px;height:64px;border-radius:var(--radius);background:var(--primary);color:var(--amber);
   display:flex;align-items:center;justify-content:center;font-size:1.7rem;
 }
 .fib-safe h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin-bottom:.6rem;}
-.fib-safe p{color:var(--muted);margin-bottom:1rem;}
+.fib-safe p{color:var(--secondary);margin-bottom:1rem;}
 .fib-safe ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem 1.6rem;}
 .fib-safe li{position:relative;padding-left:1.6rem;font-size:.94rem;color:var(--text);}
 .fib-safe li i{position:absolute;left:0;top:.28rem;color:#c0392b;font-size:.85rem;}
@@ -48,7 +48,7 @@ body.fib-after .fib-normal.fib-block{display:block !important;}
 /* ---------- tarifs ---------- */
 .fib-pricing .pricing-card{display:flex;flex-direction:column;}
 .fib-pricing .pricing-card .btn{margin-top:auto;justify-content:center;}
-.fib-pricing .price small{display:block;font-size:.42em;font-weight:500;color:var(--muted);font-family:'Inter',sans-serif;margin-top:.2rem;}
+.fib-pricing .price small{display:block;font-size:.42em;font-weight:500;color:var(--muted);font-family:'Source Sans 3',sans-serif;margin-top:.2rem;}
 .fib-pricing .pricing-card h3{font-size:1.15rem;}
 .fib-pay{
   max-width:1000px;margin:2rem auto 0;text-align:center;color:var(--muted);font-size:.92rem;
@@ -59,10 +59,10 @@ body.fib-after .fib-normal.fib-block{display:block !important;}
 
 /* ---------- programme : badge date ---------- */
 .fib-pgm .fia-tl-time{padding-right:.9rem;font-size:.78rem;}
-.fib-tl-date{display:block;font-size:.66rem;color:rgba(255,255,255,.5);margin-top:.15rem;letter-spacing:.04em;}
+.fib-tl-date{display:block;font-size:.78rem;color:var(--muted);margin-top:.15rem;letter-spacing:.04em;}
 .fib-tl-tag{
-  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.06em;
-  color:var(--amber);border:1px solid rgba(232,169,59,.35);border-radius:4px;padding:.1rem .45rem;margin-bottom:.45rem;
+  display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.06em;
+  color:var(--accent);background:var(--accent-soft);border:0;border-radius:4px;padding:.1rem .45rem;margin-bottom:.45rem;
 }
 
 /* ---------- responsive ---------- */

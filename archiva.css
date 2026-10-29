@@ -28,8 +28,8 @@ section.arc-install{padding:0;}
 }
 .arc-kicker{
   display:inline-flex;align-items:center;gap:.5rem;
-  font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--amber);background:rgba(232,169,59,.12);border:1px solid rgba(232,169,59,.35);
+  font-family:'Source Sans 3',sans-serif;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--amber);background:rgba(254,210,37,.12);border:1px solid rgba(254,210,37,.35);
   padding:.35rem .8rem;border-radius:999px;margin-bottom:1.3rem;
 }
 .arc-hero h1{
@@ -49,16 +49,16 @@ section.arc-install{padding:0;}
 }
 .arc-qr svg{width:100%;height:100%;display:block;}
 .arc-download-txt{flex:1;min-width:13rem;}
-.arc-download-txt strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.1rem;margin-bottom:.25rem;}
+.arc-download-txt strong{display:block;font-family:'Lexend',sans-serif;font-size:1.1rem;margin-bottom:.25rem;}
 .arc-download-txt p{font-size:.9rem;color:rgba(255,255,255,.72);margin-bottom:.9rem;}
 .arc-btn{
   display:inline-flex;align-items:center;gap:.55rem;
   background:var(--amber);color:var(--ink);font-weight:600;text-decoration:none;
   padding:.8rem 1.3rem;border-radius:10px;transition:var(--transition);
 }
-.arc-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(232,169,59,.35);}
+.arc-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(254,210,37,.35);}
 .arc-meta{
-  margin-top:.7rem;font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:rgba(255,255,255,.6);
+  margin-top:.7rem;font-family:'Source Sans 3',sans-serif;font-size:.74rem;color:rgba(255,255,255,.6);
 }
 
 /* visuel : tableau de bord + téléphone */
@@ -82,7 +82,7 @@ section.arc-install{padding:0;}
   background:#fff;border:1px solid var(--line);border-radius:var(--radius);
   padding:1.1rem 1.2rem;box-shadow:var(--shadow-md);
 }
-.arc-fact b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.5rem;color:var(--agp);}
+.arc-fact b{display:block;font-family:'Lexend',sans-serif;font-size:1.5rem;color:var(--agp);}
 .arc-fact span{font-size:.86rem;color:var(--muted);}
 
 /* ---------- sections ---------- */
@@ -118,7 +118,7 @@ section.arc-install{padding:0;}
 .arc-step::before{
   counter-increment:etape;content:counter(etape);
   display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;
-  background:var(--agp);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;margin-bottom:.9rem;
+  background:var(--agp);color:#fff;font-family:'Lexend',sans-serif;font-weight:700;margin-bottom:.9rem;
 }
 .arc-step h3{font-size:1rem;margin-bottom:.4rem;}
 .arc-step p{font-size:.9rem;color:var(--muted);}

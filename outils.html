@@ -19,18 +19,18 @@
     /* ---------- Hub des IA (annuaire) ---------- */
     .aihub{max-width:1200px;margin:0 auto;padding:0 20px}
     .aihub-controls{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:2rem 0 2.4rem}
-    .aihub-search{flex:1 1 260px;display:flex;align-items:center;gap:.6rem;background:#fff;border:1px solid rgba(18,21,28,.12);border-radius:10px;padding:.7rem 1rem}
+    .aihub-search{flex:1 1 260px;display:flex;align-items:center;gap:.6rem;background:#fff;border:1px solid rgba(18,21,28,.12);border-radius:8px;padding:.7rem 1rem;min-height:48px}
     .aihub-search i{color:var(--muted,#6B7280)}
     .aihub-search input{border:0;outline:0;font:inherit;width:100%;background:none;color:var(--text,#1A1D24)}
     .aihub-chip{border:1px solid rgba(27,42,74,.25);background:#fff;color:var(--navy,#1B2A4A);border-radius:999px;padding:.45rem .9rem;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s}
-    .aihub-chip:hover{border-color:var(--amber,#E8A93B)}
+    .aihub-chip:hover{border-color:var(--accent,#0369A1)}
     .aihub-chip.active{background:var(--navy,#1B2A4A);color:#fff;border-color:var(--navy,#1B2A4A)}
     .aihub-cat{margin:2.4rem 0}
     .aihub-cat h3{display:flex;align-items:center;gap:.6rem;font-size:1.15rem;margin-bottom:1rem;color:var(--text,#1A1D24)}
     .aihub-cat h3 i{width:38px;height:38px;flex:none;border-radius:9px;background:var(--navy,#1B2A4A);color:var(--amber,#E8A93B);display:grid;place-items:center;font-size:1rem}
     .aihub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:1rem}
-    .aihub-tool{display:flex;flex-direction:column;gap:.5rem;background:#fff;border:1px solid rgba(18,21,28,.1);border-radius:12px;padding:1.05rem 1.1rem;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s,box-shadow .2s}
-    .aihub-tool:hover{transform:translateY(-4px);border-color:var(--amber,#E8A93B);box-shadow:0 8px 24px rgba(18,21,28,.08)}
+    .aihub-tool{display:flex;flex-direction:column;gap:.5rem;background:#fff;border:1px solid rgba(18,21,28,.1);border-radius:8px;padding:1.05rem 1.1rem;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .aihub-tool:hover{border-color:#CBD5E1;box-shadow:0 8px 24px rgba(15,23,42,.08)}
     .aihub-tool-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem}
     .aihub-tool-name{font-weight:700;font-size:.96rem;color:var(--navy,#1B2A4A)}
     .aihub-tool-name i{margin-left:.35rem;font-size:.68rem;color:var(--muted,#6B7280)}
@@ -47,19 +47,20 @@
 </head>
 
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-arrow-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></g></symbol><symbol id="i-arrow-left" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></g></symbol><symbol id="i-arrow-up-right" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></g></symbol><symbol id="i-bot" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></g></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></g></symbol><symbol id="i-clapperboard" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12.296 3.464 3.02 3.956"/><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m6.18 5.276 3.1 3.899"/></g></symbol><symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></g></symbol><symbol id="i-code-xml" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></g></symbol><symbol id="i-graduation-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></g></symbol><symbol id="i-image" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></g></symbol><symbol id="i-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></g></symbol><symbol id="i-lightbulb" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></g></symbol><symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></g></symbol><symbol id="i-map-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g></symbol><symbol id="i-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></g></symbol><symbol id="i-messages-square" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/><path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"/></g></symbol><symbol id="i-mic" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19v3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><rect x="9" y="2" width="6" height="13" rx="3"/></g></symbol><symbol id="i-music" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V3a1 1 0 0 0-1.28-.96l-10 2.917a1 1 0 0 0-.72.96V19"/><circle cx="18" cy="16" r="3"/><circle cx="6" cy="19" r="3"/></g></symbol><symbol id="i-palette" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></g></symbol><symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></g></symbol><symbol id="i-presentation" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></g></symbol><symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></g></symbol><symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></g></symbol></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-arrow-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></g></symbol><symbol id="i-arrow-up-right" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></g></symbol><symbol id="i-bot" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></g></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></g></symbol><symbol id="i-clapperboard" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12.296 3.464 3.02 3.956"/><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m6.18 5.276 3.1 3.899"/></g></symbol><symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></g></symbol><symbol id="i-code-xml" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></g></symbol><symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></symbol><symbol id="i-graduation-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></g></symbol><symbol id="i-image" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></g></symbol><symbol id="i-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></g></symbol><symbol id="i-lightbulb" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></g></symbol><symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></g></symbol><symbol id="i-map-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g></symbol><symbol id="i-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></g></symbol><symbol id="i-messages-square" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/><path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"/></g></symbol><symbol id="i-mic" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19v3"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><rect x="9" y="2" width="6" height="13" rx="3"/></g></symbol><symbol id="i-music" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V3a1 1 0 0 0-1.28-.96l-10 2.917a1 1 0 0 0-.72.96V19"/><circle cx="18" cy="16" r="3"/><circle cx="6" cy="19" r="3"/></g></symbol><symbol id="i-palette" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></g></symbol><symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></g></symbol><symbol id="i-presentation" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></g></symbol><symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></g></symbol><symbol id="i-send" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></g></symbol><symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></g></symbol><symbol id="i-x" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></g></symbol></svg>
+  <div class="util"><div class="util-in"><span><i class="ico ico-map-pin" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-map-pin"/></svg></i> Owendo, Libreville — Gabon</span><span class="util-r"><a href="mailto:contact@olouomolab.com"><i class="ico ico-mail" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-mail"/></svg></i> contact@olouomolab.com</a><a href="tel:+24165629599"><i class="ico ico-phone" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-phone"/></svg></i> +241 65 62 95 99</a></span></div></div>
   <header>
-    <a href="index.html"><img src="assets/logo.png" alt="Olouomo Lab" class="logo"></a>
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><i class="ico ico-menu" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-menu"/></svg></i></button>
-    <nav>
-      <ul>
+    <a href="index.html" class="brand" aria-label="Olouomo Lab, retour à l’accueil"><img src="assets/logo-symbole.png" alt="" class="logo" width="44" height="36"><span class="wm">OLOUOMO LAB</span></a>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span class="i-open"><i class="ico ico-menu" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-menu"/></svg></i></span><span class="i-close"><i class="ico ico-x" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-x"/></svg></i></span></button>
+    <nav aria-label="Navigation principale">
+      <ul id="menu">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#realisations">Réalisations</a></li>
         <li><a href="formation.html">Formation</a></li>
         <li><a href="about.html">À propos</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="outils.html" class="active">Outils</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="contact.html?sujet=Demande%20de%20devis#formulaire" class="btn btn-dark">Demander un devis</a></li>
       </ul>
     </nav>
   </header>
@@ -257,31 +258,52 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-section">
-        <h3>Olouomo Lab</h3>
-        <p>Startup digitale, informatique & électronique au Gabon. Digitaliser n'a jamais été aussi facile.</p>
+  <footer class="site-ft">
+    <div class="ft-in">
+      <div class="ft-cols">
+        <div>
+          <a href="index.html" class="ft-brand"><img src="assets/logo-symbole-blanc.png" alt="" width="41" height="34"><span>OLOUOMO LAB</span></a>
+          <p>Le numérique, c’est notre métier. Société gabonaise d’ingénierie numérique, basée à Owendo.</p>
+          <div class="ft-soc">
+            <a href="https://www.facebook.com/Olouomolaboff/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ico ico-facebook" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-facebook"/></svg></i></a>
+            <a href="https://www.linkedin.com/company/olouomo-lab/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ico ico-linkedin" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-linkedin"/></svg></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="services.html">Applications et sites web</a></li>
+            <li><a href="services.html#services">Cybersécurité et vidéosurveillance</a></li>
+            <li><a href="formation.html">Formation IA et bureautique</a></li>
+            <li><a href="archiva.html">ARCHIVA, archivage numérique</a></li>
+            <li><a href="services.html#tarifs">Tarifs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Entreprise</h4>
+          <ul>
+            <li><a href="index.html#realisations">Réalisations</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="about.html#equipe">Équipe dirigeante</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="outils.html">Outils IA</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="ft-contact">
+            <li><i class="ico ico-mail" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-mail"/></svg></i><a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a></li>
+            <li><i class="ico ico-phone" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-phone"/></svg></i><a href="tel:+24165629599">+241 65 62 95 99</a></li>
+            <li><i class="ico ico-map-pin" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-map-pin"/></svg></i><span>Carrefour Touré, derrière la Pédiatrie, Owendo</span></li>
+            <li><i class="ico ico-send" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-send"/></svg></i><a href="contact.html?sujet=Demande%20de%20devis#formulaire">Demander un devis gratuit</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-section">
-        <h3>Navigation rapide</h3>
-        <ul>
-          <li><a href="legal.html">Mentions légales</a></li>
-          <li><a href="formation.html">Formations</a></li>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <p><i class="ico ico-mail" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-mail"/></svg></i> <a href="mailto:contact@olouomolab.com">contact@olouomolab.com</a></p>
-        <p><i class="ico ico-phone" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-phone"/></svg></i> <a href="tel:+24165629599">+241 65 62 95 99</a></p>
-        <p><i class="ico ico-map-pin" aria-hidden="true"><svg width="1.15em" height="1.15em" focusable="false"><use href="#i-map-pin"/></svg></i> Owendo, Libreville, Gabon</p>
+      <div class="ft-bottom">
+        <span>© 2026 Olouomo Lab. Tous droits réservés.</span>
+        <a href="legal.html">Mentions légales et confidentialité</a>
       </div>
     </div>
-    <div class="footer-copy">© 2026 Olouomo Lab — Tous droits réservés.</div>
   </footer>
 
   <script src="animations.js"></script>

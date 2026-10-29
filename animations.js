@@ -5,18 +5,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('nav ul');
   if (toggle && navMenu) {
-    toggle.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('show');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    const setMenu = (open) => {
+      navMenu.classList.toggle('show', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    };
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setMenu(!navMenu.classList.contains('show'));
+    });
+    // Fermeture : clic sur un lien, clic en dehors du panneau, touche Échap
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('show') && !navMenu.contains(e.target)) setMenu(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('show')) { setMenu(false); toggle.focus(); }
     });
   }
 
   // Lien de navigation actif (au cas où non défini côté HTML)
-  document.querySelectorAll('nav a').forEach(link => {
-    const href = link.getAttribute('href');
-    const currentPage = location.pathname.split('/').pop() || 'index.html';
-    if (href === currentPage) link.classList.add('active');
-  });
+  if (!document.querySelector('nav a.active')) {
+    const currentPage = (location.pathname.split('/').pop() || 'index').replace(/\.html$/, '');
+    document.querySelectorAll('nav a').forEach(link => {
+      const href = (link.getAttribute('href') || '').replace(/\.html$/, '');
+      if (href === currentPage) link.classList.add('active');
+    });
+  }
 
   // Révélation au défilement
   const io = new IntersectionObserver((entries) => {
@@ -56,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Formulaire de contact (retour visuel simple, envoi géré par Netlify Forms)
-  const form = document.querySelector('form[name="contact"]');
+  const form = document.querySelector('form.contact-form[name="contact"]');
   if (form) {
     form.addEventListener('submit', (e) => {
       const successMsg = document.querySelector('.form-success');
