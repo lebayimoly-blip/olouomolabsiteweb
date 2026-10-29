@@ -4,3 +4,14 @@
   Content-Disposition: attachment; filename="ARCHIVA-AGP.apk"
   Cache-Control: no-cache
   X-Robots-Tag: noindex
+
+# Cache navigateur : polices hébergées sur le site (fichiers qui ne changent jamais)
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache navigateur : photos et logos (1 jour, puis mise à jour en arrière-plan)
+/images/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/assets/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
