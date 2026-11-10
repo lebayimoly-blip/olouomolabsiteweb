@@ -1,0 +1,5 @@
+Fichier de l application CAISSEAMI : CAISSEAMI.apk
+(fichier d origine : sortie\CAISSEAMI.apk dans le projet projets_flutter\caisseami, construit avec construire.bat).
+Il est telechargeable a l adresse https://www.olouomolab.com/telechargements/caisseami/CAISSEAMI.apk
+et le QR code de la page https://www.olouomolab.com/caisseami y mene directement.
+Pour publier une nouvelle version : remplacer ce fichier, puis pousser le site (git push).

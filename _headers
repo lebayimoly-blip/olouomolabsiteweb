@@ -5,6 +5,13 @@
   Cache-Control: no-cache
   X-Robots-Tag: noindex
 
+# Téléchargement de l'application CAISSEAMI (Android)
+/telechargements/caisseami/CAISSEAMI.apk
+  Content-Type: application/vnd.android.package-archive
+  Content-Disposition: attachment; filename="CAISSEAMI.apk"
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex
+
 # Cache navigateur : polices hébergées sur le site (fichiers qui ne changent jamais)
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
